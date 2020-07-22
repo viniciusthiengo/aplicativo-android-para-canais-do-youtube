@@ -1,9 +1,11 @@
 package thiengo.com.br.canalvinciusthiengo.network
 
 import android.content.Context
+import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import thiengo.com.br.canalvinciusthiengo.MainActivity
 import thiengo.com.br.canalvinciusthiengo.data.UtilDatabase
 import thiengo.com.br.canalvinciusthiengo.domain.LastVideo
 import thiengo.com.br.canalvinciusthiengo.network.video.Video
@@ -22,7 +24,6 @@ class LastVideoResponse(
     override fun onFailure(
         call: Call<Video>,
         t: Throwable ){
-
         callbackFailure( NetworkRetrieveDataProblem.NO_INTERNET_CONNECTION )
     }
 
@@ -35,9 +36,10 @@ class LastVideoResponse(
                 val lastVideo = LastVideo(
                     uid = video.id,
                     title = video.title,
-                    description = video.description,
+                    description = video.description
+                ).apply {
                     thumbUrl = video.thumbUrl
-                )
+                }
 
                 UtilDatabase
                     .getInstance( context = context )

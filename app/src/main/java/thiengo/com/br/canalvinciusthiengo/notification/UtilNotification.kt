@@ -39,7 +39,7 @@ class UtilNotification private constructor(
     fun createBigPictureNotification( lastVideo: LastVideo ){
         val bitmapBigPicture = Picasso
             .get()
-            .load( lastVideo.thumbUrl )
+            .load( lastVideo.correctThumbUr() )
             .get()
 
         createNotification(

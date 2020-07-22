@@ -2,6 +2,7 @@ package thiengo.com.br.canalvinciusthiengo.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_last_video.*
 import kotlinx.android.synthetic.main.no_data_message_block.*
+import thiengo.com.br.canalvinciusthiengo.MainActivity
 import thiengo.com.br.canalvinciusthiengo.R
 import thiengo.com.br.canalvinciusthiengo.data.UtilDatabase
 import thiengo.com.br.canalvinciusthiengo.domain.LastVideo
@@ -24,6 +26,15 @@ class LastVideoFragment : Fragment() {
     }
     private var lastVideo: LastVideo? = null
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        Log.i(
+            MainActivity.LOG_TAG,
+            "LastVideoFragment.onCreate()"
+        )
+    }
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -70,6 +81,12 @@ class LastVideoFragment : Fragment() {
 
     private fun setUiModel( video: LastVideo? ){
         if( video != null ){
+
+            Log.i(
+                MainActivity.LOG_TAG,
+                "LastVideoFragment.setUiModel()"
+            )
+
             uiDataStatus( status = UiDataStatus.LOADED )
             lastVideo = video
 
@@ -77,7 +94,7 @@ class LastVideoFragment : Fragment() {
             tv_last_video_desc.text = video.description
             Picasso
                 .get()
-                .load( video.thumbUrl )
+                .load( video.correctThumbUr() )
                 .into( iv_last_video_thumb )
         }
         else{

@@ -1,8 +1,10 @@
 package thiengo.com.br.canalvinciusthiengo
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -34,27 +36,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         initItineraryMenu()
-        backgroundWork()
-    }
-
-    private fun backgroundWork(){
-        val request = PeriodicWorkRequestBuilder<CatchChannelDataWorker>(
-            CatchChannelDataWorker.REPEAT_INTERVAL,
-            TimeUnit.MINUTES
-        ).build()
-
-        /*
-         * Configuração que garante que mesmo com uma "re-invocação"
-         * de enfileramente de "work" não haverá work repetido em
-         * lista de execução do WorkManager.
-         * */
-        WorkManager
-            .getInstance( applicationContext )
-            .enqueueUniquePeriodicWork(
-                CatchChannelDataWorker.NAME,
-                ExistingPeriodicWorkPolicy.KEEP,
-                request
-            )
     }
 
     private fun initItineraryMenu(){
@@ -133,5 +114,13 @@ class MainActivity : AppCompatActivity() {
         fragTransaction.replace( R.id.ll_content_container, fragment, fragKey )
         fragTransaction.addToBackStack( FRAG_KEY )
         fragTransaction.commit()
+    }
+
+    override fun onBackPressed() {
+        supportFragmentManager.popBackStack(
+            null,
+            FragmentManager.POP_BACK_STACK_INCLUSIVE
+        )
+        super.onBackPressed()
     }
 }

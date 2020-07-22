@@ -1,9 +1,11 @@
 package thiengo.com.br.canalvinciusthiengo.network
 
 import android.content.Context
+import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import thiengo.com.br.canalvinciusthiengo.MainActivity
 import thiengo.com.br.canalvinciusthiengo.data.UtilDatabase
 import thiengo.com.br.canalvinciusthiengo.domain.PlayList
 import thiengo.com.br.canalvinciusthiengo.network.playlist.PlayLists
@@ -24,6 +26,7 @@ class PlayListsResponse(
         call: Call<PlayLists>,
         t: Throwable ){
 
+        Log.i(MainActivity.LOG_TAG, "t: ${t.message}")
         callbackFailure( NetworkRetrieveDataProblem.NO_INTERNET_CONNECTION )
     }
 
@@ -51,10 +54,12 @@ class PlayListsResponse(
                 callbackSuccess( playLists )
             }
             else{
+                Log.i(MainActivity.LOG_TAG, "t: NetworkRetrieveDataProblem.NO_PLAYLISTS")
                 callbackFailure( NetworkRetrieveDataProblem.NO_PLAYLISTS )
             }
         }
         else{
+            Log.i(MainActivity.LOG_TAG, "t: NetworkRetrieveDataProblem.NO_INTERNET_CONNECTION")
             callbackFailure( NetworkRetrieveDataProblem.NO_INTERNET_CONNECTION )
         }
     }

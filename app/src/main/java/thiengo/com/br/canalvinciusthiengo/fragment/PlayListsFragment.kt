@@ -72,23 +72,26 @@ class PlayListsFragment : Fragment() {
     }
 
     private fun setUiModel( pLists: List<PlayList>? ){
-        if( !pLists.isNullOrEmpty() ){
+        try{
+            if( !pLists.isNullOrEmpty() ){
 
-            uiDataStatus( status = UiDataStatus.LOADED )
+                uiDataStatus( status = UiDataStatus.LOADED )
 
-            if( !pLists.equals( playLists ) ){
-                Log.i(MainActivity.LOG_TAG, "setUiModel() INSIDE")
-                playLists.clear()
-                playLists.addAll( pLists )
+                if( !pLists.equals( playLists ) ){
+                    Log.i(MainActivity.LOG_TAG, "setUiModel() INSIDE")
+                    playLists.clear()
+                    playLists.addAll( pLists )
+                }
+
+                rv_play_lists
+                    .adapter!!
+                    .notifyDataSetChanged()
             }
-
-            rv_play_lists
-                .adapter!!
-                .notifyDataSetChanged()
+            else{
+                retrieveData()
+            }
         }
-        else{
-            retrieveData()
-        }
+        catch( e: Exception ){}
     }
 
     private fun retrieveData( pLists: List<PlayList>? = null ){

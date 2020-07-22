@@ -9,7 +9,7 @@ import thiengo.com.br.canalvinciusthiengo.domain.PlayList
 
 @Database(
     entities = arrayOf( LastVideo::class, PlayList::class ),
-    version = 13
+    version = 15
 )
 abstract class ChannelDatabase(): RoomDatabase() {
 

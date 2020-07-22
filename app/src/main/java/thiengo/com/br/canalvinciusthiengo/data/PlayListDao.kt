@@ -14,4 +14,7 @@ interface PlayListDao {
 
     @Insert( onConflict = OnConflictStrategy.REPLACE )
     fun insertAll( playLists: List<PlayList> )
+
+    @Query( value = "DELETE FROM PlayList" )
+    fun deleteAll()
 }

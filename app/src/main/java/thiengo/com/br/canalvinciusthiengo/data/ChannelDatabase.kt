@@ -9,16 +9,12 @@ import thiengo.com.br.canalvinciusthiengo.domain.PlayList
 
 @Database(
     entities = arrayOf( LastVideo::class, PlayList::class ),
-    version = 15
+    version = 17
 )
 abstract class ChannelDatabase(): RoomDatabase() {
 
     companion object{
         private const val DB_NAME = "youtube-channel"
-
-        /*
-         * Padrão Singleton.
-         * */
         private var instance: ChannelDatabase? = null
 
         fun getInstance( context: Context ) : ChannelDatabase {

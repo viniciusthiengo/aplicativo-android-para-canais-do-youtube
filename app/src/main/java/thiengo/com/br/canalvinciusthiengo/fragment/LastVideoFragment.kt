@@ -27,7 +27,7 @@ class LastVideoFragment : Fragment() {
     private var lastVideo: LastVideo? = null
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
 
         Log.i(

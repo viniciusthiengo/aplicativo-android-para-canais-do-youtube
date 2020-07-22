@@ -24,6 +24,8 @@ class LastVideoResponse(
     override fun onFailure(
         call: Call<Video>,
         t: Throwable ){
+
+        Log.i(MainActivity.LOG_TAG, "Throwable: ${t.message}")
         callbackFailure( NetworkRetrieveDataProblem.NO_INTERNET_CONNECTION )
     }
 
@@ -52,6 +54,9 @@ class LastVideoResponse(
             }
         }
         else{
+            Log.i(MainActivity.LOG_TAG, "Response.code(): ${response.code()}")
+            Log.i(MainActivity.LOG_TAG, "Response.message(): ${response.message()}")
+            Log.i(MainActivity.LOG_TAG, "Response.errorBody(): ${response.errorBody()}")
             callbackFailure( NetworkRetrieveDataProblem.NO_INTERNET_CONNECTION )
         }
     }

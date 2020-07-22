@@ -5,6 +5,7 @@ import android.util.Log
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import thiengo.com.br.canalvinciusthiengo.MainActivity
+import thiengo.com.br.canalvinciusthiengo.config.YouTubeConfig
 import thiengo.com.br.canalvinciusthiengo.domain.LastVideo
 import thiengo.com.br.canalvinciusthiengo.domain.PlayList
 
@@ -13,17 +14,6 @@ class UtilNetwork private constructor(
     ) {
 
     companion object{
-        const val FIREBASE_CM_SERVER_KEY = "AAAAM6VZ2kE:APA91bGaR_gveYgDHZ2WL9U5amxlBMtOPVTBrUolgUIYkXffk9WeTL3JZGTEFn715RGTD3eXd8N1LEWaByAaRguc1Fz5kV2HN82oehd6A6jceh_JpgayOoqEY6cs0ipEX59h6dj3D1tg"
-        const val FIREBASE_CM_SENDER_ID = "221817461313"
-        const val ONE_SIGNAL_APP_ID = "e4c1751c-0ce9-40f7-8590-f9daa7927539"
-
-        const val GOOGLE_DEV_KEY = "AIzaSyAScNRotW2GNg-lTT2lcBSV6GjxnzQOpn0" // Thiengo channel (BirdingBox)
-        //const val GOOGLE_DEV_KEY = "AIzaSyA3PIJs6i88pdEjmVldLnsR7FeflPv6MJs" // Thiengo channel (Cursos)
-
-        const val CHANNEL_ID = "UCG3gFuIkRF3PpNkRk3Wp6dw" // Thiengo channel
-        //const val CHANNEL_ID = "UCglvzYlkZgttz63tUiaqooA" // Somebody else channel
-
-        private const val BASE_URI = "https://www.googleapis.com/"
         private var instance: UtilNetwork? = null
 
         fun getInstance( context: Context) : UtilNetwork {
@@ -36,7 +26,7 @@ class UtilNetwork private constructor(
 
     private fun getYouTubeService()
         = Retrofit.Builder()
-            .baseUrl( BASE_URI )
+            .baseUrl( YouTubeConfig.API_BASE_URL.value )
             .addConverterFactory( GsonConverterFactory.create() )
             .build()
             .create( YouTubeService::class.java )

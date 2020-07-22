@@ -34,8 +34,6 @@ class PlayListsFragment : Fragment() {
             savedInstanceState: Bundle?
         ): View? {
 
-        Log.i(MainActivity.LOG_TAG, "playLists.size: ${playLists.size}")
-
         return inflater.inflate(
             R.layout.fragment_play_lists,
             container,

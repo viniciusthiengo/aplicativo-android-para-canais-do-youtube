@@ -10,9 +10,6 @@ class UtilDatabase private constructor(
     ){
 
     companion object{
-        /*
-         * Padrão Singleton.
-         * */
         private var instance: UtilDatabase? = null
 
         fun getInstance( context: Context ) : UtilDatabase {
@@ -30,6 +27,14 @@ class UtilDatabase private constructor(
         thread{
             try {
                 val dataBase = getDatabase()
+
+                /*
+                 * Certificando que sempre terá somente um
+                 * vídeo na tabela de vídeos.
+                 * */
+                dataBase
+                    .lastVideoDao()
+                    .delete()
 
                 dataBase
                     .lastVideoDao()
@@ -61,6 +66,15 @@ class UtilDatabase private constructor(
             try {
                 val dataBase = getDatabase()
 
+                /*
+                 * Certificando que sempre terá em banco de
+                 * dados local somente as PlayLists ainda
+                 * ativas no canal YouTube do aplicativo.
+                 * */
+                dataBase
+                    .playListDao()
+                    .deleteAll()
+
                 dataBase
                     .playListDao()
                     .insertAll(
@@ -86,5 +100,4 @@ class UtilDatabase private constructor(
             catch( e :Exception ){}
         }
     }
-
 }

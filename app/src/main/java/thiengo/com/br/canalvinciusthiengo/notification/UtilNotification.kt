@@ -12,6 +12,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.squareup.picasso.Picasso
+import thiengo.com.br.canalvinciusthiengo.AppForegroundStatus
 import thiengo.com.br.canalvinciusthiengo.MainActivity
 import thiengo.com.br.canalvinciusthiengo.R
 import thiengo.com.br.canalvinciusthiengo.domain.LastVideo
@@ -22,10 +23,6 @@ class UtilNotification private constructor(
 
     companion object{
         const val CHANNEL_ID = "new_channel_video"
-
-        /*
-         * Padrão Singleton.
-         * */
         private var instance: UtilNotification? = null
 
         fun getInstance( context: Context ) : UtilNotification {
@@ -37,6 +34,16 @@ class UtilNotification private constructor(
     }
 
     fun createBigPictureNotification( lastVideo: LastVideo ){
+
+        /*
+         * Clásula de guarda para garantir que a notificação
+         * somente será gerada se o aplicativo não estiver
+         * já aberto em tela (em foreground).
+         * */
+        if( MainActivity.APP_FOREGROUND == AppForegroundStatus.IS_IN_FORGROUND ){
+            return
+        }
+
         val bitmapBigPicture = Picasso
             .get()
             .load( lastVideo.correctThumbUr() )
@@ -57,7 +64,7 @@ class UtilNotification private constructor(
      * @param message Message shown on the notification
      * @param context Context needed to create Toast
      */
-    fun createNotification(
+    private fun createNotification(
             lastVideo: LastVideo,
             bitmapBigPicture: Bitmap? = null
         ){

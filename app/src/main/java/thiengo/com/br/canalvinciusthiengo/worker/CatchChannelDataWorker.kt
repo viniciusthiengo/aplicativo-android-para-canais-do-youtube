@@ -23,19 +23,19 @@ class CatchChannelDataWorker(
     override fun doWork(): Result {
         Log.i(MainActivity.LOG_TAG, "INSIDE 1")
 
-        UtilNetwork
+        /*UtilNetwork
             .getInstance( context = context )
             .retrievePlayLists(
                 networkRequestMode = NetworkRequestMode.SYNCHRONOUS,
-                callbackSuccess = {
+                callbackSuccess = {*/
 
                     UtilDatabase
                         .getInstance( context = context )
                         .getLastVideo{
                             retrieveLastVideo( oldLastVideo = it )
                         }
-                }
-            )
+                /*}
+            )*/
 
         return Result.success()
     }
@@ -48,6 +48,8 @@ class CatchChannelDataWorker(
             .retrieveLastVideo(
                 networkRequestMode = NetworkRequestMode.SYNCHRONOUS,
                 callbackSuccess = {
+
+                    Log.i(MainActivity.LOG_TAG, "INSIDE 3 ${it}")
 
                     /*
                      * Somente cria uma nova notificação se o

@@ -1,23 +1,17 @@
 package thiengo.com.br.canalvinciusthiengo
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.PeriodicWorkRequestBuilder
-import androidx.work.WorkManager
 import kotlinx.android.synthetic.main.activity_main.*
 import thiengo.com.br.canalvinciusthiengo.adapter.MenuAdapter
 import thiengo.com.br.canalvinciusthiengo.domain.MenuItem
 import thiengo.com.br.canalvinciusthiengo.domain.MenuItemsData
 import thiengo.com.br.canalvinciusthiengo.fragment.*
-import thiengo.com.br.canalvinciusthiengo.worker.CatchChannelDataWorker
-import java.util.concurrent.TimeUnit
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     companion object{
         const val LOG_TAG = "log_channel_app"
         const val FRAG_KEY = "frag"
+        var APP_FOREGROUND = AppForegroundStatus.IS_NOT_IN_FORGROUND
     }
 
     override fun onCreate( savedInstanceState: Bundle? ) {
@@ -36,6 +31,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         initItineraryMenu()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        APP_FOREGROUND = AppForegroundStatus.IS_IN_FORGROUND
+    }
+
+    override fun onPause() {
+        super.onPause()
+        APP_FOREGROUND = AppForegroundStatus.IS_NOT_IN_FORGROUND
     }
 
     private fun initItineraryMenu(){

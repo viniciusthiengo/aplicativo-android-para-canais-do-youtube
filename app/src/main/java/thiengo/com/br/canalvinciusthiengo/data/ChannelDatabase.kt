@@ -9,7 +9,7 @@ import thiengo.com.br.canalvinciusthiengo.domain.PlayList
 
 @Database(
     entities = arrayOf( LastVideo::class, PlayList::class ),
-    version = 17
+    version = 18
 )
 abstract class ChannelDatabase(): RoomDatabase() {
 
@@ -18,17 +18,18 @@ abstract class ChannelDatabase(): RoomDatabase() {
         private var instance: ChannelDatabase? = null
 
         fun getInstance( context: Context ) : ChannelDatabase {
-
             if( instance == null || !instance!!.isOpen ){
                 instance = Room.databaseBuilder(
                     context,
                     ChannelDatabase::class.java,
                     DB_NAME
                 )
+                .addCallback(
+                    InitialDataCallback( context = context )
+                )
                 .fallbackToDestructiveMigration()
                 .build()
             }
-
             return instance!!
         }
     }

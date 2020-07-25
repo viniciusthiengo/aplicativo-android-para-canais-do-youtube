@@ -4,26 +4,26 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 import thiengo.com.br.canalvinciusthiengo.config.YouTubeConfig
-import thiengo.com.br.canalvinciusthiengo.network.playlist.PlayLists
-import thiengo.com.br.canalvinciusthiengo.network.video.Video
+import thiengo.com.br.canalvinciusthiengo.network.playlistparse.PlayListsParse
+import thiengo.com.br.canalvinciusthiengo.network.videoparse.VideoParse
 
 interface YouTubeService {
 
-    @GET( "youtube/v3/search" )
+    @GET( value = YouTubeConfig.ApiV3.VIDEO_PATH )
     fun lastVideo(
-        @Query("channelId") channelId: String = YouTubeConfig.CHANNEL_ID.value,
-        @Query("part") part: String = YouTubeConfig.API_SNIPPET_PARAMETER.value,
-        @Query("maxResults") maxResults: Int = 1,
-        @Query("order") order: String = YouTubeConfig.API_ORDER_PARAMETER.value,
-        @Query("key") key: String = YouTubeConfig.GOOGLE_DEV_KEY.value
-    ): Call<Video>
+        @Query("channelId") channelId: String = YouTubeConfig.Channel.CHANNEL_ID,
+        @Query("part") part: String = YouTubeConfig.ApiV3.PART_PARAM,
+        @Query("maxResults") maxResults: String = YouTubeConfig.ApiV3.MAX_RESULTS_VIDEO_PARAM,
+        @Query("order") order: String = YouTubeConfig.ApiV3.ORDER_PARAM,
+        @Query("key") key: String = YouTubeConfig.Key.GOOGLE_DEV
+    ): Call<VideoParse>
 
-    @GET("youtube/v3/playlists")
+    @GET( value = YouTubeConfig.ApiV3.PLAYLISTS_PATH )
     fun playLists(
-        @Query("channelId") channelId: String = YouTubeConfig.CHANNEL_ID.value,
-        @Query("part") part: String = YouTubeConfig.API_SNIPPET_PARAMETER.value,
-        @Query("maxResults") maxResults: String = YouTubeConfig.API_MAX_RESULTS_PLAYLISTS_PARAMETER.value,
-        @Query("order") order: String = YouTubeConfig.API_ORDER_PARAMETER.value,
-        @Query("key") key: String = YouTubeConfig.GOOGLE_DEV_KEY.value
-    ): Call<PlayLists>
+        @Query("channelId") channelId: String = YouTubeConfig.Channel.CHANNEL_ID,
+        @Query("part") part: String = YouTubeConfig.ApiV3.PART_PARAM,
+        @Query("maxResults") maxResults: String = YouTubeConfig.ApiV3.MAX_RESULTS_PLAYLISTS_PARAM,
+        @Query("order") order: String = YouTubeConfig.ApiV3.ORDER_PARAM,
+        @Query("key") key: String = YouTubeConfig.Key.GOOGLE_DEV
+    ): Call<PlayListsParse>
 }

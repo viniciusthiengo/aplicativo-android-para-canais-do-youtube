@@ -13,8 +13,8 @@ class CustomApplication: Application() {
     override fun onCreate() {
         super.onCreate()
 
-        backgroundWork()
         oneSignalInit()
+        backgroundWork()
     }
 
     private fun backgroundWork(){

@@ -8,29 +8,29 @@ import retrofit2.Response
 import thiengo.com.br.canalvinciusthiengo.MainActivity
 import thiengo.com.br.canalvinciusthiengo.data.UtilDatabase
 import thiengo.com.br.canalvinciusthiengo.domain.PlayList
-import thiengo.com.br.canalvinciusthiengo.network.playlist.PlayLists
+import thiengo.com.br.canalvinciusthiengo.network.playlistparse.PlayListsParse
 
 class PlayListsResponse(
     private val context: Context,
     private val callbackSuccess: (List<PlayList>)->Unit = {},
-    private val callbackFailure: (NetworkRetrieveDataProblem)->Unit = {} ) : Callback<PlayLists> {
+    private val callbackFailure: (NetworkRetrieveDataProblem)->Unit = {} ) : Callback<PlayListsParse> {
 
     override fun onResponse(
-        call: Call<PlayLists>,
-        response: Response<PlayLists> ){
+        call: Call<PlayListsParse>,
+        response: Response<PlayListsParse> ){
 
         parse( response = response )
     }
 
     override fun onFailure(
-        call: Call<PlayLists>,
+        call: Call<PlayListsParse>,
         t: Throwable ){
 
         Log.i(MainActivity.LOG_TAG, "t: ${t.message}")
         callbackFailure( NetworkRetrieveDataProblem.NO_INTERNET_CONNECTION )
     }
 
-    fun parse( response: Response<PlayLists> ){
+    fun parse( response: Response<PlayListsParse> ){
 
         if( response.isSuccessful ){
             val playListObj = response.body()!!
@@ -54,12 +54,10 @@ class PlayListsResponse(
                 callbackSuccess( playLists )
             }
             else{
-                Log.i(MainActivity.LOG_TAG, "t: NetworkRetrieveDataProblem.NO_PLAYLISTS")
                 callbackFailure( NetworkRetrieveDataProblem.NO_PLAYLISTS )
             }
         }
         else{
-            Log.i(MainActivity.LOG_TAG, "t: NetworkRetrieveDataProblem.NO_INTERNET_CONNECTION")
             callbackFailure( NetworkRetrieveDataProblem.NO_INTERNET_CONNECTION )
         }
     }

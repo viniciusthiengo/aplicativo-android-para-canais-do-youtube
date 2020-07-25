@@ -1,13 +1,15 @@
 package thiengo.com.br.canalvinciusthiengo.data
 
 import android.content.Context
+import android.content.Intent
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import thiengo.com.br.canalvinciusthiengo.domain.LastVideo
 import thiengo.com.br.canalvinciusthiengo.domain.PlayList
 import kotlin.concurrent.thread
 
+
 class UtilDatabase private constructor(
-        private val appContext: Context
-    ){
+        private val appContext: Context ){
 
     companion object{
         private var instance: UtilDatabase? = null
@@ -43,9 +45,24 @@ class UtilDatabase private constructor(
                     )
 
                 dataBase.close()
+
+                newLastVideoBroadcast( lastVideo = lastVideo )
             }
             catch( e :Exception ){}
         }
+    }
+
+    private fun newLastVideoBroadcast(lastVideo: LastVideo ){
+        val intent = Intent( NewLastVideoBroadcast.FILTER_KEY )
+
+        intent.putExtra(
+            NewLastVideoBroadcast.DATA_KEY,
+            lastVideo
+        )
+
+        LocalBroadcastManager
+            .getInstance( appContext )
+            .sendBroadcast( intent )
     }
 
     fun getLastVideo( callback: (LastVideo?)->Unit ){

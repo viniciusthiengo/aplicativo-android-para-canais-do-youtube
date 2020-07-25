@@ -1,17 +1,14 @@
 package thiengo.com.br.canalvinciusthiengo.network
 
 import android.content.Context
-import android.util.Log
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import thiengo.com.br.canalvinciusthiengo.MainActivity
 import thiengo.com.br.canalvinciusthiengo.config.YouTubeConfig
 import thiengo.com.br.canalvinciusthiengo.domain.LastVideo
 import thiengo.com.br.canalvinciusthiengo.domain.PlayList
 
 class UtilNetwork private constructor(
-        private val context: Context
-    ) {
+    private val context: Context ){
 
     companion object{
         private var instance: UtilNetwork? = null
@@ -26,7 +23,7 @@ class UtilNetwork private constructor(
 
     private fun getYouTubeService()
         = Retrofit.Builder()
-            .baseUrl( YouTubeConfig.API_BASE_URL.value )
+            .baseUrl( YouTubeConfig.ApiV3.BASE_URL )
             .addConverterFactory( GsonConverterFactory.create() )
             .build()
             .create( YouTubeService::class.java )

@@ -89,7 +89,7 @@ class SocialNetworksData {
                     network = "YouTube",
                     accountName = "/ThiengoCalopsita",
                     appUri = "",
-                    webUri = "",
+                    webUri = "https://www.youtube.com/user/thiengoCalopsita",
                     logo = R.drawable.ic_youtube_color
                 ),
                 SocialNetwork(

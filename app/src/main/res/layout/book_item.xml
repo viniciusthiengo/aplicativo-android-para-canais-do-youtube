@@ -1,41 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="25dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="25dp"
-    android:layout_marginBottom="8dp"
-    android:background="@drawable/bg_item_list"
-    android:padding="8dp">
+    style="@style/AppTheme.ListItemContainer">
 
     <ImageView
-        android:id="@+id/iv_cover"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_centerVertical="true"
+        android:id="@+id/iv_icon"
+        style="@style/AppTheme.ListItemIcon"
         android:contentDescription="@string/book_cover_content_desc"
         android:src="@drawable/ic_books_color" />
 
     <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_toEndOf="@+id/iv_cover"
-        android:textColor="@android:color/black" />
+        android:id="@+id/tv_main_text"
+        style="@style/AppTheme.ListItemMainText"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/iv_icon" />
 
     <TextView
-        android:id="@+id/tv_categories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_title"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_toEndOf="@+id/iv_cover"
-        android:textColor="@android:color/black"
-        android:textSize="12sp"
-        android:textStyle="bold" />
+        android:id="@+id/tv_first_aux_text"
+        style="@style/AppTheme.ListItemAuxText"
+        android:layout_below="@+id/tv_main_text"
+        android:layout_toEndOf="@+id/iv_icon" />
 </RelativeLayout>

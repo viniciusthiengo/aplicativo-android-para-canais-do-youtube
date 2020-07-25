@@ -1,5 +1,7 @@
 package thiengo.com.br.canalvinciusthiengo
 
+import android.app.NotificationManager
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -19,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     companion object{
         const val LOG_TAG = "log_channel_app"
         const val FRAG_KEY = "frag"
-        var APP_FOREGROUND = AppForegroundStatus.IS_NOT_IN_FORGROUND
+        var APP_FOREGROUND = AppForegroundStatus.IS_NOT_IN_FOREGROUND
     }
 
     override fun onCreate( savedInstanceState: Bundle? ) {
@@ -30,17 +32,24 @@ class MainActivity : AppCompatActivity() {
             changeFragment( LastVideoFragment(), getFragmentInKey() )
         }
 
+        removeStatusBarNotification()
         initItineraryMenu()
+    }
+
+    private fun removeStatusBarNotification(){
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.cancelAll()
     }
 
     override fun onResume() {
         super.onResume()
-        APP_FOREGROUND = AppForegroundStatus.IS_IN_FORGROUND
+        APP_FOREGROUND = AppForegroundStatus.IS_IN_FOREGROUND
     }
 
     override fun onPause() {
         super.onPause()
-        APP_FOREGROUND = AppForegroundStatus.IS_NOT_IN_FORGROUND
+        APP_FOREGROUND = AppForegroundStatus.IS_NOT_IN_FOREGROUND
     }
 
     private fun initItineraryMenu(){
@@ -82,7 +91,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.social_networks -> SocialNetworksFragment()
                 R.id.play_lists -> PlayListsFragment()
                 R.id.exclusive_groups -> GroupsFragment()
-                R.id.last_info -> LastInfoFragment()
                 R.id.about_channel -> AboutChannelFragment()
                 R.id.books -> BooksFragment()
                 R.id.courses -> CoursesFragment()
@@ -99,7 +107,6 @@ class MainActivity : AppCompatActivity() {
             R.id.social_networks -> SocialNetworksFragment.KEY
             R.id.play_lists -> PlayListsFragment.KEY
             R.id.exclusive_groups -> GroupsFragment.KEY
-            R.id.last_info -> LastInfoFragment.KEY
             R.id.about_channel -> AboutChannelFragment.KEY
             R.id.books -> BooksFragment.KEY
             R.id.courses -> CoursesFragment.KEY

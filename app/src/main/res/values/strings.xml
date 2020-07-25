@@ -57,6 +57,18 @@
     <string name="last_video_play_content_desc">
         Ícone de play do vídeo.
     </string>
+    <string name="volume_icon_content_desc">
+        Ícone de controle volume.
+    </string>
+    <string name="head_phones_icon_content_desc">
+        Ícone de fones de ouvido.
+    </string>
+    <string name="video_resolution_icon_content_desc">
+        Ícone de controle de resolução (HD).
+    </string>
+    <string name="like_icon_content_desc">
+        Ícone de like, gostei do conteúdo.
+    </string>
     <string name="touch_to_watch">
         Toque para assistir
     </string>
@@ -112,12 +124,6 @@
     <string name="groups_toast_alert">
         É preciso o aplicativo do \"%s\" para abrir o grupo
         exclusivo \"%s\".
-    </string>
-
-
-    <!-- LastInfoFragment -->
-    <string name="last_info_content_title">
-        Utilidade ao seguidor (fique atento)…
     </string>
 
 
@@ -256,12 +262,9 @@
 
     <!-- "No main data" possible problems.  -->
     <string name="no_video_yet">
-        Nenhum vídeo ainda disponível!
+        Não há novo vídeo disponível.
     </string>
     <string name="no_playlists_yet">
         Nenhuma PlayList disponível no canal!
-    </string>
-    <string name="no_internet_connection">
-        Não foi possível realizar a conexão. Verifique sua rede.
     </string>
 </resources>

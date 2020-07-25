@@ -24,15 +24,4 @@
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
         android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/tv_no_internet_connection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:drawableStart="@drawable/ic_no_internet_connection"
-        android:drawablePadding="10dp"
-        android:gravity="center_vertical"
-        android:text="@string/no_internet_connection"
-        android:visibility="gone" />
 </RelativeLayout>

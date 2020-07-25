@@ -14,12 +14,10 @@ class AboutChannelFragment : Fragment() {
         const val KEY = "AboutChannelFragment_key"
     }
 
-
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle? ): View? {
 
         return inflater.inflate(
             R.layout.fragment_about_channel,

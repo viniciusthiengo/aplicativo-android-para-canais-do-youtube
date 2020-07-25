@@ -33,11 +33,6 @@ class MenuItemsData {
                     icon = R.drawable.ic_groups
                 ),
                 MenuItem(
-                    id = R.id.last_info,
-                    label = res.getString( R.string.item_menu_last_info ),
-                    icon = R.drawable.ic_info
-                ),
-                MenuItem(
                     id = R.id.about_channel,
                     label = res.getString( R.string.item_menu_about_channel ),
                     icon = R.drawable.ic_about

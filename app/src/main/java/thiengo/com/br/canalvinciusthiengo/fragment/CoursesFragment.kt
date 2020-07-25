@@ -8,85 +8,59 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_courses.*
+import kotlinx.android.synthetic.main.fragment_framework_list.*
 import thiengo.com.br.canalvinciusthiengo.R
+import thiengo.com.br.canalvinciusthiengo.adapter.BusinessContactAdapter
 import thiengo.com.br.canalvinciusthiengo.adapter.CourseAdapter
+import thiengo.com.br.canalvinciusthiengo.adapter.ListItemAdapter
+import thiengo.com.br.canalvinciusthiengo.domain.BusinessContactData
 import thiengo.com.br.canalvinciusthiengo.domain.Course
 import thiengo.com.br.canalvinciusthiengo.domain.CoursesData
 
 
-class CoursesFragment : Fragment() {
+class CoursesFragment : FrameworkListFragment() {
 
     companion object{
         const val KEY = "CoursesFragment_key"
     }
 
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-
-        return inflater.inflate(
-            R.layout.fragment_courses,
-            container,
-            false
-        )
-    }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated( savedInstanceState )
 
-        initCoursesList()
-    }
+        setUiModel(
+            titleText = getString( R.string.courses_content_title )
+        )
 
-    private fun initCoursesList(){
+        val adapter = ListItemAdapter(
+            context = activity!!,
+            items = CoursesData.getCourses(),
+            callExternalAppCallback = {
+                item -> callExternalApp(
+                    webUri = item.getWebUri(),
+                    appUri = item.getAppUri(),
+                    failMessage = String.format(
+                        getString( R.string.course_toast_alert ),
+                        (item as Course).title
+                    )
+                )
+            }
+        )
+        initList( adapter = adapter )
 
-        val layoutManager = LinearLayoutManager( activity )
-        rv_courses.layoutManager = layoutManager
-
-        rv_courses.setHasFixedSize( true )
-        rv_courses.adapter = CourseAdapter(
+        /*val adapter = CourseAdapter(
             context = activity!!,
             courses = CoursesData.getCourses(),
             callCoursePageCallback = {
-                book -> callCoursePageCallback( book )
-            }
-        )
-    }
-
-    private fun callCoursePageCallback( course: Course ){
-
-        val intent = Intent(
-            Intent.ACTION_VIEW,
-            course.webPageUri()
-        )
-
-        /*
-         * É utópico, mas pode ocorrer de não haver um
-         * navegador Web no aparelho do usuário que abra a URL do
-         * curso acionado.
-         *
-         * Sendo assim, ao invés de gerar uma exceção, nós
-         * avisamos ao usuário a necessidade de instalar o
-         * aplicativo adequado.
-         * */
-        if( intent.resolveActivity( activity!!.packageManager ) == null ){
-            Toast
-                .makeText(
-                    activity,
-                    String.format(
+                course -> callExternalApp(
+                    webUri = course.webPageUri(),
+                    failMessage = String.format(
                         getString( R.string.course_toast_alert ),
                         course.title
-                    ),
-                    Toast.LENGTH_LONG
+                    )
                 )
-                .show()
-
-            return
-        }
-
-        activity!!.startActivity( intent )
+            }
+        )
+        initList( adapter = adapter )*/
     }
 }

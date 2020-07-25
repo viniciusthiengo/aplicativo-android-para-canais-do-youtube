@@ -33,22 +33,39 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
     }
 
     private fun getLastVideoFromJson( json: JSONObject? ) : LastVideo?{
+
+        Log.i(
+            MainActivity.LOG_TAG,
+            "getLastVideoFromJson(): 1"
+        )
+
         if( json == null
-            || json.isNull( OneSignalConfig.NOTIFICATION_VIDEO_PARAMETER.value )
-            || json.isNull( OneSignalConfig.NOTIFICATION_TITLE_PARAMETER.value ) ){
+            || json.isNull( OneSignalConfig.Notification.VIDEO )
+            || json.isNull( OneSignalConfig.Notification.TITLE ) ){
             return null
         }
 
-        val url = json.getString( OneSignalConfig.NOTIFICATION_VIDEO_PARAMETER.value )
-        val title = json.getString( OneSignalConfig.NOTIFICATION_TITLE_PARAMETER.value )
+        Log.i(
+            MainActivity.LOG_TAG,
+            "getLastVideoFromJson(): 2"
+        )
+
+        val url = json.getString( OneSignalConfig.Notification.VIDEO )
+        val title = json.getString( OneSignalConfig.Notification.TITLE )
         var lastVideo : LastVideo? = null
 
         if( !url.isEmpty() && !title.isEmpty() ){
+
+            Log.i(
+                MainActivity.LOG_TAG,
+                "getLastVideoFromJson(): 3 $url"
+            )
+
             val urlQuery = UrlQuerySanitizer( url )
 
-            if( !urlQuery.getValue( YouTubeConfig.URL_VIDEO_PARAMETER.value ).isNullOrEmpty() ){
+            if( !urlQuery.getValue( YouTubeConfig.Notification.VIDEO_PARAM ).isNullOrEmpty() ){
                 lastVideo = LastVideo(
-                    uid = urlQuery.getValue( YouTubeConfig.URL_VIDEO_PARAMETER.value ),
+                    uid = urlQuery.getValue( YouTubeConfig.Notification.VIDEO_PARAM ),
                     title = title,
                     description = getDescriptionFromJson( json )
                 )
@@ -56,7 +73,7 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
                     thumbUrl = correctThumbUr()
                 }
             }
-            else if( url.contains( YouTubeConfig.ALTERNATIVE_URL.value ) ){
+            else if( url.contains( YouTubeConfig.Notification.ALTERNATIVE_URL ) ){
                 val uri = URI( url )
                 val path: String = uri.getPath()
                 val uid = path.substring(path.lastIndexOf('/') + 1)
@@ -76,20 +93,35 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
     }
 
     private fun getDescriptionFromJson( json: JSONObject )
-        = if( !json.isNull( OneSignalConfig.NOTIFICATION_DESCRIPTION_PARAMETER.value ) ){
-            json.getString( OneSignalConfig.NOTIFICATION_DESCRIPTION_PARAMETER.value )
+        = if( !json.isNull( OneSignalConfig.Notification.DESCRIPTION ) ){
+            json.getString( OneSignalConfig.Notification.DESCRIPTION )
         }
         else {
-            OneSignalConfig.NOTIFICATION_EMPTY_PARAMETER.value
+            OneSignalConfig.Notification.EMPTY
         }
 
     private fun ifNewVideoSaveAndNotify( lastVideo : LastVideo ){
+
+        Log.i(
+            MainActivity.LOG_TAG,
+            "ifNewVideoSaveAndNotify: 1"
+        )
         UtilDatabase
             .getInstance( context = this )
             .getLastVideo{
 
+                Log.i(
+                    MainActivity.LOG_TAG,
+                    "ifNewVideoSaveAndNotify: 2"
+                )
+
                 if( it == null
                     || !it.uid.equals( lastVideo.uid ) ){
+
+                    Log.i(
+                        MainActivity.LOG_TAG,
+                        "ifNewVideoSaveAndNotify: 3 ${MainActivity.APP_FOREGROUND}"
+                    )
 
                     UtilDatabase
                         .getInstance( context = this )

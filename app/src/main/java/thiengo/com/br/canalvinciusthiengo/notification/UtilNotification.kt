@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -18,8 +19,7 @@ import thiengo.com.br.canalvinciusthiengo.R
 import thiengo.com.br.canalvinciusthiengo.domain.LastVideo
 
 class UtilNotification private constructor(
-        private val context: Context
-    ){
+    private val context: Context ){
 
     companion object{
         const val CHANNEL_ID = "new_channel_video"
@@ -40,9 +40,14 @@ class UtilNotification private constructor(
          * somente será gerada se o aplicativo não estiver
          * já aberto em tela (em foreground).
          * */
-        if( MainActivity.APP_FOREGROUND == AppForegroundStatus.IS_IN_FORGROUND ){
+        if( MainActivity.APP_FOREGROUND == AppForegroundStatus.IS_IN_FOREGROUND ){
             return
         }
+
+        Log.i(
+            MainActivity.LOG_TAG,
+            "lastVideo.correctThumbUr(): ${lastVideo.correctThumbUr()}"
+        )
 
         val bitmapBigPicture = Picasso
             .get()

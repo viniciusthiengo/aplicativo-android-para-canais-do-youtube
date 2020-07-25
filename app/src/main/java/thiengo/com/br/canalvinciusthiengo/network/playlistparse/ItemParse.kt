@@ -1,9 +1,8 @@
-package thiengo.com.br.canalvinciusthiengo.network.playlist
+package thiengo.com.br.canalvinciusthiengo.network.playlistparse
 
-class Item(
+class ItemParse(
     val id: String,
-    private val snippet: Snippet?
-) {
+    private val snippet: SnippetParse? ){
 
     val title: String
         get() : String{

@@ -4,35 +4,33 @@ class PlayListData {
 
     companion object{
 
-        fun getPlayLists()
-            = listOf(
+        fun getInitialPlayLists()
+            //= mutableListOf<PlayList>()
+
+            = mutableListOf(
                 PlayList(
                     title = "[MINI-CURSO] Porque e Como Utilizar Vetores no Android",
                     uid = "PLBA57K2L2RIJeKoaLgTtYKSFAhvH6FAcG"
                 ),
                 PlayList(
-                    title = "Annotation Span para Estilização de Texto no Android",
-                    uid = "PLBA57K2L2RIIEZ1xOanua2V-nUh5SiZjY"
+                    title = "Como Desenvolver a Tela de Listagem de Calçados - Android M-Commerce",
+                    uid = "PLBA57K2L2RII2XZc79MqnqeuhG6VqfYjM"
                 ),
                 PlayList(
-                    title = "SelectionTracker Para Seleção de Itens no RecyclerView Android",
-                    uid = "PLBA57K2L2RII6Dm7-z592oRmE8pE0kuLf"
+                    title = "Como Melhorar a Área de Configurações de Conta - Android M-Commerce",
+                    uid = "PLBA57K2L2RIKwFMT9IU06wgFDlMW6WHJo"
                 ),
                 PlayList(
-                    title = "Android About Page API Para Construir a Tela Sobre",
-                    uid = "PLBA57K2L2RILcNYio-LWiDeE_PWvCMFuW"
+                    title = "Como Desenvolver as Telas de Endereço de Entrega - Android M-Commerce",
+                    uid = "PLBA57K2L2RIJ7uLasfzwBGiip4fcVH1oS"
                 ),
                 PlayList(
-                    title = "Como Impulsionar App Android - Compartilhamento Nativo",
-                    uid = "PLBA57K2L2RIK3HIcEPsCqXOwUT0DGswod"
+                    title = "Desenvolvendo as Telas de Cartão de Crédito Com Máscara de Campo - Android M-Commerce",
+                    uid = "PLBA57K2L2RILKKBEGsUk039no5sakLVOS"
                 ),
                 PlayList(
-                    title = "Como Utilizar Métodos Binding Adapter no Android",
-                    uid = "PLBA57K2L2RIK2le1Lw98grizRfGn4a8hE"
-                ),
-                PlayList(
-                    title = "Ajuste de Texto com Autosizing TextView - Android Jetpack",
-                    uid = "PLBA57K2L2RILZVIAcY0MdDnja2rCk6N4_"
+                    title = "Como Desenvolver as Telas de Configuração de E-mail e Senha - Android M-Commerce",
+                    uid = "PLBA57K2L2RIKHvU3LxgnSIzFxYZ5wtR2W"
                 )
             )
     }

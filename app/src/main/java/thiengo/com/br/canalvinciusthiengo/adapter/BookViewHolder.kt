@@ -18,8 +18,8 @@ class BookViewHolder(
     init {
         itemView.setOnClickListener( this )
 
-        tvTitle = itemView.findViewById( R.id.tv_title )
-        tvCategories = itemView.findViewById( R.id.tv_categories )
+        tvTitle = itemView.findViewById( R.id.tv_main_text )
+        tvCategories = itemView.findViewById( R.id.tv_first_aux_text )
     }
 
     fun setModel( book: Book ) {

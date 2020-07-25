@@ -20,7 +20,7 @@ class SocialNetworkViewHolder(
     init {
         itemView.setOnClickListener( this )
 
-        ivLogo = itemView.findViewById( R.id.iv_cover )
+        ivLogo = itemView.findViewById( R.id.iv_icon )
         tvAccountName = itemView.findViewById( R.id.tv_account_name )
     }
 

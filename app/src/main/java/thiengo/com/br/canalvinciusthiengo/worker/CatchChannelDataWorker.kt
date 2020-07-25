@@ -13,7 +13,7 @@ import thiengo.com.br.canalvinciusthiengo.notification.UtilNotification
 
 class CatchChannelDataWorker(
     val context: Context,
-    val params: WorkerParameters ) : Worker( context, params ) {
+    params: WorkerParameters ) : Worker( context, params ) {
 
     companion object{
         const val NAME = "sync_local_database"
@@ -23,24 +23,27 @@ class CatchChannelDataWorker(
     override fun doWork(): Result {
         Log.i(MainActivity.LOG_TAG, "INSIDE 1")
 
-        /*UtilNetwork
+        UtilNetwork
             .getInstance( context = context )
             .retrievePlayLists(
                 networkRequestMode = NetworkRequestMode.SYNCHRONOUS,
-                callbackSuccess = {*/
-
-                    UtilDatabase
-                        .getInstance( context = context )
-                        .getLastVideo{
-                            retrieveLastVideo( oldLastVideo = it )
-                        }
-                /*}
-            )*/
+                callbackSuccess = {
+                    retrieveLocalLastVideo()
+                }
+            )
 
         return Result.success()
     }
 
-    private fun retrieveLastVideo( oldLastVideo: LastVideo? ){
+    private fun retrieveLocalLastVideo(){
+        UtilDatabase
+            .getInstance( context = context )
+            .getLastVideo{
+                retrieveServerLastVideo( oldLastVideo = it )
+            }
+    }
+
+    private fun retrieveServerLastVideo(oldLastVideo: LastVideo? ){
         Log.i(MainActivity.LOG_TAG, "INSIDE 2")
 
         UtilNetwork

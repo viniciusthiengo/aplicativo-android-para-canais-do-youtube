@@ -2,7 +2,6 @@ package thiengo.com.br.canalvinciusthiengo.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_play_lists.*
 import kotlinx.android.synthetic.main.no_data_message_block.*
-import thiengo.com.br.canalvinciusthiengo.MainActivity
 import thiengo.com.br.canalvinciusthiengo.R
+import thiengo.com.br.canalvinciusthiengo.adapter.ListItemAdapter
 import thiengo.com.br.canalvinciusthiengo.adapter.PlayListAdapter
 import thiengo.com.br.canalvinciusthiengo.data.UtilDatabase
+import thiengo.com.br.canalvinciusthiengo.domain.Course
+import thiengo.com.br.canalvinciusthiengo.domain.CoursesData
 import thiengo.com.br.canalvinciusthiengo.domain.PlayList
-import thiengo.com.br.canalvinciusthiengo.network.NetworkRetrieveDataProblem
+import thiengo.com.br.canalvinciusthiengo.domain.PlayListData
 import thiengo.com.br.canalvinciusthiengo.network.UtilNetwork
 
 
@@ -25,14 +26,12 @@ class PlayListsFragment : Fragment() {
     companion object{
         const val KEY = "PlayListsFragment_key"
     }
-    private val playLists : MutableList<PlayList> = mutableListOf()
-
+    private val playLists = PlayListData.getInitialPlayLists()
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle? ): View? {
 
         return inflater.inflate(
             R.layout.fragment_play_lists,
@@ -51,101 +50,78 @@ class PlayListsFragment : Fragment() {
             setUiModel( pLists = playLists )
         }
         else{
-            uiDataStatus( status = UiDataStatus.LOADING )
+            uiDataStatus( status = UiFragDataStatus.LOADING )
             UtilDatabase
                 .getInstance( context = activity!!.applicationContext )
                 .getAllPlayLists{
-                    activity!!.runOnUiThread {
-                        setUiModel( pLists = it )
-                    }
+                    setUiModel( pLists = it )
                 }
         }
     }
 
     private fun setListeners(){
         srl_update_content.setOnRefreshListener {
-            srl_update_content.isRefreshing = true
-            retrieveData( pLists = playLists )
+            swipeRefreshStatus( status = true )
+            retrieveData()
         }
     }
 
     private fun setUiModel( pLists: List<PlayList>? ){
-        try{
-            if( !pLists.isNullOrEmpty() ){
+        if( !pLists.isNullOrEmpty() ){
 
-                uiDataStatus( status = UiDataStatus.LOADED )
+            activity?.runOnUiThread {
+                uiDataStatus( status = UiFragDataStatus.LOADED )
 
-                if( !pLists.equals( playLists ) ){
-                    Log.i(MainActivity.LOG_TAG, "setUiModel() INSIDE")
+                if (!pLists.equals( playLists )) {
                     playLists.clear()
                     playLists.addAll( pLists )
                 }
 
                 rv_play_lists
-                    .adapter!!
-                    .notifyDataSetChanged()
-            }
-            else{
-                retrieveData()
+                    ?.adapter
+                    ?.notifyDataSetChanged()
             }
         }
-        catch( e: Exception ){}
+        else{
+            uiDataStatus( status = UiFragDataStatus.NO_MAIN_CONTENT )
+        }
     }
 
-    private fun retrieveData( pLists: List<PlayList>? = null ){
-        /*
-         * Se pLists.isNullOrEmpty() for true então o método
-         *  retrieveData() não está sendo invocado devido ao
-         * acionamento de SwipeRefresh.
-         *
-         * Sendo assim o layout tem que ficar no status
-         * UiDataStatus.LOADING.
-         * */
-        if( pLists.isNullOrEmpty() ){
-            uiDataStatus( status = UiDataStatus.LOADING )
+    private fun swipeRefreshStatus( status : Boolean ){
+        activity?.runOnUiThread {
+            srl_update_content?.isRefreshing = status
         }
+    }
 
+    private fun retrieveData(){
         UtilNetwork
             .getInstance( context = activity!! )
             .retrievePlayLists(
                 callbackSuccess = {
+                    swipeRefreshStatus( status = false )
                     setUiModel( it )
                 },
                 callbackFailure = {
-                    if( pLists.isNullOrEmpty() ){
-                        if( it == NetworkRetrieveDataProblem.NO_PLAYLISTS ){
-                            uiDataStatus( status = UiDataStatus.NO_MAIN_CONTENT )
-                        }
-                        else{
-                            uiDataStatus( status = UiDataStatus.NO_CONNECTION )
-                        }
-                    }
-                    else{
-                        uiDataStatus( status = UiDataStatus.LOADED )
-                    }
+                    swipeRefreshStatus( status = false )
                 }
             )
     }
 
-    private fun uiDataStatus( status: UiDataStatus ){
-        try{
+    private fun uiDataStatus( status: UiFragDataStatus ){
+        activity?.runOnUiThread {
             var rvPlayLists = View.GONE
             var rlNoDataMessageContainer = View.VISIBLE
             var tvNoDataStatus = View.GONE
-            var tvNoInternetConnection = View.GONE
-            srl_update_content.isRefreshing = false
-            pb_load_content.hide()
+            swipeRefreshStatus( status = false )
+            pb_load_content?.hide()
 
             when( status ){
-                UiDataStatus.LOADING -> {
-                    pb_load_content.show()
+                UiFragDataStatus.LOADING -> {
+                    pb_load_content?.show()
                 }
-                UiDataStatus.NO_MAIN_CONTENT -> {
-                    tv_no_data.text = getString( R.string.no_playlists_yet )
+                UiFragDataStatus.NO_MAIN_CONTENT -> {
+                    tv_no_data?.text = getString( R.string.no_playlists_yet )
                     tvNoDataStatus = View.VISIBLE
-                }
-                UiDataStatus.NO_CONNECTION -> {
-                    tvNoInternetConnection = View.VISIBLE
                 }
                 else -> {
                     rlNoDataMessageContainer = View.GONE
@@ -153,25 +129,25 @@ class PlayListsFragment : Fragment() {
                 }
             }
 
-            rv_play_lists.visibility = rvPlayLists
-            rl_no_data_message_container.visibility = rlNoDataMessageContainer
-            tv_no_data.visibility = tvNoDataStatus
-            tv_no_internet_connection.visibility = tvNoInternetConnection
+            rv_play_lists?.visibility = rvPlayLists
+            rl_no_data_message_container?.visibility = rlNoDataMessageContainer
+            tv_no_data?.visibility = tvNoDataStatus
         }
-        catch( e: Exception ){}
     }
 
     private fun initPlayListList(){
 
         val layoutManager = LinearLayoutManager( activity )
-        rv_play_lists.layoutManager = layoutManager
+        rv_play_lists?.layoutManager = layoutManager
 
-        rv_play_lists.setHasFixedSize( true )
-        rv_play_lists.adapter = PlayListAdapter(
+        rv_play_lists?.setHasFixedSize( true )
+        rv_play_lists?.adapter = PlayListAdapter(
             context = activity!!,
             playLists = playLists,
             callYouTubePlayListCallback = {
-                playList -> callYouTubePlayListCallback( playList )
+                callYouTubePlayListCallback(
+                    playList = it
+                )
             }
         )
     }

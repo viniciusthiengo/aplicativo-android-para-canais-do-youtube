@@ -96,4 +96,8 @@ dependencies {
      * notificações no projeto.
      * */
     implementation 'com.onesignal:OneSignal:[3.15.0, 3.99.99]'
+
+
+    /*implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'android.arch.lifecycle:compiler:1.1.1'*/
 }

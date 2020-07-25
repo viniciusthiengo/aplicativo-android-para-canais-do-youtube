@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="card_view_radius">8dp</dimen>
+    <dimen name="standard_screen_side_margin">25dp</dimen>
 </resources>

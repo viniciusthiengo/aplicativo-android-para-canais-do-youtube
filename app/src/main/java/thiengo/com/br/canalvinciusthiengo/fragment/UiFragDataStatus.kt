@@ -1,8 +1,7 @@
 package thiengo.com.br.canalvinciusthiengo.fragment
 
-enum class UiDataStatus {
+enum class UiFragDataStatus {
     LOADING,
     LOADED,
-    NO_MAIN_CONTENT,
-    NO_CONNECTION
+    NO_MAIN_CONTENT
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppTheme.ListItemContainer">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        style="@style/AppTheme.ListItemIcon"
+        android:src="@drawable/ic_courses_color" />
+
+    <TextView
+        android:id="@+id/tv_main_text"
+        style="@style/AppTheme.ListItemMainText"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/iv_icon" />
+
+    <TextView
+        android:id="@+id/tv_first_aux_text"
+        style="@style/AppTheme.ListItemAuxText"
+        android:layout_below="@+id/tv_main_text"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/iv_icon" />
+
+    <TextView
+        android:id="@+id/tv_second_aux_text"
+        style="@style/AppTheme.ListItemAuxText"
+        android:layout_below="@+id/tv_first_aux_text"
+        android:layout_toEndOf="@+id/iv_icon"
+        android:drawableStart="@drawable/ic_video_play"
+        android:drawablePadding="5dp" />
+</RelativeLayout>

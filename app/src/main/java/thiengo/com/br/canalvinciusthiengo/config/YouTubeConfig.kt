@@ -7,20 +7,45 @@ package thiengo.com.br.canalvinciusthiengo.config
 // https://www.googleapis.com/youtube/v3/playlists?part=snippet&maxResults=200&channelId=UCG3gFuIkRF3PpNkRk3Wp6dw&order=date&key=AIzaSyA3PIJs6i88pdEjmVldLnsR7FeflPv6MJs
 
 
-enum class YouTubeConfig private constructor( val value: String ){
-    GOOGLE_DEV_KEY( value = "AIzaSyAScNRotW2GNg-lTT2lcBSV6GjxnzQOpn0" ), // Thiengo channel (BirdingBox)
-    //GOOGLE_DEV_KEY( value = "AIzaSyA3PIJs6i88pdEjmVldLnsR7FeflPv6MJs" ), // Thiengo channel (Cursos)
+class YouTubeConfig {
 
-    CHANNEL_ID( value = "UCG3gFuIkRF3PpNkRk3Wp6dw" ), // Thiengo channel
-    //CHANNEL_ID( value = "UCglvzYlkZgttz63tUiaqooA" ), // Somebody else channel
+    class Key{
+        companion object{
+            const val GOOGLE_DEV = "" // Thiengo channel (BirdingBox)
+            //const val GOOGLE_DEV = "" // Thiengo channel (Cursos)
+        }
+    }
 
-    API_BASE_URL( value = "https://www.googleapis.com/" ),
-    API_PATH_URL( value = "youtube/v3/search" ),
-    API_SNIPPET_PARAMETER( value = "snippet" ),
-    API_MAX_RESULTS_VIDEO_PARAMETER( value = "1" ),
-    API_MAX_RESULTS_PLAYLISTS_PARAMETER( value = "500" ),
-    API_ORDER_PARAMETER( value = "date" ),
+    class Channel{
+        companion object{
+            const val CHANNEL_ID = "" // Thiengo channel
+            //const val CHANNEL_ID = "UCglvzYlkZgttz63tUiaqooA" // Somebody else channel
 
-    URL_VIDEO_PARAMETER( value = "v" ),
-    ALTERNATIVE_URL( value = "https://youtu.be/" )
+            const val VIDEO_URL_TEMPLATE = "https://www.youtube.com/watch?v=%s"
+            const val VIDEO_THUMB_URL_TEMPLATE = "https://i.ytimg.com/vi/%s/hqdefault.jpg"
+            const val PLAYLIST_URL_TEMPLATE = "https://www.youtube.com/playlist?list=%s"
+        }
+    }
+
+    class ApiV3{
+        companion object{
+            const val BASE_URL = "https://www.googleapis.com/"
+
+            const val VIDEO_PATH = "youtube/v3/search"
+            const val PLAYLISTS_PATH = "youtube/v3/playlists"
+
+            const val PART_PARAM = "snippet"
+            const val MAX_RESULTS_VIDEO_PARAM = "1"
+            const val MAX_RESULTS_PLAYLISTS_PARAM = "500"
+            const val ORDER_PARAM = "date"
+        }
+    }
+
+    class Notification{
+        companion object{
+            const val ALTERNATIVE_URL = "https://youtu.be/"
+            const val VIDEO_PARAM = "v"
+        }
+    }
 }
+

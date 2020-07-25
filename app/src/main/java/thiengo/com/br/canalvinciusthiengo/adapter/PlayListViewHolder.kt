@@ -22,6 +22,16 @@ class PlayListViewHolder(
 
     fun setModel( playList: PlayList ) {
         tvLabel.text = playList.title
+
+        /*Log.i(
+            MainActivity.LOG_TAG,
+            """
+PlayList(
+    title = "${playList.title}",
+    uid = "${playList.uid}"
+),
+                """
+        )*/
     }
 
     override fun onClick( view: View ) {

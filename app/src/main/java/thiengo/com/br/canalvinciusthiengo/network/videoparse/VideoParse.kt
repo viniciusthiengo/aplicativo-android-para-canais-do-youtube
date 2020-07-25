@@ -1,6 +1,7 @@
-package thiengo.com.br.canalvinciusthiengo.network.video
+package thiengo.com.br.canalvinciusthiengo.network.videoparse
 
-data class Video( private val items: List<Item> ) {
+data class VideoParse(
+    private val items: List<ItemParse> ){
 
     val id: String
         get() : String{

@@ -1,70 +1,75 @@
 package thiengo.com.br.canalvinciusthiengo.domain
 
 import android.net.Uri
-import android.util.Log
+import android.os.Parcel
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import thiengo.com.br.canalvinciusthiengo.MainActivity
+import thiengo.com.br.canalvinciusthiengo.config.YouTubeConfig
 
 @Entity
 data class LastVideo(
     @PrimaryKey val uid: String,
     @ColumnInfo(name = "title") val title: String,
-    @ColumnInfo(name = "description") val description: String = "" ){
-
-    companion object {
-        private const val VIDEO_URI = "https://www.youtube.com/watch?v="
-        private const val THUMB_URL_BY_UID_TEMPLATE = "https://i.ytimg.com/vi/%s/hqdefault.jpg"
-    }
-
-    /*@PrimaryKey val uid: String
-    @ColumnInfo(name = "title") val title: String
-    @ColumnInfo(name = "description") val description: String = ""
-    //@ColumnInfo(name = "thumb_url") val thumbUrl: String = ""*/
-
-    /*@ColumnInfo(name = "thumb_url")
-    public val thumbUrl: String = ""
-        get(){
-            Log.i(
-                MainActivity.LOG_TAG,
-                "THUMB URL: ${field}"
-            )
-
-            if( field.isNotEmpty() ){
-                return field
-            }
-            return thumbUrlByUid()
-        }*/
+    @ColumnInfo(name = "description") val description: String = "" ) : Parcelable {
 
     @ColumnInfo(name = "thumb_url")
-    public var thumbUrl: String = ""
-        set( value ){
-            Log.i(
-                MainActivity.LOG_TAG,
-                "THUMB URL: ${value}"
-            )
-
-            if( value.isNotEmpty() ){
+    var thumbUrl: String = ""
+        set(value) {
+            if (value.isNotEmpty()) {
                 field = value
             }
-            field = String.format( THUMB_URL_BY_UID_TEMPLATE, uid )
-        }
-
-    fun appUri()
-        = Uri.parse(
-            String.format(
-                "%s%s",
-                VIDEO_URI,
+            field = String.format(
+                YouTubeConfig.Channel.VIDEO_THUMB_URL_TEMPLATE,
                 uid
             )
-        )
+        }
 
-    fun correctThumbUr() : String {
-        if( thumbUrl.isNotEmpty() ){
+    fun appUri() = Uri.parse(
+        String.format(
+            YouTubeConfig.Channel.VIDEO_URL_TEMPLATE,
+            uid
+        )
+    )
+
+    fun correctThumbUr(): String {
+        if (thumbUrl.isNotEmpty()) {
             return thumbUrl
         }
-        return String.format( THUMB_URL_BY_UID_TEMPLATE, uid )
+        return String.format(
+            YouTubeConfig.Channel.VIDEO_THUMB_URL_TEMPLATE,
+            uid
+        )
     }
 
+    /* Parcelable boilerplate code. */
+    constructor( source: Parcel ) : this (
+        source.readString()!!,
+        source.readString()!!,
+        source.readString()!!
+    )
+
+    override fun describeContents() = 0
+
+    override fun writeToParcel(
+        dest: Parcel,
+        flags: Int )
+        = with( dest ){
+            writeString( uid )
+            writeString( title )
+            writeString( description )
+        }
+
+    companion object {
+        @JvmField
+        val CREATOR: Parcelable.Creator<LastVideo> = object : Parcelable.Creator<LastVideo> {
+
+            override fun createFromParcel( source: Parcel ) : LastVideo
+                = LastVideo( source )
+
+            override fun newArray( size: Int ) : Array<LastVideo?>
+                = arrayOfNulls( size )
+        }
+    }
 }

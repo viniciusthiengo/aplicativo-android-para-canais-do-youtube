@@ -25,6 +25,6 @@
         style="@style/AppTheme.ListItemAuxText"
         android:layout_below="@+id/tv_first_aux_text"
         android:layout_toEndOf="@+id/iv_icon"
-        android:drawableStart="@drawable/ic_video_play"
+        android:bufferType="spannable"
         android:drawablePadding="5dp" />
 </RelativeLayout>

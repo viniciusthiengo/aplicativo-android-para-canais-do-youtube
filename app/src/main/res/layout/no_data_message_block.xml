@@ -3,8 +3,8 @@
     android:id="@+id/rl_no_data_message_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="25dp"
-    android:layout_marginEnd="25dp"
+    android:layout_marginStart="@dimen/standard_screen_side_margin"
+    android:layout_marginEnd="@dimen/standard_screen_side_margin"
     android:layout_marginBottom="25dp">
 
     <androidx.core.widget.ContentLoadingProgressBar
@@ -23,5 +23,6 @@
         android:drawableStart="@drawable/ic_no_video"
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
+        android:textColor="@color/colorContentText"
         android:visibility="gone" />
 </RelativeLayout>

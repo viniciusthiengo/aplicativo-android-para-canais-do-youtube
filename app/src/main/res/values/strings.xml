@@ -18,6 +18,10 @@
     <string name="channel_thumb_content_desc">
         Thumb do canal YouTube Vinícius Thiengo.
     </string>
+    <string name="channel_toast_alert">
+        É preciso ter o aplicativo do YouTube instalado
+        para acessar o canal.
+    </string>
 
 
     <!-- Menu -->
@@ -32,9 +36,6 @@
     </string>
     <string name="item_menu_exclusive_groups">
         Grupos
-    </string>
-    <string name="item_menu_last_info">
-        Info
     </string>
     <string name="item_menu_about_channel">
         Sobre
@@ -219,7 +220,7 @@
         Ícone de curso em vídeo.
     </string>
     <string name="complement_amount_videos">
-        %d vídeo aulas
+        🎥 %d vídeo aulas
     </string>
     <string name="course_toast_alert">
         É preciso um navegador Web para abrir a página do

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.AboutChannelFragment">
+    tools:context=".ui.fragment.AboutChannelFragment">
 
     <TextView
         style="@style/AppTheme.Title"

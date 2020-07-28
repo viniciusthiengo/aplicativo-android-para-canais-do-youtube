@@ -4,7 +4,7 @@
     android:viewportWidth="1440"
     android:viewportHeight="320">
     <path
-        android:fillColor="@color/colorOrange"
-        android:fillAlpha="0.3"
-        android:pathData="M0,256L60,234.7C120,213 240,171 360,144C480,117 600,107 720,101.3C840,96 960,96 1080,80C1200,64 1320,32 1380,16L1440,0L1440,0L1380,0C1320,0 1200,0 1080,0C960,0 840,0 720,0C600,0 480,0 360,0C240,0 120,0 60,0L0,0Z" />
+        android:fillColor="@color/colorTopWave"
+        android:fillAlpha="0.6"
+        android:pathData="M0,256L60,261.3C120,267 240,277 360,277.3C480,277 600,267 720,224C840,181 960,107 1080,96C1200,85 1320,139 1380,165.3L1440,192L1440,0L1380,0C1320,0 1200,0 1080,0C960,0 840,0 720,0C600,0 480,0 360,0C240,0 120,0 60,0L0,0Z" />
 </vector>

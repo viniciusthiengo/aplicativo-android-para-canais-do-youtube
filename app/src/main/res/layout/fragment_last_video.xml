@@ -5,7 +5,7 @@
     android:id="@+id/srl_update_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.LastVideoFragment">
+    tools:context=".ui.fragment.LastVideoFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:id="@+id/ll_last_video_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
@@ -41,26 +41,24 @@
                         android:id="@+id/iv_last_video_thumb"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@android:color/black"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/video_banner" />
+                        android:background="@color/colorVideoPlayerBackground"
+                        android:scaleType="centerCrop" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#bb000000"
+                        android:background="@color/colorVideoPlayerForeground"
                         android:padding="20dp">
 
                         <ImageView
                             android:id="@+id/iv_last_video_play"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:layout_alignParentBottom="true"
-                            android:background="@drawable/bg_last_video_play"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_centerInParent="true"
                             android:contentDescription="@string/last_video_play_content_desc"
                             android:scaleType="fitCenter"
-                            android:tint="@android:color/white" />
+                            android:src="@drawable/ic_play_button"
+                            android:tint="@color/colorVideoPlayerIcon" />
 
                         <ImageView
                             android:id="@+id/iv_volume"
@@ -106,7 +104,6 @@
                 <TextView
                     android:id="@+id/tv_touch_to_watch"
                     style="@style/AppTheme.VideoPlayerBand"
-                    android:background="@drawable/bg_touch_to_watch"
                     android:drawableStart="@drawable/ic_youtube_mini_color"
                     android:text="@string/touch_to_watch" />
 
@@ -114,15 +111,15 @@
                     android:id="@+id/tv_comment"
                     style="@style/AppTheme.VideoPlayerBand"
                     android:layout_marginStart="5dp"
-                    android:background="@drawable/bg_comment_video"
+                    android:backgroundTint="@color/colorVideoPlayerCBBackground"
                     android:drawableStart="@drawable/ic_comment_color"
-                    android:text="@string/lave_a_comment" />
+                    android:text="@string/lave_a_comment"
+                    android:textColor="@color/colorVideoPlayerCBText" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_last_video_title"
                 style="@style/AppTheme.VideoPlayerBelowTexts"
-                android:layout_marginTop="10dp"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

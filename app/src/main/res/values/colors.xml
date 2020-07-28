@@ -2,11 +2,46 @@
 <resources>
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
-    <color name="colorAccent">#F7941E</color>
+    <color name="colorAccent">#595959</color>
 
-    <color name="colorGrey">#666666</color>
-    <color name="colorMediumGrey">#BBBBBB</color>
 
-    <color name="colorPastelGreen">#b7e1c2</color>
-    <color name="colorOrange">#f7941e</color>
+    <!-- Top -->
+        <color name="colorStatusBar">#595959</color>
+        <color name="colorTopIcon">#FFFFFF</color>
+        <color name="colorTopWave">#555555</color>
+        <color name="colorTopText">#FFFFFF</color>
+
+
+    <!-- Content -->
+        <color name="colorScreenBackground">#FFFFFF</color>
+        <color name="colorContentTitle">#666666</color>
+        <color name="colorContentText">#444444</color>
+
+        <!-- Video player -->
+            <color name="colorVideoPlayerBackground">#000000</color>
+            <color name="colorVideoPlayerForeground">#BB000000</color>
+            <color name="colorVideoPlayerIcon">#FFFFFF</color>
+
+            <!-- YouTube block -->
+                <color name="colorVideoPlayerYBBackground">#DDDDDD</color>
+                <color name="colorVideoPlayerYBText">#666666</color>
+
+            <!-- Comment block -->
+                <color name="colorVideoPlayerCBBackground">#B7E1C2</color>
+                <color name="colorVideoPlayerCBText">#666666</color>
+
+        <!-- List item -->
+            <color name="colorListItemBackground_RippleStart">#F6F6F6</color>
+            <color name="colorListItemBackground_RippleEnd">#DDDDDD</color>
+            <color name="colorListItemStroke">#EEEEEE</color>
+            <color name="colorListItemText">#444444</color>
+            <color name="colorListItemNoDataIcon">#BBBBBB</color>
+
+
+    <!-- Bottom Menu -->
+        <color name="colorMenuSeparatorLine">#F1F1F1</color>
+        <color name="colorMenuBackground">@android:color/transparent</color>
+        <color name="colorMenuItemBackground">@android:color/transparent</color>
+        <color name="colorMenuItemSelected">#444444</color>
+        <color name="colorMenuItemNotSelected">#AFAFAF</color>
 </resources>

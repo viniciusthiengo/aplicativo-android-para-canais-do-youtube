@@ -5,15 +5,46 @@ import android.util.Log
 import com.onesignal.NotificationExtenderService
 import com.onesignal.OSNotificationReceivedResult
 import org.json.JSONObject
-import thiengo.com.br.canalvinciusthiengo.MainActivity
 import thiengo.com.br.canalvinciusthiengo.config.OneSignalConfig
 import thiengo.com.br.canalvinciusthiengo.config.YouTubeConfig
-import thiengo.com.br.canalvinciusthiengo.data.UtilDatabase
-import thiengo.com.br.canalvinciusthiengo.domain.LastVideo
+import thiengo.com.br.canalvinciusthiengo.data.dynamic.UtilDatabase
+import thiengo.com.br.canalvinciusthiengo.model.LastVideo
+import thiengo.com.br.canalvinciusthiengo.ui.MainActivity
 import java.net.URI
 
+/**
+ * Serviço responsável por interceptar a notificação
+ * OneSignal enviada ao aparelho e assim trabalhar
+ * a configuração personalizada dessa notificação
+ * push.
+ *
+ * Este serviço deve também estar configurado no
+ * AndroidManifest.xml do app como a seguir:
+ *
+ *  <service
+ *      android:name=".notification.CustomNotificationExtenderService"
+ *      android:exported="false"
+ *      android:permission="android.permission.BIND_JOB_SERVICE">
+ *          <intent-filter>
+ *              <action android:name="com.onesignal.NotificationExtender" />
+ *          </intent-filter>
+ *  </service>
+ *
+ * @constructor cria um objeto completo do tipo
+ * CustomNotificationExtenderService.
+ */
 class CustomNotificationExtenderService: NotificationExtenderService() {
 
+    /**
+     * Processa a notificação OneSignal que foi
+     * enviado ao aparelho.
+     *
+     * @param notification notificação OneSignal.
+     * @return um Boolean que indica se o
+     * comportamente comum de geração de notificação
+     * da OneSignal API deve (false) ou não (true)
+     * continuar.
+     */
     override fun onNotificationProcessing(
         notification: OSNotificationReceivedResult? ): Boolean {
 
@@ -27,12 +58,21 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
         )
 
         if( lastVideo != null ){
-            ifNewVideoSaveAndNotify( lastVideo = lastVideo )
+            ifNewLastVideoThenSaveAndNotify( lastVideo = lastVideo )
         }
+
         return true
     }
 
-    private fun getLastVideoFromJson( json: JSONObject? ) : LastVideo?{
+    /**
+     * Gera um objeto LastVideo completo de acordo com
+     * os dados JSON recebidos de notificação OneSignal.
+     *
+     * @param json dados JSON obtidos de notificação.
+     * @return objeto LastVideo completo.
+     */
+    private fun getLastVideoFromJson(
+        json: JSONObject? ) : LastVideo? {
 
         Log.i(
             MainActivity.LOG_TAG,
@@ -92,6 +132,14 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
         return lastVideo
     }
 
+    /**
+     * Retorna o dado de descrição do "último vídeo" se
+     * ele estiver presente no JSON de dados que chegou
+     * junto a notificação OneSignal.
+     *
+     * @param json dados JSON obtidos de notificação.
+     * @return dado de descrição do vídeo.
+     */
     private fun getDescriptionFromJson( json: JSONObject )
         = if( !json.isNull( OneSignalConfig.Notification.DESCRIPTION ) ){
             json.getString( OneSignalConfig.Notification.DESCRIPTION )
@@ -100,7 +148,17 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
             OneSignalConfig.Notification.EMPTY
         }
 
-    private fun ifNewVideoSaveAndNotify( lastVideo : LastVideo ){
+    /**
+     * Salva em banco de dados e notifica o usuário
+     * caso os dados que chegaram ao app sejam de um
+     * novo "último vídeo" liberado no canal YouTube
+     * do aplicativo.
+     *
+     * @param lastVideo último vídeo liberado em canal e
+     * que chegou ao aplicativo.
+     */
+    private fun ifNewLastVideoThenSaveAndNotify(
+        lastVideo : LastVideo ){
 
         Log.i(
             MainActivity.LOG_TAG,

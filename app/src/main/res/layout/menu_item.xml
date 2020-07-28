@@ -4,16 +4,16 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    android:background="@android:color/transparent"
+    android:background="@color/colorMenuItemBackground"
     android:gravity="center"
     android:orientation="vertical">
 
     <ImageView
-        android:tint="@color/colorMediumGrey"
         android:id="@+id/iv_icon"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginBottom="6dp" />
+        android:layout_marginBottom="6dp"
+        android:tint="@color/colorMenuItemNotSelected" />
 
     <TextView
         android:id="@+id/tv_label"

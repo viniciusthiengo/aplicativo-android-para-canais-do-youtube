@@ -13,18 +13,52 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.squareup.picasso.Picasso
-import thiengo.com.br.canalvinciusthiengo.AppForegroundStatus
-import thiengo.com.br.canalvinciusthiengo.MainActivity
 import thiengo.com.br.canalvinciusthiengo.R
-import thiengo.com.br.canalvinciusthiengo.domain.LastVideo
+import thiengo.com.br.canalvinciusthiengo.model.LastVideo
+import thiengo.com.br.canalvinciusthiengo.ui.MainActivity
+import thiengo.com.br.canalvinciusthiengo.ui.MainActivityForegroundStatus
 
+/**
+ * Classe utilitária que permite fácil acesso à
+ * geração de notificações push no app.
+ *
+ * Assim é possível obter de maneira imediata e
+ * não verbosa uma notificação push quando um
+ * novo "último vídeo" liberado chega ao aplicativo.
+ *
+ * @property context contexto do aplicativo.
+ * @constructor cria um objeto completo do tipo
+ * UtilNotification.
+ */
 class UtilNotification private constructor(
     private val context: Context ){
 
     companion object{
+        /**
+         * Constante que contém o identificador único
+         * de Notification Channel da notificação push.
+         */
         const val CHANNEL_ID = "new_channel_video"
+
+        /**
+         * Propriedade responsável por conter a única
+         * instância de UtilNotification disponível
+         * durante toda a execução do aplicativo.
+         */
         private var instance: UtilNotification? = null
 
+        /**
+         * Método que aplica, junto à propriedade
+         * instance, o padrão Singleton em classe.
+         * Grantindo que somente uma instância de
+         * UtilNotification estará disponível durante
+         * toda a execução do app. Ajudando a
+         * diminuir a possibilidade de vazamento
+         * de memória.
+         *
+         * @param context contexto do aplicativo.
+         * @return instância única de UtilNotification.
+         */
         fun getInstance( context: Context ) : UtilNotification {
             if( instance == null ){
                 instance = UtilNotification( context = context )
@@ -33,6 +67,13 @@ class UtilNotification private constructor(
         }
     }
 
+    /**
+     * Cria uma notificação que pode conter também uma
+     * BigPicture como parte do conteúdo dela.
+     *
+     * @param lastVideo último vídeo liberado em canal e
+     * que chegou ao aplicativo.
+     */
     fun createBigPictureNotification( lastVideo: LastVideo ){
 
         /*
@@ -40,7 +81,7 @@ class UtilNotification private constructor(
          * somente será gerada se o aplicativo não estiver
          * já aberto em tela (em foreground).
          * */
-        if( MainActivity.APP_FOREGROUND == AppForegroundStatus.IS_IN_FOREGROUND ){
+        if( MainActivity.APP_FOREGROUND == MainActivityForegroundStatus.IS_IN_FOREGROUND ){
             return
         }
 
@@ -61,18 +102,17 @@ class UtilNotification private constructor(
     }
 
     /**
-     * Create a Notification that is shown as a heads-up notification if possible.
+     * Cria toda a configuração de notificação push
+     * (incluindo Notification Channel) do aplicativo.
      *
-     * For this codelab, this is used to show a notification so that you know when different steps
-     * of the background work chain are starting
-     *
-     * @param message Message shown on the notification
-     * @param context Context needed to create Toast
+     * @param lastVideo último vídeo liberado em canal e
+     * que chegou ao aplicativo.
+     * @param bitmapBigPicture bitmap da thumb do último
+     * vídeo liberado.
      */
     private fun createNotification(
-            lastVideo: LastVideo,
-            bitmapBigPicture: Bitmap? = null
-        ){
+        lastVideo: LastVideo,
+        bitmapBigPicture: Bitmap? = null ){
 
         if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ) {
             createNotificationChannel()
@@ -91,6 +131,13 @@ class UtilNotification private constructor(
             )
     }
 
+    /**
+     * Cria uma Notification Channel para aparelhos
+     * Android com o Android Oreo (API 26) ou superior.
+     *
+     * Notification Channel é algo necessário nessas
+     * versões do Android para a notificação ser gerada.
+     */
     @RequiresApi( Build.VERSION_CODES.O )
     private fun createNotificationChannel(){
         val name = context.getString(
@@ -117,6 +164,18 @@ class UtilNotification private constructor(
         notificationManager?.createNotificationChannel( channel )
     }
 
+    /**
+     * Retorna o objeto de notificação push completamente
+     * configurado para que a notificação seja apresentada
+     * de maneira a aumentar a conversão (toque / clique)
+     * nela.
+     *
+     * @param lastVideo último vídeo liberado em canal e
+     * que chegou ao aplicativo.
+     * @param bitmapBigPicture bitmap da thumb do último
+     * vídeo liberado.
+     * @return notificação adequadamente configurada.
+     */
     private fun getNotification(
         lastVideo: LastVideo,
         bitmapBigPicture: Bitmap? = null ) : Notification {
@@ -151,6 +210,15 @@ class UtilNotification private constructor(
         return notification.build()
     }
 
+    /**
+     * Configura e retorna uma PendingIntent que
+     * acionará a MainActivity do aplicativo caso
+     * a notificação push do app seja acionada pelo
+     * usuário.
+     *
+     * @return PendingIntent configurada para
+     * abertura de app.
+     */
     private fun getPendingIntent() : PendingIntent {
         val intent = Intent(
             context,

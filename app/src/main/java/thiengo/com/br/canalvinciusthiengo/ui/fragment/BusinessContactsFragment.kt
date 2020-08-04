@@ -42,6 +42,7 @@ class BusinessContactsFragment : FrameworkListFragment() {
             items = BusinessContactData.getBusinessContacts(),
             callExternalAppCallback = {
                 item -> callExternalApp(
+                    webUri = item.getWebUri(),
                     appUri = item.getAppUri(),
                     failMessage = String.format(
                         getString( R.string.business_contact_toast_alert ),

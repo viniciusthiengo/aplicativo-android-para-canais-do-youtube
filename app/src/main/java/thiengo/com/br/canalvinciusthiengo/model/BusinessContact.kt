@@ -25,6 +25,7 @@ import android.net.Uri
 class BusinessContact(
     val place: String,
     val contact: String,
+    private val webUri: String,
     private val appUri: String,
     private val logo: Int ) : ListItem {
 
@@ -34,6 +35,9 @@ class BusinessContact(
             place,
             contact
         )
+
+    override fun getWebUri()
+        = Uri.parse( webUri )
 
     override fun getAppUri()
         = Uri.parse( appUri )

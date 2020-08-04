@@ -61,21 +61,6 @@ data class LastVideo(
         }
 
     /**
-     * Retorna uma URL válida de thumb do vídeo,
-     * pois é preciso ter uma thumb sendo
-     * apresentada junto ao vídeo e é possível
-     * que thumbUrl esteja vazia.
-     *
-     * @return a Web URL válida da thumb do vídeo.
-     */
-    fun correctThumbUr(): String {
-        if (thumbUrl.isNotEmpty()) {
-            return thumbUrl
-        }
-        return alternativeThumbUrl()
-    }
-
-    /**
      * Retorna a Web URL alternativa da thumb do
      * vídeo.
      *

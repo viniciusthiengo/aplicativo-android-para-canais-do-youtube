@@ -45,7 +45,7 @@ class PlayListsFragment : Fragment() {
      * PlayList tenha sido ainda enviada ao app e a
      * lista esteja vazia.
      */
-    private val playLists = PlayListData.getInitialPlayLists()
+    private val playLists = mutableListOf<PlayList>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -69,11 +69,30 @@ class PlayListsFragment : Fragment() {
             setUiModel( pLists = playLists )
         }
         else{
+            /**
+             * Todo o algoritmo abaixo é necessário aqui,
+             * pois na primeira abertura do aplicativo,
+             * quando acessando o fragmento PlayListsFragment,
+             * é possível que a inserção de dados de PlayList
+             * no banco de dados local (partindo dos algoritmos
+             * em InitialDataCallback) não seja rápida o
+             * suficiente para os dados já serem apresentados
+             * neste fragmento quando o usuário estiver o
+             * acessando pela primeira vez.
+             * */
+            playLists.addAll( PlayListData.getInitialPlayLists() )
+
             uiDataStatus( status = UiFragLoadDataStatus.LOADING )
             UtilDatabase
                 .getInstance( context = activity!!.applicationContext )
                 .getAllPlayLists{
-                    setUiModel( pLists = it )
+                    val auxPlayList = if( it.isNullOrEmpty() ) {
+                        playLists
+                    }
+                    else {
+                        it
+                    }
+                    setUiModel( pLists = auxPlayList )
                 }
         }
     }
@@ -137,8 +156,8 @@ class PlayListsFragment : Fragment() {
      *
      * @param status estado atual do swipe.
      */
-    private fun swipeRefreshStatus(
-        status : Boolean ){
+    private fun swipeRefreshStatus( status : Boolean ){
+
         activity?.runOnUiThread {
             srl_update_content?.isRefreshing = status
         }

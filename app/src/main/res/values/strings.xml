@@ -73,7 +73,7 @@
     <string name="touch_to_watch">
         Toque para assistir
     </string>
-    <string name="lave_a_comment">
+    <string name="leave_a_comment">
         Deixe seu comentário
     </string>
     <string name="last_video_toast_alert">
@@ -86,9 +86,6 @@
     <!-- SocialNetworksFragment -->
     <string name="social_networks_content_title">
         Todas as redes do canal com conteúdos exclusivos
-    </string>
-    <string name="social_network_icon_content_desc">
-        Ícone de identificação da rede do canal.
     </string>
     <string name="social_network_toast_alert">
         É preciso ao menos um aplicativo de navegador Web
@@ -107,6 +104,9 @@
         É preciso ou o aplicativo do YouTube ou um navegador
         Web para que a PlayList \"%s\" seja acessada.
     </string>
+    <string name="no_playlists_yet">
+        Nenhuma PlayList disponível no canal!
+    </string>
 
 
     <!-- GroupsFragment -->
@@ -118,10 +118,6 @@
         pode fazer parte. Estamos esperando por você também
         nas nossas comunidades exclusivas.
     </string>
-    <string name="groups_icon_content_desc">
-        Ícone de identificação da plataforma do grupo
-        exclusivo para seguidores.
-    </string>
     <string name="groups_toast_alert">
         É preciso o aplicativo do \"%s\" para abrir o grupo
         exclusivo \"%s\".
@@ -132,79 +128,40 @@
     <string name="about_channel_content_title">
         Conheça um pouco mais do porquê do canal
     </string>
-    <string name="about_channel_full_desc"><b>What is Lorem Ipsum?</b>
+    <string name="about_channel_full_desc">A
+        proposta do canal é mostrar, passo a passo, as mais
+        diversas APIs, bibliotecas e frameworks Android para
+        o desenvolvimento de aplicativos mobile com qualidade.
 
-        \n\nLorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type
-        specimen book. It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged. It was popularised in
-        the 1960s with the https://www.thiengo.com.br release of Letraset sheets containing Lorem Ipsum passages,
-        and more recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
+        \n\nO canal é uma extensão do Blog Thiengo.com.br.
 
-        \n\n<b>Where does it come from?</b>
+        \n\nUma extensão em vídeo dos artigos que são disponibilizados
+        em texto e também (alguns deles) em PDF.
 
-        \n\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-        in a piece of classical Latin literature from 45 BC, making it over 2000 years
-        old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-        looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
-        passage, and going through the cites of the word in classical literature,
-        discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-        and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil)
-        by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
-        very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem
-        ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        \n\nComo conteúdo também teremos a construção de alguns
+        aplicativos Android por completo.
 
-        \n\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
-        those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-        Malorum" by Cicero are also reproduced in their exact original form, accompanied
-        by English versions from the 1914 translation by H. Rackham.
+        \n\nAlguns desses conteúdos de apps completos serão em
+        formato de série. Outros em formato único, tudo em
+        uma única “tacada” (uma vídeo aula).
 
-        \n\n<b>Where does it come from?</b>
+        \n\nPara sugerir novos conteúdos e também tirar dúvidas
+        você pode estar entrando em contato com o Thiengo
+        pelos endereços a seguir:
 
-        \n\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-        in a piece of classical Latin literature from 45 BC, making it over 2000 years
-        old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-        looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
-        passage, and going through the cites of the word in classical literature,
-        discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-        and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil)
-        by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
-        very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem
-        ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        \n\n<b>➙ E-mail:</b> thiengocalopsita@gmail.com
 
-        \n\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
-        those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-        Malorum" by Cicero are also reproduced in their exact original form, accompanied
-        by English versions from the 1914 translation by H. Rackham.
+        \n\n<b>➙ Contato Blog:</b> https://www.Thiengo.com.br/contato
 
-        \n\n<b>Where does it come from?</b>
+        \n\nÉ isso.
 
-        \n\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-        in a piece of classical Latin literature from 45 BC, making it over 2000 years
-        old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-        looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
-        passage, and going through the cites of the word in classical literature,
-        discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-        and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil)
-        by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
-        very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem
-        ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-        \n\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
-        those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-        Malorum" by Cicero are also reproduced in their exact original form, accompanied
-        by English versions from the 1914 translation by H. Rackham.
+        \n\nAbraço.
     </string>
 
 
     <!-- BooksFragment -->
     <string name="books_content_title">
         Conheça meus livros
-    </string>
-    <string name="book_cover_content_desc">
-        Ícone de livro.
     </string>
     <string name="books_toast_alert">
         É preciso ao menos um navegador Web para abrir a
@@ -215,9 +172,6 @@
     <!-- CoursesFragment -->
     <string name="courses_content_title">
         Conheça meus cursos em vídeo
-    </string>
-    <string name="course_cover_content_desc">
-        Ícone de curso em vídeo.
     </string>
     <string name="complement_amount_videos">
         🎥 %d vídeo aulas
@@ -240,10 +194,6 @@
         todas as mídias do canal e assim crescer
         exponencialmente a sua <em>brand</em>.
     </string>
-    <string name="business_contact_icon_content_desc">
-        Ícone de identificação da plataforma de contato
-        para negócios com o canal.
-    </string>
     <string name="business_contact_toast_alert">
         É preciso o aplicativo \"%s\" para poder entrar em
         contato pelo \"%s\".
@@ -258,14 +208,5 @@
         Notificação de novos vídeos de desenvolvimento
         Android que são liberados no canal YouTube
         Vinícius Thiengo.
-    </string>
-
-
-    <!-- "No main data" possible problems.  -->
-    <string name="no_video_yet">
-        Não há novo vídeo disponível.
-    </string>
-    <string name="no_playlists_yet">
-        Nenhuma PlayList disponível no canal!
     </string>
 </resources>

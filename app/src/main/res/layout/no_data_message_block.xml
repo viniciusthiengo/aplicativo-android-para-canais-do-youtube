@@ -2,10 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl_no_data_message_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="0dp"
     android:layout_marginStart="@dimen/standard_screen_side_margin"
     android:layout_marginEnd="@dimen/standard_screen_side_margin"
-    android:layout_marginBottom="25dp">
+    android:layout_marginBottom="25dp"
+    android:layout_weight="1">
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/pb_load_content"
@@ -20,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:drawableStart="@drawable/ic_no_video"
+        android:drawableStart="@drawable/ic_no_content"
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
         android:textColor="@color/colorContentText"

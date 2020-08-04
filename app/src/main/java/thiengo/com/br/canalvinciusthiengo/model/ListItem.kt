@@ -84,5 +84,4 @@ interface ListItem {
      * @return o identificador único do ícone.
      */
     fun getIcon() : Int
-        = 0
 }

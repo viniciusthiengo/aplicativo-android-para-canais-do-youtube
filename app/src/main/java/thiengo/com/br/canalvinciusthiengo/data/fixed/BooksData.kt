@@ -20,7 +20,7 @@ import thiengo.com.br.canalvinciusthiengo.model.Book
  * que trabalha como se fosse uma persistência de
  * dados estáticos.
  */
-class BooksData {
+abstract class BooksData {
 
     companion object {
         /**

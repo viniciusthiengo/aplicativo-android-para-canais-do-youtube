@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.LastVideoFragment">
+
+    <TextView
+        style="@style/AppTheme.Title"
+        android:text="@string/last_video_content_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_last_video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_last_video"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/standard_screen_side_margin"
+            android:layout_marginEnd="@dimen/standard_screen_side_margin"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="10dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--
+                    ImageView responsável por conter o
+                    banner do vídeo como background do
+                    player em tela.
+                -->
+                <ImageView
+                    android:id="@+id/iv_last_video_thumb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorVideoPlayerBackground"
+                    android:scaleType="centerCrop" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorVideoPlayerForeground"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/iv_last_video_play"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/last_video_play_content_desc"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_play_button"
+                        android:tint="@color/colorVideoPlayerIcon" />
+
+                    <ImageView
+                        android:id="@+id/iv_volume"
+                        style="@style/AppTheme.VideoPlayerIcons"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:contentDescription="@string/volume_icon_content_desc"
+                        android:src="@drawable/ic_volume" />
+
+                    <ImageView
+                        style="@style/AppTheme.VideoPlayerIcons"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/iv_volume"
+                        android:contentDescription="@string/head_phones_icon_content_desc"
+                        android:src="@drawable/ic_head_phone" />
+
+                    <ImageView
+                        style="@style/AppTheme.VideoPlayerIcons"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:contentDescription="@string/video_resolution_icon_content_desc"
+                        android:src="@drawable/ic_hd_video" />
+
+                    <ImageView
+                        style="@style/AppTheme.VideoPlayerIcons"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/like_icon_content_desc"
+                        android:src="@drawable/ic_like" />
+                </RelativeLayout>
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_screen_side_margin"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/standard_screen_side_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_touch_to_watch"
+                style="@style/AppTheme.VideoPlayerBand"
+                android:drawableStart="@drawable/ic_youtube_mini_color"
+                android:text="@string/touch_to_watch" />
+
+            <TextView
+                android:id="@+id/tv_comment"
+                style="@style/AppTheme.VideoPlayerBand"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="@color/colorVideoPlayerCBBackground"
+                android:drawableStart="@drawable/ic_comment_color"
+                android:text="@string/leave_a_comment"
+                android:textColor="@color/colorVideoPlayerCBText" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_last_video_title"
+            style="@style/AppTheme.VideoPlayerTextsBelow"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_last_video_desc"
+            style="@style/AppTheme.VideoPlayerTextsBelow"
+            android:layout_marginTop="5dp" />
+    </LinearLayout>
+</LinearLayout>

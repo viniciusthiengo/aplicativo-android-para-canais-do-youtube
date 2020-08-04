@@ -26,8 +26,8 @@ class Course(
     val title: String,
     private val categories: List<String>,
     private val amountVideos: Int,
-    private val webPage: String ) : ListItem {
-
+    private val webPage: String,
+    private val cover: Int ) : ListItem {
 
     override fun getMainText()
         = title
@@ -45,5 +45,5 @@ class Course(
         = Uri.parse( webPage )
 
     override fun getIcon()
-            = R.drawable.ic_courses_color
+        = cover
 }

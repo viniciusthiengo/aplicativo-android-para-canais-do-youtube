@@ -19,7 +19,7 @@ import thiengo.com.br.canalvinciusthiengo.model.BusinessContact
  * trabalha como se fosse uma persistência de dados
  * estáticos.
  */
-class BusinessContactData {
+abstract class BusinessContactData {
 
     companion object{
         /**
@@ -34,33 +34,38 @@ class BusinessContactData {
                 BusinessContact(
                     place = "Gmail",
                     contact = "thiengocalopsita@gmail.com",
-                    appUri = "com.google.android.gm",
+                    webUri = "mailto:thiengocalopsita@gmail.com?Subject=Contato comercial - Thiengo",
+                    appUri = "",
                     logo = R.drawable.ic_gmail_color
                 ),
                 BusinessContact(
                     place = "Blog",
                     contact = "Thiengo.com.br",
+                    webUri = "https://www.thiengo.com.br/contato",
                     appUri = "",
                     logo = R.drawable.ic_blog_color
-                ),
+                )/*,
                 BusinessContact(
                     place = "WhatsApp",
                     contact = "+55 (27) 9-9999-9999",
+                    webUri = "",
                     appUri = "",
                     logo = R.drawable.ic_whatsapp_color
                 ),
                 BusinessContact(
                     place = "Telegram",
                     contact = "+55 (27) 9-9999-9999",
+                    webUri = "",
                     appUri = "",
                     logo = R.drawable.ic_telegram_color
                 ),
                 BusinessContact(
                     place = "Facebook Messeger",
                     contact = "Vinícius Thiengo",
+                    webUri = "",
                     appUri = "",
                     logo = R.drawable.ic_facebook_messeger_color
-                )
+                )*/
             )
     }
 }

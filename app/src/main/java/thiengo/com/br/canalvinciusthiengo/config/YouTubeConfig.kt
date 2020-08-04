@@ -12,30 +12,30 @@ package thiengo.com.br.canalvinciusthiengo.config
  * facilitar a leitura dele. Ou seja, em termos de
  * regras de sintaxe esses não são obrigatórios.
  */
-class YouTubeConfig {
+abstract class YouTubeConfig {
 
-    class Key {
+    abstract class Key {
         companion object {
             /**
              * Constante com a chave de API do Google
              * para que seja possível realizar consultas
              * a YouTube Data API.
              */
-            const val GOOGLE_DEV = "" // Thiengo channel (BirdingBox)
-            //const val GOOGLE_DEV = "" // Thiengo channel (Cursos)
+            //const val GOOGLE_DEV = "" // Thiengo channel (BirdingBox)
+            const val GOOGLE_DEV = "" // Thiengo channel (Cursos)
         }
     }
 
-    class Channel {
+    abstract class Channel {
         companion object {
             /**
              * Constante com o identificador único do
-             * canal. Com o esse ID é seja possível
+             * canal. Com esse ID é possível
              * carregar da YouTube Data API os dados do
              * canal correto.
              */
             const val CHANNEL_ID = "" // Thiengo channel
-            //const val CHANNEL_ID = "UCglvzYlkZgttz63tUiaqooA" // Somebody else channel
+            //const val CHANNEL_ID = "" // Somebody else channel
 
             /**
              * Constante com a URL do canal.
@@ -55,7 +55,7 @@ class YouTubeConfig {
         }
     }
 
-    class ApiV3 {
+    abstract class ApiV3 {
         companion object {
             /**
              * Constante com a URL base para acesso a
@@ -84,7 +84,7 @@ class YouTubeConfig {
         }
     }
 
-    class Notification {
+    abstract class Notification {
         companion object {
             /**
              * Constantes com definições para acesso aos
@@ -94,6 +94,7 @@ class YouTubeConfig {
              */
             const val ALTERNATIVE_URL = "https://youtu.be/"
             const val VIDEO_PARAM = "v"
+            const val EMPTY = ""
         }
     }
 }

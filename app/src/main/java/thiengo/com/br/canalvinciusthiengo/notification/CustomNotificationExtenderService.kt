@@ -79,6 +79,11 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
             "getLastVideoFromJson(): 1"
         )
 
+        /*
+         * Padrão Cláusula de guarda. Se as premissas não
+         * estiverem presentes, então nem mesmo continue
+         * com a execução.
+         * */
         if( json == null
             || json.isNull( OneSignalConfig.Notification.VIDEO )
             || json.isNull( OneSignalConfig.Notification.TITLE ) ){
@@ -110,13 +115,16 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
                     description = getDescriptionFromJson( json )
                 )
                 .apply {
-                    thumbUrl = correctThumbUr()
+                    thumbUrl = YouTubeConfig.Notification.EMPTY
                 }
             }
             else if( url.contains( YouTubeConfig.Notification.ALTERNATIVE_URL ) ){
                 val uri = URI( url )
                 val path: String = uri.getPath()
-                val uid = path.substring(path.lastIndexOf('/') + 1)
+                val uid = path
+                    .substring(
+                        path.lastIndexOf('/') + 1
+                    )
 
                 lastVideo = LastVideo(
                     uid = uid,
@@ -124,7 +132,7 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
                     description = getDescriptionFromJson( json )
                 )
                 .apply {
-                    thumbUrl = correctThumbUr()
+                    thumbUrl = YouTubeConfig.Notification.EMPTY
                 }
             }
         }

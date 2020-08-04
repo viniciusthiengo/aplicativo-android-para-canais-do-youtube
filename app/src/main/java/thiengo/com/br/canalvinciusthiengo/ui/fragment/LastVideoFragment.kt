@@ -135,7 +135,7 @@ class LastVideoFragment : Fragment() {
                 try{
                     Picasso
                         .get()
-                        .load( lVideo.correctThumbUr() )
+                        .load( lVideo.thumbUrl )
                         .into( iv_last_video_thumb )
 
                     iv_last_video_thumb?.contentDescription = lVideo.title
@@ -246,14 +246,17 @@ class LastVideoFragment : Fragment() {
      */
     private fun initLocalBroadcast(){
         val intentFilter = IntentFilter( NewLastVideoBroadcast.FILTER_KEY )
-        localBroadcast =
-            NewLastVideoBroadcast(
-                fragment = this
-            )
+
+        localBroadcast = NewLastVideoBroadcast(
+            fragment = this
+        )
 
         LocalBroadcastManager
             .getInstance( activity!! )
-            .registerReceiver( localBroadcast, intentFilter )
+            .registerReceiver(
+                localBroadcast,
+                intentFilter
+            )
     }
 
     /**
@@ -272,10 +275,10 @@ class LastVideoFragment : Fragment() {
      * último vídeo liberado em canal e recebidos em
      * aplicativo.
      *
-     * @param lVideo último vídeo liberado em canal.
+     * @param video último vídeo liberado em canal.
      */
-    fun newLastVideoData( lVideo: LastVideo ){
-        lastVideo = lVideo
-        setUiModel( lastVideo )
+    fun newLastVideoData( video: LastVideo ){
+        lastVideo = video
+        setUiModel( lVideo =  video )
     }
 }

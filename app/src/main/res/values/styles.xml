@@ -1,12 +1,12 @@
 <resources>
-    <!-- Base application theme. -->
-    <!-- style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" -->
+    <!-- Tema base do aplicativo. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
+        <item name="android:windowBackground">@drawable/bg</item>
         <item name="android:statusBarColor">@color/colorStatusBar</item>
     </style>
 
@@ -21,26 +21,22 @@
         <item name="android:textColor">@color/colorContentTitle</item>
     </style>
 
-    <style name="AppTheme.TextContent">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/standard_screen_side_margin</item>
-        <item name="android:layout_marginEnd">@dimen/standard_screen_side_margin</item>
-        <item name="android:layout_marginBottom">10dp</item>
+    <style name="AppTheme.TextContent" parent="AppTheme.Title">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:autoLink">all</item>
         <item name="android:linksClickable">true</item>
         <item name="android:textColor">@color/colorContentText</item>
     </style>
 
-    <style name="AppTheme.ListItemContainer">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/standard_screen_side_margin</item>
-        <item name="android:layout_marginEnd">@dimen/standard_screen_side_margin</item>
+    <style name="AppTheme.ListItemContainer" parent="AppTheme.TextContent">
+
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:background">@drawable/bg_item_list</item>
         <item name="android:padding">8dp</item>
+        <item name="android:autoLink">none</item>
+        <item name="android:linksClickable">false</item>
     </style>
 
     <style name="AppTheme.ListItemIcon">
@@ -61,12 +57,10 @@
         <item name="android:gravity">center_vertical</item>
     </style>
 
-    <style name="AppTheme.ListItemAuxText">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_alignParentEnd">true</item>
-        <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:textColor">@color/colorListItemText</item>
+    <style name="AppTheme.ListItemAuxText" parent="AppTheme.ListItemMainText">
+
+        <item name="android:layout_alignParentTop">false</item>
+        <item name="android:layout_marginTop">0dp</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -97,7 +91,7 @@
         <item name="android:background">@drawable/bg_video_player_band</item>
     </style>
 
-    <style name="AppTheme.VideoPlayerBelowTexts">
+    <style name="AppTheme.VideoPlayerTextsBelow">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/standard_screen_side_margin</item>

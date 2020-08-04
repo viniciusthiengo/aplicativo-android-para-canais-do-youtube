@@ -35,8 +35,10 @@ import thiengo.com.br.canalvinciusthiengo.config.YouTubeConfig
  */
 @Entity
 class PlayList(
-    @ColumnInfo( name = "title" ) val title: String,
-    @PrimaryKey val uid: String ) : ListItem {
+        @ColumnInfo( name = "title" ) val title: String,
+        @PrimaryKey val uid: String,
+        val thumb: Int = R.drawable.ic_playlist_color
+    ) : ListItem {
 
     override fun getMainText()
         = title
@@ -50,5 +52,5 @@ class PlayList(
         )
 
     override fun getIcon()
-        = R.drawable.ic_playlist_color
+        = thumb
 }

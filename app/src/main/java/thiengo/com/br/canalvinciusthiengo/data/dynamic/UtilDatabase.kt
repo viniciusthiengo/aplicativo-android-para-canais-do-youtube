@@ -215,7 +215,7 @@ class UtilDatabase private constructor(
      * retorno de dataBase.playListDao().getAll().
      */
     fun getAllPlayLists(
-        callback: (List<PlayList>?)->Unit ){
+        callback: (List<PlayList>? )->Unit ){
 
         thread {
             try {

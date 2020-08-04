@@ -47,7 +47,7 @@ class CustomApplication: Application() {
     private fun backgroundWork(){
         val request = PeriodicWorkRequestBuilder<CatchChannelDataWorker>(
             CatchChannelDataWorker.REPEAT_INTERVAL,
-            TimeUnit.MINUTES
+            TimeUnit.HOURS
         ).build()
 
         /*
@@ -86,3 +86,5 @@ class CustomApplication: Application() {
             .init()
     }
 }
+
+

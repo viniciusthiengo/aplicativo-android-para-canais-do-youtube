@@ -11,9 +11,9 @@ package thiengo.com.br.canalvinciusthiengo.config
  * facilitar a leitura dele. Ou seja, em termos de
  * regras de sintaxe esses não são obrigatórios.
  */
-class OneSignalConfig {
+abstract class OneSignalConfig {
 
-    class Firebase {
+    abstract class Firebase {
         companion object CloudMessage {
             /**
              * Constantes com dados de configuração
@@ -26,7 +26,7 @@ class OneSignalConfig {
         }
     }
 
-    class App {
+    abstract class App {
         companion object {
             /**
              * Constante com dado de configuração
@@ -39,7 +39,7 @@ class OneSignalConfig {
         }
     }
 
-    class Notification {
+    abstract class Notification {
         companion object Parameter {
             /**
              * Constantes com definições de campos

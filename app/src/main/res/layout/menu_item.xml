@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="68dp"
     android:layout_height="wrap_content"
     android:layout_marginLeft="10dp"
@@ -16,6 +17,8 @@
         android:tint="@color/colorMenuItemNotSelected" />
 
     <TextView
+        android:maxLines="1"
+        android:ellipsize="end"
         android:id="@+id/tv_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

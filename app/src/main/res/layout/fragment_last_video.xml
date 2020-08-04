@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/srl_update_content"
@@ -37,6 +38,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <!--
+                        ImageView responsável por conter o
+                        banner do vídeo como background do
+                        player em tela.
+                    -->
                     <ImageView
                         android:id="@+id/iv_last_video_thumb"
                         android:layout_width="match_parent"
@@ -113,19 +119,19 @@
                     android:layout_marginStart="5dp"
                     android:backgroundTint="@color/colorVideoPlayerCBBackground"
                     android:drawableStart="@drawable/ic_comment_color"
-                    android:text="@string/lave_a_comment"
+                    android:text="@string/leave_a_comment"
                     android:textColor="@color/colorVideoPlayerCBText" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_last_video_title"
-                style="@style/AppTheme.VideoPlayerBelowTexts"
+                style="@style/AppTheme.VideoPlayerTextsBelow"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_last_video_desc"
-                style="@style/AppTheme.VideoPlayerBelowTexts"
+                style="@style/AppTheme.VideoPlayerTextsBelow"
                 android:layout_marginTop="5dp" />
         </LinearLayout>
     </LinearLayout>

@@ -19,7 +19,7 @@ import thiengo.com.br.canalvinciusthiengo.model.SocialNetwork
  * trabalha como se fosse uma persistência de dados
  * estáticos.
  */
-class SocialNetworksData {
+abstract class SocialNetworksData {
 
     companion object{
         /**

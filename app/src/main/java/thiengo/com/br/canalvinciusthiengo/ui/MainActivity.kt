@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
 
         val layoutManager = GridLayoutManager(
             this,
-            MenuItemsData.NUMBER_COLUMNS,
+            MenuAdapter.NUMBER_COLUMNS,
             RecyclerView.HORIZONTAL,
             false
         )
@@ -121,7 +121,7 @@ class MainActivity : AppCompatActivity() {
         rv_menu.setHasFixedSize( true )
         rv_menu.adapter = MenuAdapter(
             context = this,
-            items = MenuItemsData.getItems( resources ),
+            items = MenuItemsData.getItems( res = resources ),
             changeFragmentCallback = {
                 item -> fragmentOnScreen( item = item )
             }
@@ -161,7 +161,9 @@ class MainActivity : AppCompatActivity() {
         itemId: Int = R.id.last_video ) : Fragment {
 
         val key = getFragmentInKey( itemId = itemId )
-        var fragment = supportFragmentManager.findFragmentByTag( key )
+
+        var fragment = supportFragmentManager
+            .findFragmentByTag( key )
 
         if( fragment == null ){
             fragment = when( itemId ){
@@ -219,20 +221,27 @@ class MainActivity : AppCompatActivity() {
         fragment: Fragment,
         fragKey: String ){
 
+        /**
+         * Animação na transição entre fragmentos.
+         */
         val fragTransaction: FragmentTransaction = supportFragmentManager
             .beginTransaction()
-
         fragTransaction.setCustomAnimations(
             android.R.anim.fade_in,
             android.R.anim.fade_out
         )
-        //fragmentManager.addOnBackStackChangedListener(this)
+
+        /**
+         * Mantendo o fragmento em memória com um
+         * "localizador" único dele.
+         */
         fragTransaction.replace(
             R.id.ll_content_container,
             fragment,
             fragKey
         )
         fragTransaction.addToBackStack( FRAG_STACK_ID )
+
         fragTransaction.commit()
     }
 

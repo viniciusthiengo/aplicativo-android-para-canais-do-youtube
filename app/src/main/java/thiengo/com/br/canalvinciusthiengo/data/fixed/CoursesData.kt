@@ -1,5 +1,6 @@
 package thiengo.com.br.canalvinciusthiengo.data.fixed
 
+import thiengo.com.br.canalvinciusthiengo.R
 import thiengo.com.br.canalvinciusthiengo.model.Course
 
 /**
@@ -19,7 +20,7 @@ import thiengo.com.br.canalvinciusthiengo.model.Course
  * que trabalha como se fosse uma persistência de
  * dados estáticos.
  */
-class CoursesData {
+abstract class CoursesData {
 
     companion object{
         /**
@@ -35,7 +36,8 @@ class CoursesData {
                     title = "Android: Prototipagem Profissional de Aplicativos",
                     categories = listOf("Android", "Prototipagem", "Lado estratégico"),
                     amountVideos = 186,
-                    webPage = "https://www.udemy.com/android-prototipagem-profissional-de-aplicativos/?persist_locale&locale=pt_BR"
+                    webPage = "https://www.udemy.com/android-prototipagem-profissional-de-aplicativos/?persist_locale&locale=pt_BR",
+                    cover = R.drawable.ic_courses_color
                 )
             )
     }

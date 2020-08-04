@@ -29,6 +29,16 @@ class MenuAdapter(
         private val changeFragmentCallback: (MenuItem)->Unit
     ) : RecyclerView.Adapter<MenuViewHolder>() {
 
+    companion object{
+        /**
+         * Constante que define o número de
+         * colunas do menu. No caso é apenas uma
+         * coluna para o menu principal em
+         * apresentação horizontal.
+         */
+        const val NUMBER_COLUMNS = 1
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int ) : MenuViewHolder {

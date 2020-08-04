@@ -35,7 +35,7 @@ class CatchChannelDataWorker(
          * inicial de WorkManager.
          */
         const val NAME = "sync_local_database"
-        const val REPEAT_INTERVAL : Long = 20
+        const val REPEAT_INTERVAL : Long = 18
     }
 
     override fun doWork(): Result {

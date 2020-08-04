@@ -19,7 +19,7 @@ import thiengo.com.br.canalvinciusthiengo.model.Group
  * trabalha como se fosse uma persistência de dados
  * estáticos.
  */
-class GroupsData {
+abstract class GroupsData {
 
     companion object{
         /**

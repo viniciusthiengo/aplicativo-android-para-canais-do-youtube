@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,74 +8,7 @@
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_app"
-        android:paddingStart="@dimen/standard_screen_side_margin"
-        android:paddingTop="25dp"
-        android:paddingEnd="@dimen/standard_screen_side_margin"
-        android:paddingBottom="65dp">
-
-        <ImageView
-            android:id="@+id/iv_youtube_logo"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="end"
-            android:layout_marginBottom="15dp"
-            android:contentDescription="@string/youtube_content_icon_content_desc"
-            android:onClick="openYouTubeChannel"
-            android:src="@drawable/ic_youtube_logo"
-            android:tint="@color/colorTopIcon" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_channel_logo"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_below="@+id/iv_youtube_logo"
-            android:layout_alignParentStart="true"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="0dp">
-
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:contentDescription="@string/channel_thumb_content_desc"
-                android:onClick="openYouTubeChannel"
-                android:scaleType="center"
-                android:src="@drawable/channel_logo" />
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/tv_channel_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/cv_channel_logo"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@id/cv_channel_logo"
-            android:ellipsize="end"
-            android:fontFamily="@font/quicksand_variable_font_wght"
-            android:maxLines="1"
-            android:onClick="openYouTubeChannel"
-            android:text="@string/channel_name"
-            android:textColor="@color/colorTopText"
-            android:textSize="19sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_channel_name"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@id/cv_channel_logo"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:onClick="openYouTubeChannel"
-            android:text="@string/channel_desc"
-            android:textColor="@color/colorTopText"
-            android:textStyle="normal" />
-    </RelativeLayout>
+    <include layout="@layout/top_signature" />
 
     <LinearLayout
         android:id="@+id/ll_content_container"
@@ -87,9 +20,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorMenuSeparatorLine" />
 

@@ -5,19 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.fragment.AboutChannelFragment">
+    tools:context=".ui.fragment.LastVideoFragment">
 
     <TextView
         style="@style/AppTheme.Title"
-        android:text="@string/about_channel_content_title" />
+        android:text="@string/playlists_content_title" />
 
-    <ScrollView
+    <include layout="@layout/no_data_message_block" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_play_lists"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <TextView
-            style="@style/AppTheme.TextContent"
-            android:text="@string/about_channel_full_desc" />
-    </ScrollView>
+        android:layout_weight="1"
+        android:visibility="gone" />
 </LinearLayout>

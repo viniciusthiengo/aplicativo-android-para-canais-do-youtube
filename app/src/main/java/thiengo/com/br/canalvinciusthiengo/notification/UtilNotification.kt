@@ -41,6 +41,15 @@ class UtilNotification private constructor(
         const val CHANNEL_ID = "new_channel_video"
 
         /**
+         * Constante que contém o identificador único
+         * para todas as notificações que forem criadas
+         * a partir deste app. Não precismos de trabalho
+         * com acumulação de notificações, então é seguro
+         * seguir está estratégia.
+         */
+        const val NOTIFICATION_ID = 1
+
+        /**
          * Propriedade responsável por conter a única
          * instância de UtilNotification disponível
          * durante toda a execução do aplicativo.
@@ -74,7 +83,8 @@ class UtilNotification private constructor(
      * @param lastVideo último vídeo liberado em canal e
      * que chegou ao aplicativo.
      */
-    fun createBigPictureNotification( lastVideo: LastVideo ){
+    fun createBigPictureNotification(
+        lastVideo: LastVideo ){
 
         /*
          * Clásula de guarda para garantir que a notificação
@@ -87,12 +97,12 @@ class UtilNotification private constructor(
 
         Log.i(
             MainActivity.LOG_TAG,
-            "lastVideo.correctThumbUr(): ${lastVideo.correctThumbUr()}"
+            "lastVideo.thumbUrl(): ${lastVideo.thumbUrl}"
         )
 
         val bitmapBigPicture = Picasso
             .get()
-            .load( lastVideo.correctThumbUr() )
+            .load( lastVideo.thumbUrl )
             .get()
 
         createNotification(
@@ -118,6 +128,11 @@ class UtilNotification private constructor(
             createNotificationChannel()
         }
 
+        Log.i(
+            MainActivity.LOG_TAG,
+            "createNotification: AFTER IF"
+        )
+
         val notificationBuilder = getNotification(
             lastVideo = lastVideo,
             bitmapBigPicture = bitmapBigPicture
@@ -126,7 +141,7 @@ class UtilNotification private constructor(
         NotificationManagerCompat
             .from( context )
             .notify(
-                1,
+                NOTIFICATION_ID,
                 notificationBuilder
             )
     }
@@ -156,7 +171,6 @@ class UtilNotification private constructor(
             this.description = description
         }
 
-        // Add the channel
         val notificationManager = context.getSystemService(
             Context.NOTIFICATION_SERVICE
         ) as NotificationManager?
@@ -220,6 +234,7 @@ class UtilNotification private constructor(
      * abertura de app.
      */
     private fun getPendingIntent() : PendingIntent {
+
         val intent = Intent(
             context,
             MainActivity::class.java

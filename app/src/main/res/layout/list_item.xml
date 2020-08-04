@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/AppTheme.ListItemContainer">
 
     <ImageView
         android:id="@+id/iv_icon"
-        style="@style/AppTheme.ListItemIcon"
-        android:src="@drawable/ic_courses_color" />
+        style="@style/AppTheme.ListItemIcon" />
 
     <TextView
         android:id="@+id/tv_main_text"
@@ -24,7 +24,5 @@
         android:id="@+id/tv_second_aux_text"
         style="@style/AppTheme.ListItemAuxText"
         android:layout_below="@+id/tv_first_aux_text"
-        android:layout_toEndOf="@+id/iv_icon"
-        android:bufferType="spannable"
-        android:drawablePadding="5dp" />
+        android:layout_toEndOf="@+id/iv_icon" />
 </RelativeLayout>

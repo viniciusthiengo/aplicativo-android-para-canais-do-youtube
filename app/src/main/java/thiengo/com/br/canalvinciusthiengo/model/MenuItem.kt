@@ -7,7 +7,7 @@ package thiengo.com.br.canalvinciusthiengo.model
  * O objetivo desta classe (objetos desta classe)
  * é manter os dados de identificação do item de
  * menu principal, incluindo identificação do
- * estado atual dele (selecinado ou não).
+ * estado atual dele (selecionado ou não).
  *
  * @property id identificador único do item.
  * @property label rótulo do item.

@@ -10,8 +10,7 @@ import thiengo.com.br.canalvinciusthiengo.model.ListItem
 /**
  * Classe responsável por aplicar o padrão
  * ViewHolder nas listas de itens dos fragmentos
- * do aplicativo que contém o framework
- * RecyclerView.
+ * que contêm o framework RecyclerView.
  *
  * @property adapter adaptador de itens de lista.
  * @property callExternalAppCallback contém o
@@ -50,7 +49,7 @@ class ListItemViewHolder(
 
     /**
      * Define em UI os dados que devem ser
-     * apresentados em lista.
+     * apresentados em item lista.
      *
      * @param item item de lista.
      */

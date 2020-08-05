@@ -18,9 +18,9 @@ import thiengo.com.br.canalvinciusthiengo.model.ListItem
  *
  * @property context contexto do aplicativo.
  * @property items itens de lista do tipo (que
- * herdem de) ListItem.
+ * implementem de) ListItem.
  * @property callExternalAppCallback contém o
- * algoritmo de execução quando um novo item é
+ * algoritmo de execução quando um item é
  * acionado pelo usuário.
  * @constructor cria um objeto completo do tipo
  * ListItemAdapter.

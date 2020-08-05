@@ -4,7 +4,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import thiengo.com.br.canalvinciusthiengo.R
 import thiengo.com.br.canalvinciusthiengo.model.MenuItem
@@ -70,42 +69,34 @@ class MenuViewHolder(
      */
     private fun setStyle( item: MenuItem ){
 
-        var tvLabelColor = R.color.colorMenuItemNotSelected
-        var ivIconColor = R.color.colorMenuItemNotSelected
+        var itemColor = R.color.colorMenuItemNotSelected
 
         if( item.isSelected == MenuItemStatus.SELECTED ){
-            ivIconColor = R.color.colorMenuItemSelected
-            tvLabelColor = R.color.colorMenuItemSelected
+            itemColor = R.color.colorMenuItemSelected
         }
 
-        ivIcon.setColorFilter(
-            ContextCompat.getColor(
-                adapter.context,
-                ivIconColor
-            )
+        val color = ContextCompat.getColor(
+            adapter.context,
+            itemColor
         )
-        tvLabel.setTextColor(
-            ResourcesCompat.getColor(
-                adapter.context.resources,
-                tvLabelColor,
-                null
-            )
-        )
+
+        ivIcon.setColorFilter( color )
+        tvLabel.setTextColor( color )
     }
 
     override fun onClick( view: View ){
 
-        val selectedItem = adapter.items.first {
+        val oldSelectedItem = adapter.items.first {
             it.isSelected == MenuItemStatus.SELECTED
         }
-        val indexItemSelected = adapter.items.indexOf( selectedItem )
+        val indexOldSelectedItem = adapter.items.indexOf( oldSelectedItem )
 
         /**
          * Cláusula de guarda para que não haja
          * ativação redundante de fragmento já
          * em foreground.
          */
-        if( indexItemSelected == adapterPosition ){
+        if( indexOldSelectedItem == adapterPosition ){
             return
         }
 
@@ -115,28 +106,18 @@ class MenuViewHolder(
          * item "não selecionado". Pois um novo
          * item foi acionado.
          */
-        selectedItem.isSelected = MenuItemStatus.NOT_SELECTED
-        adapter.notifyItemChanged( indexItemSelected )
+        oldSelectedItem.apply {
+            isSelected = MenuItemStatus.NOT_SELECTED
+        }
+        adapter.notifyItemChanged( indexOldSelectedItem )
 
         /**
          * O algoritmo a seguir é responsável por
          * colocar, no item acionado pelo usuário,
-         * o status e estilo adequados de acordo
-         * com o status atual do item.
-         *
-         * Com a função with() sendo utilizada nós
-         * podemos abreviar o código. Dentro do
-         * bloco desta função podemos utilizar "this"
-         * ao invés de "adapter.items[ adapterPosition ]".
+         * o status e estilo adequados.
          */
-        with( adapter.items[ adapterPosition ] ){
-
-            this.isSelected = when( this.isSelected ){
-                MenuItemStatus.SELECTED ->
-                    MenuItemStatus.NOT_SELECTED
-                else ->
-                    MenuItemStatus.SELECTED
-            }
+        adapter.items[ adapterPosition ].apply {
+            isSelected = MenuItemStatus.SELECTED
         }
         adapter.notifyItemChanged(
             adapterPosition

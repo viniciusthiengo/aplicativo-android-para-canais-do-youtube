@@ -5,9 +5,9 @@ import android.net.Uri
 
 /**
  * Interface utilizada como "estrutura comum" a todos
- * os items de lista presentes em projeto.
+ * os itens de lista presentes em projeto.
  *
- * Assim é possível economizar na quantidade de códigos
+ * Assim é possível economizar na quantidade de código
  * que seria necessária para inúmeros Adapters e
  * ViewHolders de cada Fragment que tem um RecyclerView
  * (framework de lista).
@@ -39,7 +39,7 @@ interface ListItem {
      * porém ainda necessárias.
      *
      * @param resources objeto para acesso
-     * a reursos do sistema.
+     * a recursos do sistema.
      * @return o texto secundário auxiliar do
      * item de lista.
      */

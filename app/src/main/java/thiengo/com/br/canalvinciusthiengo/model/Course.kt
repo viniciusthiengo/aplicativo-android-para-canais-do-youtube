@@ -19,6 +19,8 @@ import thiengo.com.br.canalvinciusthiengo.R
  * @property amountVideos quantidade de vídeo
  * aulas presentes no curso.
  * @property webPage URL da página Web do curso.
+ * @property cover identificador único do ícone
+ * vetorial do curso.
  * @constructor cria um objeto completo do tipo
  * Course.
  */

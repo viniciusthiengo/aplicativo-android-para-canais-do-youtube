@@ -15,10 +15,10 @@ import android.net.Uri
  * @property place nome do aplicativo Android
  * para contato.
  * @property contact endereço de contato.
- * @property appUri Intent URI do endereço de
- * contato no aplicativo de acesso a ele.
+ * @property webUri URL do endereço de
+ * contato no app / local de acesso a ele.
  * @property logo ícone que identifica o
- * aplicativo Android para contato.
+ * app / local Android para contato.
  * @constructor cria um objeto completo do tipo
  * BusinessContact.
  */
@@ -26,7 +26,6 @@ class BusinessContact(
     val place: String,
     val contact: String,
     private val webUri: String,
-    private val appUri: String,
     private val logo: Int ) : ListItem {
 
     override fun getMainText()
@@ -38,9 +37,6 @@ class BusinessContact(
 
     override fun getWebUri()
         = Uri.parse( webUri )
-
-    override fun getAppUri()
-        = Uri.parse( appUri )
 
     override fun getIcon()
         = logo

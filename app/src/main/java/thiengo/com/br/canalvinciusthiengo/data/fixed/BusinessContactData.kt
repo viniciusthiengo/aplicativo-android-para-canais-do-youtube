@@ -35,15 +35,19 @@ abstract class BusinessContactData {
                     place = "Gmail",
                     contact = "thiengocalopsita@gmail.com",
                     webUri = "mailto:thiengocalopsita@gmail.com?Subject=Contato comercial - Thiengo",
-                    appUri = "",
                     logo = R.drawable.ic_gmail_color
                 ),
                 BusinessContact(
                     place = "Blog",
                     contact = "Thiengo.com.br",
                     webUri = "https://www.thiengo.com.br/contato",
-                    appUri = "",
                     logo = R.drawable.ic_blog_color
+                ),
+                BusinessContact(
+                    place = "Facebook Messenger",
+                    contact = "Vinícius Thiengo - Blog",
+                    webUri = "http://m.me/thiengoCalopsita",
+                    logo = R.drawable.ic_facebook_messenger_color
                 )/*,
                 BusinessContact(
                     place = "WhatsApp",

@@ -53,7 +53,13 @@ abstract class BooksData {
                 Book(
                     title = "Porque e Como Utilizar Vetores no Android",
                     categories = listOf("Android", "Kotlin", "Drawable"),
-                    webPage = "https://drive.google.com/file/d/1XNt1gmfcVeqDQFhqR7MZEf8dSurzzdyl/view?usp=sharing",
+                    webPage = "https://www.thiengo.com.br/construa-um-aplicativo-android-completo-para-youtubers-parte-1",
+                    cover = R.drawable.ic_book_cover_orange
+                ),
+                Book(
+                    title = "Construa Um Aplicativo Android Completo Para YouTubers",
+                    categories = listOf("Android", "Kotlin", "YouTuber"),
+                    webPage = "https://www.thiengo.com.br/construa-um-aplicativo-android-completo-para-youtubers-parte-1",
                     cover = R.drawable.ic_book_cover_orange
                 )
             )

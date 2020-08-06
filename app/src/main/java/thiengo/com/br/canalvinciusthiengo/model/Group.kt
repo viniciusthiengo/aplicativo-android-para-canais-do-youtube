@@ -13,20 +13,19 @@ import android.net.Uri
  * mesmo de acessa-lo e assim decidir se vai ou
  * não fazer parte dele.
  *
- * @property place local digital, aplicativo
- * Android, do grupo.
+ * @property place local digital ou não do grupo.
  * @property name nome do grupo.
- * @property appUri Intent URI do grupo no
- * aplicativo de acesso a ele.
+ * @property webUri URL do grupo no app / site de
+ * acesso a ele.
  * @property logo ícone de identificação do
- * aplicativo do grupo.
+ * app / local do grupo.
  * @constructor cria um objeto completo do tipo
  * Group.
  */
 class Group(
     val place: String,
     val name: String,
-    private val appUri: String,
+    private val webUri: String,
     private val logo: Int ) : ListItem {
 
     override fun getMainText()
@@ -36,8 +35,8 @@ class Group(
             name
         )
 
-    override fun getAppUri()
-        = Uri.parse( appUri )
+    override fun getWebUri()
+        = Uri.parse( webUri )
 
     override fun getIcon()
         = logo

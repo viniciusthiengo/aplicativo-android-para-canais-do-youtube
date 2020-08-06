@@ -42,7 +42,7 @@ class GroupsFragment : FrameworkListFragment() {
             items = GroupsData.getGroups(),
             callExternalAppCallback = {
                 item -> callExternalApp(
-                    appUri = item.getAppUri(),
+                    webUri = item.getWebUri(),
                     failMessage = String.format(
                         getString( R.string.groups_toast_alert ),
                         (item as Group).place,

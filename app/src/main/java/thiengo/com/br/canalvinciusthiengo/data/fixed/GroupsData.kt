@@ -33,27 +33,33 @@ abstract class GroupsData {
             = listOf(
                 Group(
                     place = "Facebook",
-                    name = "Seguidores do Blog Thiengo.com.br",
-                    appUri = "",
-                    logo = R.drawable.ic_facebook_group_color
-                ),
-                Group(
-                    place = "Facebook",
-                    name = "Leitores dos livros do Thiengo",
-                    appUri = "",
+                    name = "Desenvolvimento Mobile",
+                    webUri = "https://www.facebook.com/groups/246149505467359",
                     logo = R.drawable.ic_facebook_group_color
                 ),
                 Group(
                     place = "WhatsApp",
-                    name = "[Thiengo] Devs Android",
-                    appUri = "",
+                    name = "\uD83D\uDCAF% Android",
+                    webUri = "https://chat.whatsapp.com/HLXgiKgC6o96q8UWGjiidW",
                     logo = R.drawable.ic_whatsapp_color
                 ),
                 Group(
                     place = "Telegram",
-                    name = "[Thiengo] Devs Android",
-                    appUri = "",
+                    name = "DevCodeBr - Android/Java/Kotlin",
+                    webUri = "https://t.me/devcodebr_android",
                     logo = R.drawable.ic_telegram_color
+                ),
+                Group(
+                    place = "Discord",
+                    name = "Android Discord",
+                    webUri = "https://discord.gg/B8XEDGC",
+                    logo = R.drawable.ic_discord_color
+                ),
+                Group(
+                    place = "LinkedIn",
+                    name = "Android Developers Brazil",
+                    webUri = "https://www.linkedin.com/groups/4447810/",
+                    logo = R.drawable.ic_linkedin_group_color
                 )
             )
     }

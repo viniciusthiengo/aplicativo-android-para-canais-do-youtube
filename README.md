@@ -1,36 +1,48 @@
-# Yosemite Summer Camp (Kotlin Android)
+# Aplicativo Completo Para YouTubers (Kotlin Android)
 
-Projeto Kotlin Android da segunda parte do "artigo aula" [Porque e Como Utilizar Vetores no Android](https://www.thiengo.com.br/porque-e-como-utilizar-vetores-no-android#projeto-android) do Blog [Thiengo.com.br](https://www.thiengo.com.br).
+Neste repositório você tem acesso a um projeto de aplicativo Android completo que tem como propósito ajudar a solucionar o problema de notificações não entregues dos canais do YouTube.
 
-Artigo que apresenta passo a passo todo o trabalho com gráficos (imagens) vetoriais em aplicativos Android.
+O público alvo do aplicativo é de YouTubers.
 
-Também são abordadas dicas essenciais como: o "problema" com a API de suporte de vetores (para versões do Android abaixo da API 21 - Lollipop) e o porquê de evita-la.
+Um outro objetivo deste app é melhorar a divulgação, *brand*, do YouTuber. Pois no app ele poderá colocar inúmeras outras informações que fazem com que o negócio digital dele cresça ainda mais.
 
-<img src="https://www.thiengo.com.br/img/post/normal/lllpfgu2d49n6p37uh386ls8s4a2504c0e651daed1194c672762226c7a.jpg" height="590" alt="Aplicativo Android Yosemite Summer Camp - Para testes com a API de vetores">
+Para seguir o passo a passo de construção do aplicativo, é preciso iniciar os estudos no artigo [Construa Um Aplicativo Android Completo Para YouTubers - Parte 1](https://www.thiengo.com.br/construa-um-aplicativo-android-completo-para-youtubers-parte-1). A partir deste artigo são 15 conteúdos até o final do aplicativo.
 
-O conteúdo do artigo também está disponível em [vídeos](https://www.thiengo.com.br/porque-e-como-utilizar-vetores-no-android#videos) e em [slides](https://www.thiengo.com.br/porque-e-como-utilizar-vetores-no-android#slides).
-
-### Primeira parte
-
-Caso você queira ter acesso à primeira parte do artigo, então [entre por aqui](https://www.thiengo.com.br/porque-e-como-utilizar-vetores-no-android#o-porque-das-imagens-vetoriais). Está primeira parte mostra, detalhadamente, como utilizar de maneira eficiente os drawables vetoriais estáticos.
-
-Também há dicas importantes sobre quando não utilizar vetores no Android.
-
-Fortemente recomendo que você pegue um café ☕ 🥨 antes de iniciar os estudos no artigo. Isso, pois o conteúdo é muito importante para desenvolvedores Android e está bem completo.
-
-Para acessar o projeto Android da primeira parte do artigo aula, então entre no seguinte repositório: [Vector Tests - (Kotlin Android)](https://github.com/viniciusthiengo/vector-tests)
+<img src="https://www.thiengo.com.br/img/post/normal/kdg5mfldb3cu94hmq4e3jjb9a78b16ca82b88e9bf2debfc9d7d3d436e9.jpg" height="590" alt="Aplicativo Android Para YouTubers">
 
 ### Versão em PDF
 
 Os artigos aula do Blog também têm suas versões completas em PDF. Porém essas versões são liberadas somente aos inscritos na lista de e-mails do Blog (que é gratuita).
 
-Para obter também a versão em PDF e assim poder estudar quando e onde quiser, basta [entrar no site](https://www.thiengo.com.br/) e se cadastrar na lista de e-mails.
+Para obter também a versão em PDF e assim poder estudar quando e onde quiser, basta [entrar no site](https://www.thiengo.com.br) e se cadastrar na lista de e-mails.
 
-Na página de confirmação terá o link para baixar a versão PDF do artigo deste projeto. Estará com o mesmo rótulo do artigo "Porque e Como Utilizar Vetores no Android".
+Na página de confirmação terá o link para baixar a versão PDF com todos os artigos deste projeto em um único arquivo.
+
+Este PDF estará com o mesmo rótulo do primeiro artigo desta série "Construa Um Aplicativo Android Completo Para YouTubers - Parte 1".
+
+### Roteiro (artigos) completo de construção do aplicativo
+
+A seguir a lista dos artigo que devem ser seguidos, passo a passo, caso você queira entender todos os detalhes deste projeto de aplicativo:
+
+- Construa Um Aplicativo Android Completo Para YouTubers - Parte 1;
+- Início do Lado Tático e Barra de Topo Personalizada - Parte 2;
+- Criando e Configurando o Menu Principal - Parte 3;
+- Criando a Estrutura Base Das Telas Com Lista - Parte 4;
+- Construindo os Fragmentos de Conteúdo Local - Parte 5 (você está aqui);
+- Parte 6*... em edição 📑🖋*;
+- Parte 7*... em edição 📑🖋*;
+- Parte 8*... em edição 📑🖋*;
+- Parte 9*... em edição 📑🖋*;
+- Parte 10*... em edição 📑🖋*;
+- Parte 11*... em edição 📑🖋*;
+- Parte 12*... em edição 📑🖋*;
+- Parte 13*... em edição 📑🖋*;
+- Parte 14*... em edição 📑🖋*;
+- Parte 15 **[FINAL]***... em edição 📑🖋*.
 
 ## Dúvidas e dicas
 
-Caso você tenha dúvidas ou dicas sobre as vetores no Android ou sobre algum dos projetos apresentados em artigo, então [entre em contato](https://www.thiengo.com.br/contato) ou deixe seu comentário no artigo que logo eu lhe respondo.
+Caso você tenha dúvidas ou dicas sobre este projeto completo de aplicativo Android para YouTubers, então [entre em contato](https://www.thiengo.com.br/contato) ou deixe seu comentário em algum dos artigos da série que logo eu lhe respondo.
 
 ## Meus livros 📚 e curso
 

@@ -8,7 +8,7 @@ Um outro objetivo deste app é melhorar a divulgação, *brand*, do YouTuber. Po
 
 Para seguir o passo a passo de construção do aplicativo, é preciso iniciar os estudos no artigo [Construa Um Aplicativo Android Completo Para YouTubers - Parte 1](https://www.thiengo.com.br/construa-um-aplicativo-android-completo-para-youtubers-parte-1). A partir deste artigo são 15 conteúdos até o final do aplicativo.
 
-<img src="https://www.thiengo.com.br/img/post/normal/kdg5mfldb3cu94hmq4e3jjb9a78b16ca82b88e9bf2debfc9d7d3d436e9.jpg" height="590" alt="Aplicativo Android Para YouTubers">
+<img src="https://www.thiengo.com.br/img/post/normal/8hu102sv6b7a8ue1nc9etdp937e7e1f61565294937c4c8a6e1dfb15b18.jpg" height="590" alt="Aplicativo Android Para YouTubers">
 
 ### Versão em PDF
 

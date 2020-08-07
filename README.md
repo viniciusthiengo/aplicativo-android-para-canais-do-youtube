@@ -24,21 +24,21 @@ Este PDF estará com o mesmo rótulo do primeiro artigo desta série "Construa U
 
 A seguir a lista dos artigo que devem ser seguidos, passo a passo, caso você queira entender todos os detalhes deste projeto de aplicativo:
 
-- Construa Um Aplicativo Android Completo Para YouTubers - Parte 1;
-- Início do Lado Tático e Barra de Topo Personalizada - Parte 2;
-- Criando e Configurando o Menu Principal - Parte 3;
-- Criando a Estrutura Base Das Telas Com Lista - Parte 4;
-- Construindo os Fragmentos de Conteúdo Local - Parte 5 (você está aqui);
-- Parte 6*... em edição 📑🖋*;
-- Parte 7*... em edição 📑🖋*;
-- Parte 8*... em edição 📑🖋*;
-- Parte 9*... em edição 📑🖋*;
-- Parte 10*... em edição 📑🖋*;
-- Parte 11*... em edição 📑🖋*;
-- Parte 12*... em edição 📑🖋*;
-- Parte 13*... em edição 📑🖋*;
-- Parte 14*... em edição 📑🖋*;
-- Parte 15 **[FINAL]***... em edição 📑🖋*.
+- [Construa Um Aplicativo Android Completo Para YouTubers - Parte 1](https://www.thiengo.com.br/construa-um-aplicativo-android-completo-para-youtubers-parte-1);
+- [Início do Lado Tático e Barra de Topo Personalizada - Parte 2](https://www.thiengo.com.br/inicio-do-lado-tatico-e-barra-de-topo-personalizada-youtuber-android-app-parte-2);
+- [Criando e Configurando o Menu Principal - Parte 3](https://www.thiengo.com.br/criando-e-configurando-o-menu-principal-youtuber-android-app-parte-3);
+- [Criando a Estrutura Base Das Telas Com Lista - Parte 4](https://www.thiengo.com.br/criando-a-estrutura-base-das-telas-com-lista-youtuber-android-app-parte-4);
+- [Construindo os Fragmentos de Conteúdo Local - Parte 5](https://www.thiengo.com.br/construindo-os-fragmentos-de-conteudo-local-youtuber-android-app-parte-5);
+- Parte 6... *em edição 📑🖋*;
+- Parte 7... *em edição 📑🖋*;
+- Parte 8... *em edição 📑🖋*;
+- Parte 9... *em edição 📑🖋*;
+- Parte 10... *em edição 📑🖋*;
+- Parte 11... *em edição 📑🖋*;
+- Parte 12... *em edição 📑🖋*;
+- Parte 13... *em edição 📑🖋*;
+- Parte 14... *em edição 📑🖋*;
+- Parte 15 **[FINAL]**... *em edição 📑🖋*.
 
 ## Dúvidas e dicas
 

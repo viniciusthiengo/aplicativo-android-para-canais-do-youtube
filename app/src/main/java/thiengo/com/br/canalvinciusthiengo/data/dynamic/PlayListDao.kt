@@ -44,11 +44,11 @@ interface PlayListDao {
 
     /**
      * Remove todos os dados PlayList
-     * presentes em base local. Isso ocorre
+     * presentes em base local. Isso deve ocorrer
      * sempre antes de invocar o método
      * insertAll() para garantir que somente
      * o conjunto mais atual de PlayLists
-     * do canal permaneça no aplictivo.
+     * do canal permaneça no aplicativo.
      */
     @Query( value = "DELETE FROM PlayList" )
     fun deleteAll()

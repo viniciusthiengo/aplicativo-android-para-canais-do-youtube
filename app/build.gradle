@@ -60,10 +60,10 @@ dependencies {
     /**
      * Para RecyclerView e outros.
      */
-    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.google.android.material:material:1.2.0'
 
-    implementation  'com.fxn769:bubbletabbar:1.0.5'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //implementation  'com.fxn769:bubbletabbar:1.0.5'
+    //implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     /*
      * Retrofit API para comunicação remota. O Parse é

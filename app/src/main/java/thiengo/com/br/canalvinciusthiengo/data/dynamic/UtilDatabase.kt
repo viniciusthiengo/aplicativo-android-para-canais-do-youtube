@@ -34,7 +34,7 @@ class UtilDatabase private constructor(
         /**
          * Método que aplica, junto à propriedade
          * instance, o padrão Singleton em classe.
-         * Grantindo que somente uma instância de
+         * Garantindo que somente uma instância de
          * UtilDatabase estará disponível durante
          * toda a execução do app. Ajudando a
          * diminuir a possibilidade de vazamento

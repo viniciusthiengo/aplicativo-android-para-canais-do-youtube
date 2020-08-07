@@ -19,20 +19,20 @@ import thiengo.com.br.canalvinciusthiengo.config.YouTubeConfig
  *
  * Outro objetivo desta classe é ser uma entidade
  * (estrutura) para a persistência local, Room.
- * Pois os dados do último vídeo são carregados de
- * um servidor remoto, servidor do YouTube. E com
- * a Room API é possível ainda permitir acesso do
- * usuário ao vídeo mesmo quando o servidor não
- * mais retornou respostas.
+ * Pois os dados do último vídeo são ou carregados de
+ * um servidor remoto, servidor do YouTube, ou de
+ * notificação push. E com a Room API é possível
+ * ainda permitir acesso do usuário ao vídeo mesmo
+ * quando o servidor do YouTube ou o sistema
+ * notificações push não mais retornaram respostas.
  *
  * @property uid identificador único do vídeo
  * para acesso a ele no site ou aplicativo do
  * YouTube e também na persistência local, Room
- * API. É o mesmo identificador do Vídeo no
+ * API. É o mesmo identificador do vídeo no
  * site do YouTube.
  * @property title título do vídeo.
  * @property description descrição do vídeo.
- * @property uid identificador único da PlayList
  * @constructor cria um objeto completo do tipo
  * LastVideo.
  */
@@ -54,10 +54,12 @@ data class LastVideo(
     @ColumnInfo( name = "thumb_url" )
     var thumbUrl: String = ""
         set( value ) {
-            if( value.isNotEmpty() ){
-                field = value
+            field = if( value.isNotEmpty() ){
+                value
             }
-            field = alternativeThumbUrl()
+            else{
+                alternativeThumbUrl()
+            }
         }
 
     /**

@@ -42,11 +42,11 @@ interface LastVideoDao {
 
     /**
      * Remove todos os dados LastVideo
-     * presentes em base local. Isso ocorre
+     * presentes em base local. Isso deve ocorre
      * sempre antes de invocar o método
      * insert() para garantir que somente um
      * único conjunto de dados de "último
-     * vídeo" permaneça no aplictivo.
+     * vídeo" permaneça no aplicativo.
      */
     @Query( value = "DELETE FROM LastVideo" )
     fun delete()

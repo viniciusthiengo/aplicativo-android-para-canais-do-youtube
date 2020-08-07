@@ -45,7 +45,7 @@ abstract class ChannelDatabase: RoomDatabase() {
         /**
          * Método que aplica, junto à propriedade
          * instance, o padrão Singleton em classe.
-         * Grantindo que somente uma instância de
+         * Garantindo que somente uma instância de
          * ChannelDatabase estará disponível durante
          * toda a execução de cada chamada a banco
          * de dados local. Ajudando também a

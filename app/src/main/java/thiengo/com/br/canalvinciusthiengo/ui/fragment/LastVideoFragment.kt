@@ -20,7 +20,7 @@ import thiengo.com.br.canalvinciusthiengo.network.UtilNetwork
 
 /**
  * Contém toda a UI de último vídeo disponível
- * do canal YouTube do app.
+ * no canal YouTube do app.
  *
  * @constructor cria um objeto completo do tipo
  * LastVideoFragment.
@@ -57,7 +57,7 @@ class LastVideoFragment : Fragment() {
         /**
          * Para garantir que o banco de dados local
          * será acessado apenas na primeira vez que
-         * fragmento é carregado.
+         * o fragmento é carregado.
          *
          * Sendo assim o usuário poderá mudar de tabs
          * (itens de menu) que não haverá novos
@@ -150,7 +150,7 @@ class LastVideoFragment : Fragment() {
 
     /**
      * Garante que o componente visual de apresentação
-     * de descrição do vídeo somente estatrá em tela
+     * de descrição do vídeo somente estará em tela
      * caso exista descrição (alguns vídeos não têm).
      *
      * @param description descrição do vídeo.
@@ -198,7 +198,7 @@ class LastVideoFragment : Fragment() {
 
     /**
      * Invoca o aplicativo do YouTube para que o usuário
-     * tenha acesso ao último vídeo liberado do canal.
+     * tenha acesso ao último vídeo liberado no canal.
      *
      * Caso o dado de URI presente no objeto [lastVideo] seja
      * inválido para a abertura do app nativo do YouTube

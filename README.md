@@ -33,7 +33,7 @@ A seguir a lista dos artigo que devem ser seguidos, passo a passo, caso você qu
    - [Construindo os Fragmentos de Conteúdo Local - Parte 5](https://www.thiengo.com.br/construindo-os-fragmentos-de-conteudo-local-youtuber-android-app-parte-5);
    - [Banco de Dados Local Com a Room API - Parte 6](https://www.thiengo.com.br/banco-de-dados-local-com-a-room-api-youtuber-android-app-parte-6);
    - [Construindo a Tela e a Lógica de Último Vídeo - Parte 7](https://www.thiengo.com.br/construindo-a-tela-e-a-logica-de-ultimo-video-youtuber-android-app-parte-7);
-   - Parte 8... *em edição 📑🖋*;
+   - [Desenvolvendo a Tela e a Lógica de PlayLists - Parte 8](https://www.thiengo.com.br/desenvolvendo-a-tela-e-a-logica-de-playlists-youtuber-android-app-parte-8);
    - Parte 9... *em edição 📑🖋*;
    - Parte 10... *em edição 📑🖋*;
    - Parte 11... *em edição 📑🖋*;

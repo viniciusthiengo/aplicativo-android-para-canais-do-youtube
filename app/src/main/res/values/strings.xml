@@ -97,9 +97,6 @@
     <string name="playlists_content_title">
         PlayLists do canal
     </string>
-    <string name="playlist_icon_content_desc">
-        Ícone de PlayList do YouTube.
-    </string>
     <string name="playlist_toast_alert">
         É preciso ou o aplicativo do YouTube ou um navegador
         Web para que a PlayList \"%s\" seja acessada.

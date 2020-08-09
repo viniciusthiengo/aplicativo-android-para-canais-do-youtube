@@ -77,8 +77,8 @@ class PlayListsFragment : Fragment() {
              * no banco de dados local (partindo dos algoritmos
              * em InitialDataCallback) não seja rápida o
              * suficiente para os dados já serem apresentados
-             * neste fragmento quando o usuário estiver o
-             * acessando pela primeira vez.
+             * neste fragmento quando o usuário estiver
+             * acessando-o pela primeira vez.
              * */
             playLists.addAll( PlayListData.getInitialPlayLists() )
 
@@ -187,7 +187,7 @@ class PlayListsFragment : Fragment() {
      * ser apresentados em tela.
      *
      * Como é possível ter a invocação deste método
-     * fora Thread Principal, então é importante
+     * fora da Thread Principal, então é importante
      * sempre ter o código de atualização de UI
      * dentro de runOnUiThread().
      *

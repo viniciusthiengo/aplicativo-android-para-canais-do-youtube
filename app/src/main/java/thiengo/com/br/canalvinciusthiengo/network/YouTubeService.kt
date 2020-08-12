@@ -9,7 +9,7 @@ import thiengo.com.br.canalvinciusthiengo.model.parse.video.VideoParse
 
 /**
  * Interface responsável por definir a API de comunicação
- * remota do aplicativo para ser utilziada junto à
+ * remota do aplicativo para ser utilizada junto à
  * biblioteca Retrofit.
  */
 interface YouTubeService {
@@ -25,7 +25,7 @@ interface YouTubeService {
      * @param maxResults número máximo de videos.
      * @param order dado de ordenação dos resultados.
      * @return todos os dados da resposta do servidor
-     * remoto.
+     * remoto - em objeto Call<VideoParse>.
      */
     @GET( value = YouTubeConfig.ApiV3.VIDEO_PATH )
     fun lastVideo(
@@ -52,7 +52,7 @@ interface YouTubeService {
      * @param maxResults número máximo de PlayLists.
      * @param order dado de ordenação dos resultados.
      * @return todos os dados da resposta do servidor
-     * remoto.
+     * remoto - em objeto Call<PlayListsParse>.
      */
     @GET( value = YouTubeConfig.ApiV3.PLAYLISTS_PATH )
     fun playLists(

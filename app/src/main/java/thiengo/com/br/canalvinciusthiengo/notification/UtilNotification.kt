@@ -19,7 +19,7 @@ import thiengo.com.br.canalvinciusthiengo.ui.MainActivity
 import thiengo.com.br.canalvinciusthiengo.ui.MainActivityForegroundStatus
 
 /**
- * Classe utilitária que permite fácil acesso à
+ * Classe utilitária que permite o fácil acesso à
  * geração de notificações push no app.
  *
  * Assim é possível obter de maneira imediata e
@@ -43,7 +43,7 @@ class UtilNotification private constructor(
         /**
          * Constante que contém o identificador único
          * para todas as notificações que forem criadas
-         * a partir deste app. Não precismos de trabalho
+         * a partir deste app. Não precisamos de trabalho
          * com acumulação de notificações, então é seguro
          * seguir está estratégia.
          */
@@ -87,7 +87,7 @@ class UtilNotification private constructor(
         lastVideo: LastVideo ){
 
         /*
-         * Clásula de guarda para garantir que a notificação
+         * Cláusula de guarda para garantir que a notificação
          * somente será gerada se o aplicativo não estiver
          * já aberto em tela (em foreground).
          * */

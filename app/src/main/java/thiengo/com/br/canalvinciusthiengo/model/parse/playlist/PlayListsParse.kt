@@ -18,7 +18,7 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.playlist
  *
  * Com a configuração atual de uso da API Gson
  * para aplicação do parse JSON, as propriedades de
- * classes parses devem ter os mesmos rótulos dos
+ * classes parse devem ter os mesmos rótulos dos
  * campos referentes a elas em JSON.
  *
  * @property items PlayLists retornadas pelo

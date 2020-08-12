@@ -59,12 +59,12 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        removeStatusBarNotification()
         initBottomMenu()
     }
 
     override fun onResume() {
         super.onResume()
+        removeStatusBarNotification()
         APP_FOREGROUND = MainActivityForegroundStatus.IS_IN_FOREGROUND
     }
 
@@ -136,10 +136,11 @@ class MainActivity : AppCompatActivity() {
      */
     private fun fragmentOnScreen( item: MenuItem ){
         val fragment = getFragment( itemId = item.id )
+        val fragKey = getFragmentInKey( itemId = item.id )
 
         changeFragment(
             fragment = fragment,
-            fragKey = getFragmentInKey( itemId = item.id )
+            fragKey = fragKey
         )
     }
 
@@ -224,8 +225,7 @@ class MainActivity : AppCompatActivity() {
         /**
          * Animação na transição entre fragmentos.
          */
-        val fragTransaction: FragmentTransaction = supportFragmentManager
-            .beginTransaction()
+        val fragTransaction = supportFragmentManager.beginTransaction()
         fragTransaction.setCustomAnimations(
             android.R.anim.fade_in,
             android.R.anim.fade_out

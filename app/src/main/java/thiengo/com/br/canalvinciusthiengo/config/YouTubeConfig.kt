@@ -19,10 +19,10 @@ abstract class YouTubeConfig {
             /**
              * Constante com a chave de API do Google
              * para que seja possível realizar consultas
-             * a YouTube Data API.
+             * à YouTube Data API.
              */
-            //const val GOOGLE_DEV = "" // Thiengo channel (BirdingBox)
-            const val GOOGLE_DEV = "" // Thiengo channel (Cursos)
+            const val GOOGLE_DEV = "" // Thiengo channel (BirdingBox)
+            //const val GOOGLE_DEV = "" // Thiengo channel (Cursos)
         }
     }
 
@@ -58,7 +58,7 @@ abstract class YouTubeConfig {
     abstract class ApiV3 {
         companion object {
             /**
-             * Constante com a URL base para acesso a
+             * Constante com a URL base para acesso à
              * YouTube Data API.
              */
             const val BASE_URL = "https://www.googleapis.com/"

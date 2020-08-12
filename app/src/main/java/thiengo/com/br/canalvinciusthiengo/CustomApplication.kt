@@ -53,7 +53,7 @@ class CustomApplication: Application() {
         /*
          * Configuração de WorkManager que
          * garante que mesmo com uma
-         * "re-invocação" de enfileramente de
+         * "re-invocação" de enfileramento de
          * "work" não haverá work repetido em
          * lista de execução do WorkManager.
          * */

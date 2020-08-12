@@ -70,7 +70,7 @@ class CatchChannelDataWorker(
      * meio de callback, o "último vídeo" disponível em
      * canal YouTube vinculado ao app.
      *
-     * @param oldLastVideo "último vídeo" obtido do banco
+     * @param oldLastVideo "último vídeo", obtido do banco
      * de dados local.
      */
     private fun retrieveServerLastVideo(
@@ -91,7 +91,9 @@ class CatchChannelDataWorker(
                      * ainda salvo no banco de dados local.
                      */
                     if( oldLastVideo == null
-                        || !oldLastVideo.uid.equals( it.uid ) ){
+                        || !oldLastVideo.uid.equals( it.uid )
+                        || !oldLastVideo.title.equals( it.title )
+                        || !oldLastVideo.title.equals( it.description )){
 
                         Log.i(MainActivity.LOG_TAG, "INSIDE 3")
 

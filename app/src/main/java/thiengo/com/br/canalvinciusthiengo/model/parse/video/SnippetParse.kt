@@ -8,7 +8,7 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.video
  * é ser parte do parse do JSON (via Gson API)
  * que é retornado pelo servidor do YouTube com
  * os dados do último vídeo liberado no canal
- * vinculado do app.
+ * vinculado ao app.
  *
  * Apesar de outros dados de snippet estarem
  * disponíveis no JSON, o que importa para o
@@ -16,7 +16,7 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.video
  *
  * Com a configuração atual de uso da API Gson
  * para aplicação do parse JSON, as propriedades de
- * classes parses devem ter os mesmos rótulos dos
+ * classes parse devem ter os mesmos rótulos dos
  * campos referentes a elas em JSON.
  *
  * @property title título do vídeo.

@@ -22,7 +22,7 @@ import thiengo.com.br.canalvinciusthiengo.model.PlayList
         LastVideo::class,
         PlayList::class
     ),
-    version = 19
+    version = 20
 )
 abstract class ChannelDatabase: RoomDatabase() {
 

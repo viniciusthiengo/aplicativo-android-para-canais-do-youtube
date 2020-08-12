@@ -37,11 +37,11 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
 
     /**
      * Processa a notificação OneSignal que foi
-     * enviado ao aparelho.
+     * enviada ao aparelho.
      *
      * @param notification notificação OneSignal.
      * @return um Boolean que indica se o
-     * comportamente comum de geração de notificação
+     * comportamento comum de geração de notificação
      * da OneSignal API deve (false) ou não (true)
      * continuar.
      */
@@ -182,7 +182,9 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
                 )
 
                 if( it == null
-                    || !it.uid.equals( lastVideo.uid ) ){
+                    || !it.uid.equals( lastVideo.uid )
+                    || !it.title.equals( lastVideo.title )
+                    || !it.description.equals( lastVideo.description ) ){
 
                     Log.i(
                         MainActivity.LOG_TAG,

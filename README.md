@@ -34,10 +34,10 @@ A seguir a lista dos artigo que devem ser seguidos, passo a passo, caso você qu
    - [Banco de Dados Local Com a Room API - Parte 6](https://www.thiengo.com.br/banco-de-dados-local-com-a-room-api-youtuber-android-app-parte-6);
    - [Construindo a Tela e a Lógica de Último Vídeo - Parte 7](https://www.thiengo.com.br/construindo-a-tela-e-a-logica-de-ultimo-video-youtuber-android-app-parte-7);
    - [Desenvolvendo a Tela e a Lógica de PlayLists - Parte 8](https://www.thiengo.com.br/desenvolvendo-a-tela-e-a-logica-de-playlists-youtuber-android-app-parte-8);
-   - Parte 9... *em edição 📑🖋*;
-   - Parte 10... *em edição 📑🖋*;
-   - Parte 11... *em edição 📑🖋*;
-   - Parte 12... *em edição 📑🖋*;
+   - [Vinculando Telas ao Menu Principal - Parte 9](https://www.thiengo.com.br/vinculando-telas-ao-menu-principal-youtuber-android-app-parte-9);
+   - [Configurando Por Completo o Sistema de Notificação Push - Parte 10](https://www.thiengo.com.br/configurando-por-completo-o-sistema-de-notificacao-push-youtuber-android-app-parte-10);
+   - [Configurando a YouTube Data API Com a Biblioteca Retrofit - Parte 11](https://www.thiengo.com.br/configurando-a-youtube-data-api-com-a-biblioteca-retrofit-youtuber-android-app-parte-11);
+   - [Configurando o WorkManager Para Requisições em Background - Parte 12](https://www.thiengo.com.br/configurando-o-workmanager-para-requisicoes-em-background-youtuber-android-app-parte-12);
    - Parte 13... *em edição 📑🖋*;
    - Parte 14... *em edição 📑🖋*;
    - Parte 15 **[FINAL]**... *em edição 📑🖋*.

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <!--
+        A definição android:opacity=”opaque” é
+        fundamental para evitar um flash em preto
+        durante a transição do tema de tela de
+        abertura em app.
+
+        Note que a ordem das tags <item> importa.
+        A que vem antes em arquivo é então o layer
+        mais abaixo na estrutura do layout.
+    -->
+
+    <!--
+        A cor de background. Preferencialmente a
+        mesma cor definida para a StatusBar.
+    -->
+    <item android:drawable="@color/colorStatusBar" />
+
+    <!--
+        A logo central na tela. Aqui estamos utilizando
+        uma com a seguinte definição em DP:
+            ➙ width: 264dp;
+            ➙ height: 60dp.
+    -->
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/launcher_screen_logo" />
+    </item>
+
+    <!--
+        Definição do PoweredBy, "Desenvolvido por", logo
+        ao fundo na tela. Precisamos trabalhar com um
+        texto em imagem, pois até o momento da construção
+        deste projeto não era possível colocar texto
+        String como uma das camadas em layer-list.
+
+        Aqui estamos utilizando a seguinte definição em
+        DP para essa imagem:
+            ➙ width: 250dp;
+            ➙ height: 20dp.
+
+        A definição android:bottom="58dp" é necessária, pois
+        caso contrário, devido a android:gravity="center_horizontal|bottom",
+        a imagem fica literalmente "colada" no fundo da
+        tela e assim, dependendo do aparelho (modelo), a
+        bottom bar padrão do Android fica sobre a imagem
+        de PoweredBy.
+    -->
+    <item android:bottom="58dp">
+        <bitmap
+            android:gravity="center_horizontal|bottom"
+            android:src="@drawable/powered_by" />
+    </item>
+</layer-list>

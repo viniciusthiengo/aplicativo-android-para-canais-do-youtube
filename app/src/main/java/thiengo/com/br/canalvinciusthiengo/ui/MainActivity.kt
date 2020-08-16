@@ -48,7 +48,8 @@ class MainActivity : AppCompatActivity() {
         var APP_FOREGROUND = MainActivityForegroundStatus.IS_NOT_IN_FOREGROUND
     }
 
-    override fun onCreate( savedInstanceState: Bundle? ) {
+    override fun onCreate( savedInstanceState: Bundle? ){
+        setTheme( R.style.AppTheme )
         super.onCreate( savedInstanceState )
         setContentView( R.layout.activity_main )
 

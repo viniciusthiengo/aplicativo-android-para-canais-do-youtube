@@ -1,4 +1,17 @@
 <resources>
+
+    <!--
+        Tema da launcher screen. Carregado antes de tudo
+        para que não fique em tela uma definição de
+        windowBackground que é padrão e sem relação com
+        o design do app.
+    -->
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">
+            @drawable/launcher_screen
+        </item>
+    </style>
+
     <!-- Tema base do aplicativo. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
@@ -6,7 +19,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="android:windowBackground">@drawable/bg</item>
         <item name="android:statusBarColor">@color/colorStatusBar</item>
     </style>
 

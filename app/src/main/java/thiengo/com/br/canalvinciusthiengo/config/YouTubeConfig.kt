@@ -21,8 +21,7 @@ abstract class YouTubeConfig {
              * para que seja possível realizar consultas
              * à YouTube Data API.
              */
-            const val GOOGLE_DEV = "" // Thiengo channel (BirdingBox)
-            //const val GOOGLE_DEV = "" // Thiengo channel (Cursos)
+            const val GOOGLE_DEV = ""
         }
     }
 
@@ -34,8 +33,7 @@ abstract class YouTubeConfig {
              * carregar da YouTube Data API os dados do
              * canal correto.
              */
-            const val CHANNEL_ID = "" // Thiengo channel
-            //const val CHANNEL_ID = "" // Somebody else channel
+            const val CHANNEL_ID = ""
 
             /**
              * Constante com a URL do canal.

@@ -1,14 +1,12 @@
 package thiengo.com.br.canalvinciusthiengo.network
 
 import android.content.Context
-import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import thiengo.com.br.canalvinciusthiengo.data.dynamic.UtilDatabase
 import thiengo.com.br.canalvinciusthiengo.model.PlayList
 import thiengo.com.br.canalvinciusthiengo.model.parse.playlist.PlayListsParse
-import thiengo.com.br.canalvinciusthiengo.ui.MainActivity
 
 /**
  * Trabalha a resposta do servidor do YouTube à requisição
@@ -37,7 +35,7 @@ class PlayListsResponse(
     override fun onFailure(
         call: Call<PlayListsParse>,
         t: Throwable ){
-        Log.i(MainActivity.LOG_TAG, "t: ${t.message}")
+
         callbackFailure( NetworkRetrieveDataProblem.NO_INTERNET_CONNECTION )
     }
 

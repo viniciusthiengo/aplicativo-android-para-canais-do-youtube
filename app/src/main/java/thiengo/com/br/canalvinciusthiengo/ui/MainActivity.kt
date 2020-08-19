@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,7 +30,11 @@ import thiengo.com.br.canalvinciusthiengo.ui.fragment.*
 class MainActivity : AppCompatActivity() {
 
     companion object{
-        const val LOG_TAG = "log_channel_app"
+        /**
+         * Para debugs em projeto com a classe Log.
+         */
+        const val LOG_DEBUG = "log_channel_app"
+
         /**
          * Constante com o identificador único da
          * pilha de fragmentos em memória.

@@ -8,7 +8,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -95,11 +94,6 @@ class UtilNotification private constructor(
             return
         }
 
-        Log.i(
-            MainActivity.LOG_TAG,
-            "lastVideo.thumbUrl(): ${lastVideo.thumbUrl}"
-        )
-
         val bitmapBigPicture = Picasso
             .get()
             .load( lastVideo.thumbUrl )
@@ -127,11 +121,6 @@ class UtilNotification private constructor(
         if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ) {
             createNotificationChannel()
         }
-
-        Log.i(
-            MainActivity.LOG_TAG,
-            "createNotification: AFTER IF"
-        )
 
         val notificationBuilder = getNotification(
             lastVideo = lastVideo,

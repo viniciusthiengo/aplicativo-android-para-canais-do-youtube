@@ -15,7 +15,7 @@ import thiengo.com.br.canalvinciusthiengo.model.PlayList
  * principais PlayLists e assim ter certeza que
  * o usuário terá acesso a elas.
  */
-class PlayListData {
+class PlayListsData {
 
     companion object{
         /**

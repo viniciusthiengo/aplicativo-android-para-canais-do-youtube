@@ -1,7 +1,6 @@
 package thiengo.com.br.canalvinciusthiengo.network.worker
 
 import android.content.Context
-import android.util.Log
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import thiengo.com.br.canalvinciusthiengo.data.dynamic.UtilDatabase
@@ -9,7 +8,6 @@ import thiengo.com.br.canalvinciusthiengo.model.LastVideo
 import thiengo.com.br.canalvinciusthiengo.network.NetworkRequestMode
 import thiengo.com.br.canalvinciusthiengo.network.UtilNetwork
 import thiengo.com.br.canalvinciusthiengo.notification.UtilNotification
-import thiengo.com.br.canalvinciusthiengo.ui.MainActivity
 
 /**
  * Classe Worker de trabalho periódico em background,
@@ -39,8 +37,6 @@ class CatchChannelDataWorker(
     }
 
     override fun doWork(): Result {
-        Log.i(MainActivity.LOG_TAG, "INSIDE 1")
-
         UtilNetwork
             .getInstance( context = context )
             .retrievePlayLists(
@@ -75,15 +71,12 @@ class CatchChannelDataWorker(
      */
     private fun retrieveServerLastVideo(
         oldLastVideo: LastVideo? ){
-        Log.i( MainActivity.LOG_TAG, "INSIDE 2" )
 
         UtilNetwork
             .getInstance( context = context )
             .retrieveLastVideo(
                 networkRequestMode = NetworkRequestMode.SYNCHRONOUS,
                 callbackSuccess = {
-
-                    Log.i(MainActivity.LOG_TAG, "INSIDE 3 ${it}")
 
                     /**
                      * Somente cria uma nova notificação se o
@@ -94,8 +87,6 @@ class CatchChannelDataWorker(
                         || !oldLastVideo.uid.equals( it.uid )
                         || !oldLastVideo.title.equals( it.title )
                         || !oldLastVideo.title.equals( it.description )){
-
-                        Log.i(MainActivity.LOG_TAG, "INSIDE 3")
 
                         UtilNotification
                             .getInstance( context = context )

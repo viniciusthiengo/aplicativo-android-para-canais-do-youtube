@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_play_lists.*
 import kotlinx.android.synthetic.main.no_data_message_block.*
 import thiengo.com.br.canalvinciusthiengo.R
 import thiengo.com.br.canalvinciusthiengo.data.dynamic.UtilDatabase
-import thiengo.com.br.canalvinciusthiengo.data.fixed.PlayListData
+import thiengo.com.br.canalvinciusthiengo.data.fixed.PlayListsData
 import thiengo.com.br.canalvinciusthiengo.model.PlayList
 import thiengo.com.br.canalvinciusthiengo.network.UtilNetwork
 import thiengo.com.br.canalvinciusthiengo.ui.adapter.ListItemAdapter
@@ -80,7 +80,7 @@ class PlayListsFragment : Fragment() {
              * neste fragmento quando o usuário estiver
              * acessando-o pela primeira vez.
              * */
-            playLists.addAll( PlayListData.getInitialPlayLists() )
+            playLists.addAll( PlayListsData.getInitialPlayLists() )
 
             uiDataStatus( status = UiFragLoadDataStatus.LOADING )
             UtilDatabase

@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import thiengo.com.br.canalvinciusthiengo.data.fixed.LastVideoData
-import thiengo.com.br.canalvinciusthiengo.data.fixed.PlayListData
+import thiengo.com.br.canalvinciusthiengo.data.fixed.PlayListsData
 
 /**
  * Classe responsável por inicializar a base de
@@ -49,7 +49,7 @@ class InitialDataCallback(
         UtilDatabase
             .getInstance( context = context )
             .savePlayLists(
-                playLists = PlayListData.getInitialPlayLists()
+                playLists = PlayListsData.getInitialPlayLists()
             )
     }
 }

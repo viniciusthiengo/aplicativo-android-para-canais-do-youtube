@@ -1,7 +1,6 @@
 package thiengo.com.br.canalvinciusthiengo.notification
 
 import android.net.UrlQuerySanitizer
-import android.util.Log
 import com.onesignal.NotificationExtenderService
 import com.onesignal.OSNotificationReceivedResult
 import org.json.JSONObject
@@ -9,7 +8,6 @@ import thiengo.com.br.canalvinciusthiengo.config.OneSignalConfig
 import thiengo.com.br.canalvinciusthiengo.config.YouTubeConfig
 import thiengo.com.br.canalvinciusthiengo.data.dynamic.UtilDatabase
 import thiengo.com.br.canalvinciusthiengo.model.LastVideo
-import thiengo.com.br.canalvinciusthiengo.ui.MainActivity
 import java.net.URI
 
 /**
@@ -48,11 +46,6 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
     override fun onNotificationProcessing(
         notification: OSNotificationReceivedResult? ): Boolean {
 
-        Log.i(
-            MainActivity.LOG_TAG,
-            "notification.payload.additionalData: ${notification?.payload?.additionalData}"
-        )
-
         val lastVideo = getLastVideoFromJson(
             json = notification?.payload?.additionalData
         )
@@ -74,11 +67,6 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
     private fun getLastVideoFromJson(
         json: JSONObject? ) : LastVideo? {
 
-        Log.i(
-            MainActivity.LOG_TAG,
-            "getLastVideoFromJson(): 1"
-        )
-
         /*
          * Padrão Cláusula de guarda. Se as premissas não
          * estiverem presentes, então nem mesmo continue
@@ -90,21 +78,11 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
             return null
         }
 
-        Log.i(
-            MainActivity.LOG_TAG,
-            "getLastVideoFromJson(): 2"
-        )
-
         val url = json.getString( OneSignalConfig.Notification.VIDEO )
         val title = json.getString( OneSignalConfig.Notification.TITLE )
         var lastVideo : LastVideo? = null
 
         if( !url.isEmpty() && !title.isEmpty() ){
-
-            Log.i(
-                MainActivity.LOG_TAG,
-                "getLastVideoFromJson(): 3 $url"
-            )
 
             val urlQuery = UrlQuerySanitizer( url )
 
@@ -168,28 +146,14 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
     private fun ifNewLastVideoThenSaveAndNotify(
         lastVideo : LastVideo ){
 
-        Log.i(
-            MainActivity.LOG_TAG,
-            "ifNewVideoSaveAndNotify: 1"
-        )
         UtilDatabase
             .getInstance( context = this )
             .getLastVideo{
-
-                Log.i(
-                    MainActivity.LOG_TAG,
-                    "ifNewVideoSaveAndNotify: 2"
-                )
 
                 if( it == null
                     || !it.uid.equals( lastVideo.uid )
                     || !it.title.equals( lastVideo.title )
                     || !it.description.equals( lastVideo.description ) ){
-
-                    Log.i(
-                        MainActivity.LOG_TAG,
-                        "ifNewVideoSaveAndNotify: 3 ${MainActivity.APP_FOREGROUND}"
-                    )
 
                     UtilDatabase
                         .getInstance( context = this )

@@ -1,4 +1,4 @@
-# Aplicativo Completo Para YouTubers (Kotlin Android)
+# Aplicativo Framework Para YouTubers (Kotlin Android)
 
 Neste repositório você tem acesso a um projeto de aplicativo (framework) Android completo.
 

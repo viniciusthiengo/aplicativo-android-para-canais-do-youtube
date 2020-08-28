@@ -1,28 +1,46 @@
 # Aplicativo Completo Para YouTubers (Kotlin Android)
 
-Neste repositório você tem acesso a um projeto de aplicativo Android completo que tem como propósito ajudar a solucionar o problema de notificações não entregues dos canais do YouTube.
+Neste repositório você tem acesso a um projeto de aplicativo (framework) Android completo.
 
-O público alvo do aplicativo é de YouTubers.
+Projeto que tem como propósito solucionar o problema de "notificações não entregues" dos canais YouTube.
 
-Um outro objetivo deste app é melhorar a divulgação, *brand*, do YouTuber. Pois no app ele poderá colocar inúmeras outras informações que fazem com que o negócio digital dele cresça ainda mais.
+Um outro objetivo marginal deste app framework é melhorar a divulgação, *brand*, do YouTuber. Pois no aplicativo é também possível colocar inúmeras outras informações que fazem com que o negócio digital do YouTuber cresça ainda mais.
 
-Para seguir o passo a passo de construção do aplicativo, é preciso iniciar os estudos no artigo [Construa Um Aplicativo Android Completo Para YouTubers - Parte 1](https://www.thiengo.com.br/construa-um-aplicativo-android-completo-para-youtubers-parte-1). A partir deste artigo são 15 conteúdos até o final do aplicativo.
+Para seguir o passo a passo de construção de todo esse aplicativo framework Android é preciso iniciar os estudos no artigo a seguir:
+
+- [Construa Um Aplicativo Android Completo Para YouTubers - Parte 1](https://www.thiengo.com.br/construa-um-aplicativo-android-completo-para-youtubers-parte-1). 
+
+A partir deste artigo são 15 conteúdos até o final do aplicativo.
 
 <img src="https://www.thiengo.com.br/img/post/normal/8hu102sv6b7a8ue1nc9etdp937e7e1f61565294937c4c8a6e1dfb15b18.jpg" height="590" alt="Aplicativo Android Para YouTubers">
 
+Ao final de todo o projeto framework você terá desenvolvido por completo dois aplicativos Android para YouTubers.
+
+### Framework?
+
+O projeto é todo desenvolvido com a mentalidade de reutilização de estrutura, ou seja:
+
+> O mesmo projeto poderá ser utilizado para qualquer canal YouTube. Isso com apenas poucas modificações em estrutura e conteúdo, exatamente como apresentado em [Nós Temos Um Framework Em Mãos](https://www.thiengo.com.br/nos-temos-um-framework-em-maos-youtuber-android-app-parte-14).
+
+Desta forma podemos seguramente também utilizar o termo **framework** neste projeto de aplicativo Android.
+
 ### Versão em PDF
 
-Os artigos aula do Blog também têm suas versões completas em PDF. Porém essas versões são liberadas somente aos inscritos na lista de e-mails do Blog (que é gratuita).
+Os artigos aula do Blog também têm suas versões completas em PDF. Porém essas versões são **liberadas somente aos inscritos na lista de e-mails** do Blog (que é gratuita).
 
 Para obter também a versão em PDF e assim poder estudar quando e onde quiser, basta [entrar no site](https://www.thiengo.com.br) e se cadastrar na lista de e-mails.
 
 Na página de confirmação terá o link para baixar a versão PDF com todos os artigos deste projeto em um único arquivo.
 
-Este PDF estará com o mesmo rótulo do primeiro artigo desta série "Construa Um Aplicativo Android Completo Para YouTubers - Parte 1".
+Este PDF estará com o mesmo rótulo do primeiro artigo desta série "Construa Um Aplicativo Android Completo Para YouTubers".
 
-### Roteiro (artigos) completo de construção do aplicativo
+A real vantagem da versão em PDF é que:
 
-A seguir a lista dos artigo que devem ser seguidos, passo a passo, caso você queira entender todos os detalhes deste projeto de aplicativo:
+> Os códigos fonte nessa versão têm a exata mesma formatação dos códigos quando no [Android Studio IDE](https://www.thiengo.com.br/android-studio-instalacao-configuracao-e-otimizacao). 
+
+### Roteiro completo de construção do aplicativo framework
+
+A seguir a lista dos artigos que devem ser seguidos, passo a passo, caso você queira entender todos os detalhes deste projeto de aplicativo:
 
 - Lado Estratégico:
   - [Construa Um Aplicativo Android Completo Para YouTubers - Parte 1](https://www.thiengo.com.br/construa-um-aplicativo-android-completo-para-youtubers-parte-1).
@@ -38,13 +56,23 @@ A seguir a lista dos artigo que devem ser seguidos, passo a passo, caso você qu
    - [Configurando Por Completo o Sistema de Notificação Push - Parte 10](https://www.thiengo.com.br/configurando-por-completo-o-sistema-de-notificacao-push-youtuber-android-app-parte-10);
    - [Configurando a YouTube Data API Com a Biblioteca Retrofit - Parte 11](https://www.thiengo.com.br/configurando-a-youtube-data-api-com-a-biblioteca-retrofit-youtuber-android-app-parte-11);
    - [Configurando o WorkManager Para Requisições em Background - Parte 12](https://www.thiengo.com.br/configurando-o-workmanager-para-requisicoes-em-background-youtuber-android-app-parte-12);
-   - Parte 13... *em edição 📑🖋*;
-   - Parte 14... *em edição 📑🖋*;
+   - [Testes e Resultados no Projeto Finalizado - Parte 13](https://www.thiengo.com.br/testes-e-resultados-no-projeto-finalizado-youtuber-android-app-parte-13);
+   - [Nós Temos Um Framework Em Mãos - Parte 14](https://www.thiengo.com.br/nos-temos-um-framework-em-maos-youtuber-android-app-parte-14);
    - Parte 15 **[FINAL]**... *em edição 📑🖋*.
+
+### Já tenho um cliente. E agora?
+
+Se você já está com um cliente para este projeto de aplicativo framework Android, porém está com o tempo curto para ter que consumir todo o conteúdo do projeto e assim saber passo a passo como desenvolve-lo.
+
+Se você está nesta situação, então siga direto para:
+
+- [Nós Temos Um Framework Em Mãos - Parte 14](https://www.thiengo.com.br/nos-temos-um-framework-em-maos-youtuber-android-app-parte-14) (capítulo 14 no PDF).
+
+Pois é exatamente nesta parte do projeto onde é apresentado, passo a passo, como utilizar o app em modo framework.
 
 ## Dúvidas e dicas
 
-Caso você tenha dúvidas ou dicas sobre este projeto completo de aplicativo Android para YouTubers, então [entre em contato](https://www.thiengo.com.br/contato) ou deixe seu comentário em algum dos artigos da série que logo eu lhe respondo.
+Caso você tenha dúvidas ou dicas sobre este projeto completo de framework Android para YouTubers, então [entre em contato](https://www.thiengo.com.br/contato) ou deixe seu comentário em algum dos artigos da série que logo eu lhe respondo.
 
 ## Meus livros 📚 e curso
 

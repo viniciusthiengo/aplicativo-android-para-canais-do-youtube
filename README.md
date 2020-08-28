@@ -12,11 +12,11 @@ Para seguir o passo a passo de construção de todo esse aplicativo framework An
 
 A partir deste artigo são 15 conteúdos até o final do aplicativo.
 
-<img src="https://www.thiengo.com.br/img/post/normal/8hu102sv6b7a8ue1nc9etdp937e7e1f61565294937c4c8a6e1dfb15b18.jpg" height="590" alt="Aplicativo Android Para YouTubers">
+<img src="https://www.thiengo.com.br/img/post/normal/51r39hb2psu5jmdacmqfg8bv07e17a1cbafa7143ac9e8cf3baaabea099.jpg" height="800" alt="Aplicativos Android construídos a partir do app framework deste repositório">
 
 Ao final de todo o projeto framework você terá desenvolvido por completo dois aplicativos Android para YouTubers.
 
-### Framework?
+### Framework
 
 O projeto é todo desenvolvido com a mentalidade de reutilização de estrutura, ou seja:
 

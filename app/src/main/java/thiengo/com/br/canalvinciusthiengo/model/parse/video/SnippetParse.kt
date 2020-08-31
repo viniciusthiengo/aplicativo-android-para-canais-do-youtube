@@ -24,7 +24,7 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.video
  * @property thumbnails contém todas as versões
  * disponíveis de thumb do vídeo.
  * @constructor cria um objeto completo do tipo
- * SnippetParse.
+ * [SnippetParse].
  */
 class SnippetParse(
     val title: String,

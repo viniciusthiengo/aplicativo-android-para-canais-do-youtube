@@ -35,7 +35,7 @@ abstract class ChannelDatabase: RoomDatabase() {
 
         /**
          * Constante responsável por conter a
-         * única instância de ChannelDatabase
+         * única instância de [ChannelDatabase]
          * disponível durante toda a execução
          * de cada chamada a banco de dados
          * local.
@@ -44,16 +44,16 @@ abstract class ChannelDatabase: RoomDatabase() {
 
         /**
          * Método que aplica, junto à propriedade
-         * instance, o padrão Singleton em classe.
+         * [instance], o padrão Singleton em classe.
          * Garantindo que somente uma instância de
-         * ChannelDatabase estará disponível durante
+         * [ChannelDatabase] estará disponível durante
          * toda a execução de cada chamada a banco
          * de dados local. Ajudando também a
          * diminuir a possibilidade de vazamento
          * de memória e de locks de tabela.
          *
          * @param context contexto do aplicativo.
-         * @return instância única de ChannelDatabase.
+         * @return instância única de [ChannelDatabase].
          */
         fun getInstance( context: Context ) : ChannelDatabase {
 
@@ -79,3 +79,12 @@ abstract class ChannelDatabase: RoomDatabase() {
     abstract fun lastVideoDao() : LastVideoDao
     abstract fun playListDao() : PlayListDao
 }
+
+
+
+
+
+
+
+
+

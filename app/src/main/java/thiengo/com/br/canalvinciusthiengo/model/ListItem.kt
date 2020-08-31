@@ -8,8 +8,8 @@ import android.net.Uri
  * os itens de lista presentes em projeto.
  *
  * Assim é possível economizar na quantidade de código
- * que seria necessária para inúmeros Adapters e
- * ViewHolders de cada Fragment que tem um RecyclerView
+ * que seria necessária para inúmeros adapters e
+ * ViewHolders de cada [Fragment] que tem um [RecyclerView]
  * (framework de lista).
  */
 interface ListItem {
@@ -48,7 +48,7 @@ interface ListItem {
 
     /**
      * Retorna a Web URI que deve ser acionada
-     * junto a um objeto Intent em uma invocação
+     * junto a um objeto [Intent] em uma invocação
      * de startActivity().
      *
      * Isso para abrir o aplicativo responsável
@@ -62,7 +62,7 @@ interface ListItem {
 
     /**
      * Retorna a app URI que deve ser acionada
-     * junto a um objeto Intent em uma invocação
+     * junto a um objeto [Intent] em uma invocação
      * de startActivity().
      *
      * Isso para abrir o aplicativo responsável

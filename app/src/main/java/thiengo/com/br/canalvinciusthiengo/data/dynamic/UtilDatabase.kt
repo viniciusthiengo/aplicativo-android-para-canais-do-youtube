@@ -17,7 +17,7 @@ import kotlin.concurrent.thread
  *
  * @property context contexto do aplicativo.
  * @constructor cria um objeto completo do tipo
- * UtilDatabase.
+ * [UtilDatabase].
  */
 class UtilDatabase private constructor(
     private val context: Context ){
@@ -25,7 +25,7 @@ class UtilDatabase private constructor(
     companion object{
         /**
          * Propriedade responsável por conter a
-         * única instância de UtilDatabase
+         * única instância de [UtilDatabase]
          * disponível durante toda a execução do
          * aplicativo.
          */
@@ -33,15 +33,15 @@ class UtilDatabase private constructor(
 
         /**
          * Método que aplica, junto à propriedade
-         * instance, o padrão Singleton em classe.
+         * [instance], o padrão Singleton em classe.
          * Garantindo que somente uma instância de
-         * UtilDatabase estará disponível durante
+         * [UtilDatabase] estará disponível durante
          * toda a execução do app. Ajudando a
          * diminuir a possibilidade de vazamento
          * de memória.
          *
          * @param context contexto do aplicativo.
-         * @return instância única de UtilDatabase.
+         * @return instância única de [UtilDatabase].
          */
         fun getInstance( context: Context ) : UtilDatabase {
             if( instance == null ){
@@ -105,8 +105,8 @@ class UtilDatabase private constructor(
     }
 
     /**
-     * Via LocalBroadcastManager informa ao
-     * fragmento LastVideoFragment os dados do
+     * Via [LocalBroadcastManager] informa ao
+     * fragmento [LastVideoFragment] os dados do
      * novo "último vídeo" que deve aparecer em
      * tela.
      *
@@ -142,7 +142,7 @@ class UtilDatabase private constructor(
      * thread{} no código do método a seguir.
      *
      * @param callback função que vai trabalhar o
-     * retorno de dataBase.lastVideoDao().get().
+     * retorno de [dataBase].lastVideoDao().get().
      */
     fun getLastVideo(
         callback: (LastVideo?)->Unit ){
@@ -212,7 +212,7 @@ class UtilDatabase private constructor(
      * thread{} no código do método a seguir.
      *
      * @param callback função que vai trabalhar o
-     * retorno de dataBase.playListDao().getAll().
+     * retorno de [dataBase].playListDao().getAll().
      */
     fun getAllPlayLists(
         callback: (List<PlayList>? )->Unit ){

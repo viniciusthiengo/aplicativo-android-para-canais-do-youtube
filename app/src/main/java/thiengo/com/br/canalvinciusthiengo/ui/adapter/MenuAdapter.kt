@@ -13,7 +13,7 @@ import thiengo.com.br.canalvinciusthiengo.model.MenuItem
  *
  * Define qual ViewHolder, qual lista de dados e
  * qual layout será utilizado no framework de
- * lista RecyclerView do BottomMenu do app.
+ * lista [RecyclerView] do BottomMenu do app.
  *
  * @property context contexto do aplicativo.
  * @property items itens de menu (dados em lista).
@@ -21,7 +21,7 @@ import thiengo.com.br.canalvinciusthiengo.model.MenuItem
  * algoritmo de execução quando um novo item é
  * acionado pelo usuário.
  * @constructor cria um objeto completo do tipo
- * MenuAdapter.
+ * [MenuAdapter].
  */
 class MenuAdapter(
         val context: Context,

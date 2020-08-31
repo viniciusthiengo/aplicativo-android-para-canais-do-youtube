@@ -16,6 +16,6 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.video
  *
  * @property videoId identificador único do vídeo.
  * @constructor cria um objeto completo do tipo
- * IdParse.
+ * [IdParse].
  */
 class IdParse( val videoId: String )

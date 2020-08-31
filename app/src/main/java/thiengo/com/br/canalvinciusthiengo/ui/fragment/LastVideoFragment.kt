@@ -18,19 +18,20 @@ import thiengo.com.br.canalvinciusthiengo.data.fixed.LastVideoData
 import thiengo.com.br.canalvinciusthiengo.model.LastVideo
 import thiengo.com.br.canalvinciusthiengo.network.UtilNetwork
 
+
 /**
  * Contém toda a UI de último vídeo disponível
  * no canal YouTube do app.
  *
  * @constructor cria um objeto completo do tipo
- * LastVideoFragment.
+ * [LastVideoFragment].
  */
 class LastVideoFragment : Fragment() {
 
     companion object {
         /**
          * Constante com o identificador único do
-         * fragmento LastVideoFragment para que
+         * fragmento [LastVideoFragment] para que
          * ele seja encontrado na pilha de fragmentos
          * e assim não seja necessária a construção
          * de mais de um objeto deste fragmento em
@@ -119,7 +120,7 @@ class LastVideoFragment : Fragment() {
      * de vídeo dentro de runOnUiThread().
      *
      * Outro ponto importante é garantir que não
-     * haverá NullPointerException caso os dados
+     * haverá [NullPointerException] caso os dados
      * cheguem em método quando a UI não mais está no
      * foreground (primeiro plano). Assim o operador
      * not null (?.) é utilizado com frequência.

@@ -20,6 +20,6 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.playlist
  *
  * @property title título da PlayList.
  * @constructor cria um objeto completo do tipo
- * SnippetParse.
+ * [SnippetParse].
  */
 class SnippetParse( val title: String )

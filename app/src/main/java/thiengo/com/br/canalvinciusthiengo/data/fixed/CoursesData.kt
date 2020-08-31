@@ -28,7 +28,7 @@ abstract class CoursesData {
          * vinculados ao canal.
          *
          * @return lista não mutável de objetos
-         * Course.
+         * [Course].
          */
         fun getCourses()
             = listOf(

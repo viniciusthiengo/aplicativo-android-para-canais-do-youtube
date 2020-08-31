@@ -23,7 +23,7 @@ class LastVideoData {
          * Retorna o "último" vídeo disponível
          * por padrão no aplicativo
          *
-         * @return objeto do tipo LastVideo.
+         * @return objeto do tipo [LastVideo].
          */
         fun getInitialVideo()
             = LastVideo(

@@ -20,7 +20,7 @@ import android.net.Uri
  * @property logo ícone de identificação do
  * app / local do grupo.
  * @constructor cria um objeto completo do tipo
- * Group.
+ * [Group].
  */
 class Group(
     val place: String,

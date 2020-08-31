@@ -18,7 +18,7 @@ import thiengo.com.br.canalvinciusthiengo.data.fixed.PlayListsData
  *
  * @property context contexto do aplicativo.
  * @constructor cria um objeto completo do tipo
- * InitialDataCallback.
+ * [InitialDataCallback].
  */
 class InitialDataCallback(
     private val context: Context ) : RoomDatabase.Callback() {

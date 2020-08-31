@@ -6,10 +6,10 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import thiengo.com.br.canalvinciusthiengo.model.LastVideo
 
-/*
+/**
  * Interface de configuração de acesso à tabela
  * LastVideo da persistência local, Room API.
- * */
+ */
 @Dao
 interface LastVideoDao {
 
@@ -31,17 +31,17 @@ interface LastVideoDao {
     fun insert( lastVideo: LastVideo )
 
     /**
-     * Retorna o único LastVideo salvo em Room
+     * Retorna o único [LastVideo] salvo em Room
      * (SQLite) ou null caso não tenha ainda
      * algum.
      *
-     * @return o único LastVideo em base.
+     * @return o único [LastVideo] em base.
      */
     @Query( value = "SELECT * FROM LastVideo LIMIT 1" )
     fun get() : LastVideo?
 
     /**
-     * Remove todos os dados LastVideo
+     * Remove todos os dados [LastVideo]
      * presentes em base local. Isso deve ocorre
      * sempre antes de invocar o método
      * insert() para garantir que somente um

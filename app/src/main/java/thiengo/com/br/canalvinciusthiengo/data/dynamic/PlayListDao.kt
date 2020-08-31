@@ -6,10 +6,10 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import thiengo.com.br.canalvinciusthiengo.model.PlayList
 
-/*
+/**
  * Interface de configuração de acesso à tabela
  * PlayList da persistência local, Room API.
- * */
+ */
 @Dao
 interface PlayListDao {
 
@@ -39,11 +39,11 @@ interface PlayListDao {
      * @return lista não mutável de PlayLists em
      * base.
      */
-    @Query("SELECT * FROM PlayList")
+    @Query( value = "SELECT * FROM PlayList" )
     fun getAll() : List<PlayList>?
 
     /**
-     * Remove todos os dados PlayList
+     * Remove todos os dados [PlayList]
      * presentes em base local. Isso deve ocorrer
      * sempre antes de invocar o método
      * insertAll() para garantir que somente

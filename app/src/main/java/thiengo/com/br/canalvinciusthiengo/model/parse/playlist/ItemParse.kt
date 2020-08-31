@@ -23,7 +23,7 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.playlist
  * @property snippet contém a informação de
  * título da PlayList.
  * @constructor cria um objeto do tipo
- * ItemParse.
+ * [ItemParse].
  */
 class ItemParse(
     val id: String,
@@ -36,8 +36,8 @@ class ItemParse(
      * null e assim não haja título de PlayList.
      * Porém devido ao algoritmo definido em get()
      * nunca é retornado null para a propriedade
-     * title de ItemParse.
-     * @return uma String válida de título de
+     * title de [ItemParse].
+     * @return uma [String] válida de título de
      * PlayList.
      */
     val title: String

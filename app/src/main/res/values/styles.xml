@@ -119,5 +119,4 @@
         <item name="android:ellipsize">end</item>
         <item name="android:maxLines">2</item>
     </style>
-
 </resources>

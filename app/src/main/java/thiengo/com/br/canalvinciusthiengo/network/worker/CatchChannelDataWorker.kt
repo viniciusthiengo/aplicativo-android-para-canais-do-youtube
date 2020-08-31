@@ -10,10 +10,10 @@ import thiengo.com.br.canalvinciusthiengo.network.UtilNetwork
 import thiengo.com.br.canalvinciusthiengo.notification.UtilNotification
 
 /**
- * Classe Worker de trabalho periódico em background,
+ * Classe [Worker] de trabalho periódico em background,
  * mesmo quando o aplicativo não está em memória.
  *
- * Com o objeto desta classe Worker é possível manter
+ * Com o objeto desta classe [Worker] é possível manter
  * os dados de "último vídeo" e de PlayLists do canal
  * atualizados em app.
  *
@@ -21,7 +21,7 @@ import thiengo.com.br.canalvinciusthiengo.notification.UtilNotification
  * @property params parâmetros de trabalho do
  * WorkManager.
  * @constructor cria um objeto completo do tipo
- * CatchChannelDataWorker.
+ * [CatchChannelDataWorker].
  */
 class CatchChannelDataWorker(
     private val context: Context,

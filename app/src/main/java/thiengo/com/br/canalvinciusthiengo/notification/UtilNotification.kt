@@ -27,7 +27,7 @@ import thiengo.com.br.canalvinciusthiengo.ui.MainActivityForegroundStatus
  *
  * @property context contexto do aplicativo.
  * @constructor cria um objeto completo do tipo
- * UtilNotification.
+ * [UtilNotification].
  */
 class UtilNotification private constructor(
     private val context: Context ){
@@ -50,22 +50,22 @@ class UtilNotification private constructor(
 
         /**
          * Propriedade responsável por conter a única
-         * instância de UtilNotification disponível
+         * instância de [UtilNotification] disponível
          * durante toda a execução do aplicativo.
          */
         private var instance: UtilNotification? = null
 
         /**
          * Método que aplica, junto à propriedade
-         * instance, o padrão Singleton em classe.
+         * [instance], o padrão Singleton em classe.
          * Grantindo que somente uma instância de
-         * UtilNotification estará disponível durante
+         * [UtilNotification] estará disponível durante
          * toda a execução do app. Ajudando a
          * diminuir a possibilidade de vazamento
          * de memória.
          *
          * @param context contexto do aplicativo.
-         * @return instância única de UtilNotification.
+         * @return instância única de [UtilNotification].
          */
         fun getInstance( context: Context ) : UtilNotification {
             if( instance == null ){
@@ -214,12 +214,12 @@ class UtilNotification private constructor(
     }
 
     /**
-     * Configura e retorna uma PendingIntent que
-     * acionará a MainActivity do aplicativo caso
+     * Configura e retorna uma [PendingIntent] que
+     * acionará a [MainActivity] do aplicativo caso
      * a notificação push do app seja acionada pelo
      * usuário.
      *
-     * @return PendingIntent configurada para
+     * @return [PendingIntent] configurada para
      * abertura de app.
      */
     private fun getPendingIntent() : PendingIntent {

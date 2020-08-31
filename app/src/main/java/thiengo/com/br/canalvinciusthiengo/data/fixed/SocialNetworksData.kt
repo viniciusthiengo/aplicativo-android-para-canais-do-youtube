@@ -27,7 +27,7 @@ abstract class SocialNetworksData {
          * canal.
          *
          * @return lista não mutável de objetos
-         * SocialNetwork.
+         * [SocialNetwork].
          */
         fun getNetworks()
             = listOf(
@@ -81,95 +81,11 @@ abstract class SocialNetworksData {
                     logo = R.drawable.ic_twitter_color
                 ),
                 SocialNetwork(
-                    network = "Reddit",
-                    accountName = "/vinicius_thiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_reddit_color
-                ),
-                SocialNetwork(
-                    network = "Snapchat",
-                    accountName = "/vinicius_thiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_snapchat_color
-                ),
-                SocialNetwork(
-                    network = "TikTok",
-                    accountName = "/vinicius_thiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_tiktok_color
-                ),
-                SocialNetwork(
-                    network = "Periscope",
-                    accountName = "/vinicius_thiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_periscope_color
-                ),
-                SocialNetwork(
                     network = "YouTube",
                     accountName = "/ThiengoCalopsita",
                     appUri = "",
                     webUri = "https://www.youtube.com/user/thiengoCalopsita",
                     logo = R.drawable.ic_youtube_color
-                ),
-                SocialNetwork(
-                    network = "Medium",
-                    accountName = "/ViniciusThiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_medium_color
-                ),
-                SocialNetwork(
-                    network = "iTunes",
-                    accountName = "/ViniciusThiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_itunes_color
-                ),
-                SocialNetwork(
-                    network = "Spotify",
-                    accountName = "/ViniciusThiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_spotify_color
-                ),
-                SocialNetwork(
-                    network = "DropBox",
-                    accountName = "/ViniciusThiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_dropbox_color
-                ),
-                SocialNetwork(
-                    network = "Pinterest",
-                    accountName = "/ViniciusThiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_pinterest_color
-                ),
-                SocialNetwork(
-                    network = "Tumblr",
-                    accountName = "/ViniciusThiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_tumblr_color
-                ),
-                SocialNetwork(
-                    network = "Instagram",
-                    accountName = "/vinicius_thiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_instagram_color
-                ),
-                SocialNetwork(
-                    network = "SoundCloud",
-                    accountName = "/vinicius_thiengo",
-                    appUri = "",
-                    webUri = "",
-                    logo = R.drawable.ic_soundcloud_color
                 )
             )
     }

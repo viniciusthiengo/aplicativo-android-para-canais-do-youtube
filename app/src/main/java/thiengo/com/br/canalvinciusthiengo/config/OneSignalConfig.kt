@@ -5,7 +5,7 @@ package thiengo.com.br.canalvinciusthiengo.config
  * configuração de notificações push no sistema
  * via API OneSignal.
  *
- * As classes internas (Firebase, App e Notification)
+ * As classes internas ([Firebase], [App] e [Notification])
  * e também os rótulos de todos os companion object.
  * Estes estão presentes em código somente para
  * facilitar a leitura dele. Ou seja, em termos de
@@ -53,9 +53,9 @@ abstract class OneSignalConfig {
 
             /**
              * Constante com uma definição de
-             * String vazia para retornos onde
+             * [String] vazia para retornos onde
              * dados opcionais (como o dado de
-             * DESCRIPTION) não foram fornecidos
+             * [DESCRIPTION]) não foram fornecidos
              * em notificação push.
              */
             const val EMPTY = ""

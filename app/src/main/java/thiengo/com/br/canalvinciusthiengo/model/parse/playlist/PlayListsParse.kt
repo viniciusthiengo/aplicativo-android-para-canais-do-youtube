@@ -24,6 +24,6 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.playlist
  * @property items PlayLists retornadas pelo
  * YouTube Data API.
  * @constructor cria um objeto completo do tipo
- * PlayListsParse.
+ * [PlayListsParse].
  */
 class PlayListsParse( val items: List<ItemParse> )

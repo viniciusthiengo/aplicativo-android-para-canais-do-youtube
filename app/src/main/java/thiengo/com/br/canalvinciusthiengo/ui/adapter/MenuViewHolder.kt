@@ -20,7 +20,7 @@ import thiengo.com.br.canalvinciusthiengo.model.MenuItemStatus
  * acionado pelo usuário.
  * @property itemView layout de item.
  * @constructor cria um objeto completo do tipo
- * MenuViewHolder.
+ * [MenuViewHolder].
  */
 class MenuViewHolder(
         private val adapter: MenuAdapter,
@@ -31,8 +31,8 @@ class MenuViewHolder(
     /**
      * Propriedades de layout, UI.
      */
-    var ivIcon: ImageView
-    var tvLabel: TextView
+    private var ivIcon: ImageView
+    private var tvLabel: TextView
 
     /**
      * Bloco de inicialização da UI do layout
@@ -124,7 +124,7 @@ class MenuViewHolder(
         )
 
         changeFragmentCallback(
-            adapter.items[adapterPosition]
+            adapter.items[ adapterPosition ]
         )
     }
 }

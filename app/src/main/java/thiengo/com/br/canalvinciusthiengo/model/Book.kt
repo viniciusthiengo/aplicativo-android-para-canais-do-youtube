@@ -18,7 +18,7 @@ import android.net.Uri
  * @property cover identificador único do ícone
  * que simula a capa do livro.
  * @constructor cria um objeto completo do tipo
- * Book.
+ * [Book].
  */
 class Book(
     val title: String,

@@ -20,7 +20,7 @@ import android.net.Uri
  * @property logo ícone que identifica o
  * app / local Android para contato.
  * @constructor cria um objeto completo do tipo
- * BusinessContact.
+ * [BusinessContact].
  */
 class BusinessContact(
     val place: String,

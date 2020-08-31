@@ -18,7 +18,7 @@ import thiengo.com.br.canalvinciusthiengo.model.parse.playlist.PlayListsParse
  * @property callbackFailure callback que deve ser
  * executado em caso de resposta falha.
  * @constructor cria um objeto completo do tipo
- * PlayListsResponse.
+ * [PlayListsResponse].
  */
 class PlayListsResponse(
         private val context: Context,

@@ -25,7 +25,7 @@ import thiengo.com.br.canalvinciusthiengo.ui.fragment.*
  * aplicativo.
  *
  * @constructor cria um objeto completo do tipo
- * MainActivity.
+ * [MainActivity].
  */
 class MainActivity : AppCompatActivity() {
 

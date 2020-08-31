@@ -15,7 +15,7 @@ package thiengo.com.br.canalvinciusthiengo.model
  * o item.
  * @property isSelected estado do item.
  * @constructor cria um objeto completo do tipo
- * MenuItem.
+ * [MenuItem].
  */
 class MenuItem(
     val id: Int,

@@ -17,7 +17,7 @@ import thiengo.com.br.canalvinciusthiengo.R
 /**
  * Classe base para todos os fragmentos do projeto
  * que têm como parte principal do layout o framework
- * de lista RecyclerView e os dados estão somente
+ * de lista [RecyclerView] e os dados estão somente
  * local em projeto (data/fixed).
  */
 abstract class FrameworkListFragment : Fragment() {
@@ -72,8 +72,8 @@ abstract class FrameworkListFragment : Fragment() {
     /**
      * Atualiza o valor de bottomMargin do título do
      * fragmento quando também há em layout um outro
-     * TextView de conteúdo extra além do TextView de
-     * título e do RecyclerView de itens de lista.
+     * [TextView] de conteúdo extra além do [TextView]
+     * de título e do [RecyclerView] de itens de lista.
      *
      * Desta forma o conteúdo fica mais apresentável.
      *
@@ -165,7 +165,7 @@ abstract class FrameworkListFragment : Fragment() {
              * É utópico, mas pode ocorrer de não haver
              * nem mesmo um navegador Web no aparelho do
              * usuário que abra a URL (se houver algo em
-             * webUri) da rede acionada.
+             * [webUri]) da rede acionada.
              *
              * Sendo assim, ao invés de gerar uma exceção,
              * nós avisamos ao usuário a necessidade de
@@ -182,7 +182,7 @@ abstract class FrameworkListFragment : Fragment() {
     }
 
     /**
-     * Retorna um objeto Intent válido ou null de acordo
+     * Retorna um objeto [Intent] válido ou null de acordo
      * com o valor presente em uri.
      *
      * @param uri endereço para abertura de app auxiliar.

@@ -21,7 +21,7 @@
         android:contentDescription="@string/youtube_content_icon_content_desc"
         android:onClick="openYouTubeChannel"
         android:src="@drawable/ic_youtube_logo"
-        android:tint="@color/colorTopIcon" />
+        app:tint="@color/colorTopIcon" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_channel_logo"

@@ -22,14 +22,14 @@ import thiengo.com.br.canalvinciusthiengo.ui.adapter.ListItemAdapter
  * do app.
  *
  * @constructor cria um objeto completo do tipo
- * PlayListsFragment.
+ * [PlayListsFragment].
  */
 class PlayListsFragment : Fragment() {
 
     companion object {
         /**
          * Constante com o identificador único do
-         * fragmento PlayListsFragment para que
+         * fragmento [PlayListsFragment] para que
          * ele seja encontrado na pilha de fragmentos
          * e assim não seja necessária a construção
          * de mais de um objeto deste fragmento em
@@ -72,10 +72,10 @@ class PlayListsFragment : Fragment() {
             /**
              * Todo o algoritmo abaixo é necessário aqui,
              * pois na primeira abertura do aplicativo,
-             * quando acessando o fragmento PlayListsFragment,
+             * quando acessando o fragmento [PlayListsFragment],
              * é possível que a inserção de dados de PlayList
              * no banco de dados local (partindo dos algoritmos
-             * em InitialDataCallback) não seja rápida o
+             * em [InitialDataCallback]) não seja rápida o
              * suficiente para os dados já serem apresentados
              * neste fragmento quando o usuário estiver
              * acessando-o pela primeira vez.
@@ -118,7 +118,7 @@ class PlayListsFragment : Fragment() {
      * de lista dentro de runOnUiThread().
      *
      * Outro ponto importante é garantir que não
-     * haverá NullPointerException caso os dados
+     * haverá [NullPointerException] caso os dados
      * cheguem em método quando a UI não mais está no
      * foreground (primeiro plano). Assim o operador
      * not null (?.) é utilizado com frequência.
@@ -192,7 +192,7 @@ class PlayListsFragment : Fragment() {
      * dentro de runOnUiThread().
      *
      * Outro ponto importante é garantir que não
-     * haverá NullPointerException caso os dados
+     * haverá [NullPointerException] caso os dados
      * cheguem em método quando a UI não mais está no
      * foreground (primeiro plano). Assim o operador
      * not null (?.) é utilizado com frequência.
@@ -231,7 +231,7 @@ class PlayListsFragment : Fragment() {
 
     /**
      * Inicializa por completo o framework de lista
-     * RecyclerView que deve conter a listagem das
+     * [RecyclerView] que deve conter a listagem das
      * PlayLists do canal.
      */
     private fun initPlayListList(){
@@ -259,7 +259,7 @@ class PlayListsFragment : Fragment() {
      * ou abertura da versão dele em app de navegador Web,
      * então uma mensagem de falha é apresentada.
      *
-     * @param playList objeto PlayList do item de lista
+     * @param playList objeto [PlayList] do item de lista
      * acionado pelo usuário.
      */
     private fun callYouTubePlayListCallback(

@@ -6,7 +6,7 @@ package thiengo.com.br.canalvinciusthiengo.config
  * dados para acesso a recursos alternativos externos
  * do YouTube.
  *
- * As classes internas (Key, Channel, ApiV3 e Notification)
+ * As classes internas ([Key], [Channel], [ApiV3] e [Notification])
  * e também os rótulos de todos os companion object.
  * Estes estão presentes em código somente para
  * facilitar a leitura dele. Ou seja, em termos de
@@ -96,3 +96,8 @@ abstract class YouTubeConfig {
         }
     }
 }
+
+
+
+
+

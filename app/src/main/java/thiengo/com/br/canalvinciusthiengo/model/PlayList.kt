@@ -31,7 +31,7 @@ import thiengo.com.br.canalvinciusthiengo.config.YouTubeConfig
  * API. É o mesmo identificador da PlayList no
  * site do YouTube.
  * @constructor cria um objeto completo do tipo
- * PlayList.
+ * [PlayList].
  */
 @Entity
 class PlayList(

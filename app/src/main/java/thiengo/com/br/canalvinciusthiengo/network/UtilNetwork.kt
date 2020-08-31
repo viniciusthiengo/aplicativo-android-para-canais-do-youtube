@@ -16,7 +16,7 @@ import thiengo.com.br.canalvinciusthiengo.model.PlayList
  *
  * @property context contexto do aplicativo.
  * @constructor cria um objeto completo do tipo
- * UtilNetwork.
+ * [UtilNetwork].
  */
 class UtilNetwork private constructor(
     private val context: Context ){
@@ -24,22 +24,22 @@ class UtilNetwork private constructor(
     companion object{
         /**
          * Propriedade responsável por conter a única
-         * instância de UtilNetwork disponível
+         * instância de [UtilNetwork] disponível
          * durante toda a execução do aplicativo.
          */
         private var instance: UtilNetwork? = null
 
         /**
          * Método que aplica, junto à propriedade
-         * instance, o padrão Singleton em classe.
+         * [instance], o padrão Singleton em classe.
          * Grantindo que somente uma instância de
-         * UtilNetwork estará disponível durante
+         * [UtilNetwork] estará disponível durante
          * toda a execução do app. Ajudando a
          * diminuir a possibilidade de vazamento
          * de memória.
          *
          * @param context contexto do aplicativo.
-         * @return instância única de UtilNetwork.
+         * @return instância única de [UtilNetwork].
          */
         fun getInstance( context: Context ) : UtilNetwork {
             if( instance == null ){
@@ -69,9 +69,9 @@ class UtilNetwork private constructor(
      *
      * @param networkRequestMode modelo de conexão com o servidor
      * remoto.
-     * @property callbackSuccess callback que deve ser executado
+     * @param callbackSuccess callback que deve ser executado
      * em caso de resposta bem sucedida.
-     * @property callbackFailure callback que deve ser executado
+     * @param callbackFailure callback que deve ser executado
      * em caso de resposta falha.
      */
     fun retrieveLastVideo(
@@ -107,9 +107,9 @@ class UtilNetwork private constructor(
      *
      * @param networkRequestMode modelo de conexão com o servidor
      * remoto.
-     * @property callbackSuccess callback que deve ser executado
+     * @param callbackSuccess callback que deve ser executado
      * em caso de resposta bem sucedida.
-     * @property callbackFailure callback que deve ser executado
+     * @param callbackFailure callback que deve ser executado
      * em caso de resposta falha.
      */
     fun retrievePlayLists(

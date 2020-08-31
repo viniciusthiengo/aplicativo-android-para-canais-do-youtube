@@ -8,12 +8,12 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.video
  * O objetivo desta classe (objetos desta classe)
  * é ser parte do parse do JSON (via Gson API)
  * que é retornado pelo servidor do YouTube com
- * os dados de PlayLists do canal vinculado ao
+ * os dados de último vídeo do canal vinculado ao
  * app.
  *
  * Apesar de outros dados de thumbnail estarem
  * disponíveis no JSON, o que importa para o
- * aplicativo é somente os dados de versão de
+ * aplicativo é somente o dado de versão de
  * alta resolução da thumb.
  *
  * Com a configuração atual de uso da API Gson
@@ -24,6 +24,6 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.video
  * @property high thumb de mais alta resolução
  * do vídeo.
  * @constructor cria um objeto completo do tipo
- * ThumbnailParse.
+ * [ThumbnailParse].
  */
 class ThumbnailParse( val high: ThumbParse )

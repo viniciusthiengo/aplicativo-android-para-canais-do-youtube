@@ -18,7 +18,7 @@ import thiengo.com.br.canalvinciusthiengo.model.parse.video.VideoParse
  * @property callbackFailure callback que deve ser
  * executado em caso de resposta falha.
  * @constructor cria um objeto completo do tipo
- * LastVideoResponse.
+ * [LastVideoResponse].
  */
 class LastVideoResponse(
         private val context: Context,
@@ -39,7 +39,7 @@ class LastVideoResponse(
     }
 
     /**
-     * Cria um novo LastVideo em app (incluindo no banco de
+     * Cria um novo [LastVideo] em app (incluindo no banco de
      * dados local) caso a resposta do YouTube à requisição
      * de dados do "último vídeo" seja bem sucedida.
      *

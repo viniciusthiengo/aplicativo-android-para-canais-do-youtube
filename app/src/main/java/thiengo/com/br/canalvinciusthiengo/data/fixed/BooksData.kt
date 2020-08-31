@@ -28,7 +28,7 @@ abstract class BooksData {
          * vinculados ao canal.
          *
          * @return lista não mutável de objetos
-         * Book.
+         * [Book].
          */
         fun getBooks()
             = listOf(
@@ -53,7 +53,7 @@ abstract class BooksData {
                 Book(
                     title = "Porque e Como Utilizar Vetores no Android",
                     categories = listOf("Android", "Kotlin", "Drawable"),
-                    webPage = "https://www.thiengo.com.br/construa-um-aplicativo-android-completo-para-youtubers-parte-1",
+                    webPage = "https://www.thiengo.com.br/porque-e-como-utilizar-vetores-no-android",
                     cover = R.drawable.ic_book_cover_orange
                 ),
                 Book(

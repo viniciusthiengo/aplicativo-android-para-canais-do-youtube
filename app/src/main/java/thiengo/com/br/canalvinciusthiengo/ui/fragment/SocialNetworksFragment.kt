@@ -11,14 +11,14 @@ import thiengo.com.br.canalvinciusthiengo.ui.adapter.ListItemAdapter
  * app.
  *
  * @constructor cria um objeto completo do tipo
- * SocialNetworksFragment.
+ * [SocialNetworksFragment].
  */
 class SocialNetworksFragment : FrameworkListFragment() {
 
     companion object {
         /**
          * Constante com o identificador único do
-         * fragmento SocialNetworksFragment para que
+         * fragmento [SocialNetworksFragment] para que
          * ele seja encontrado na pilha de fragmentos
          * e assim não seja necessária a construção
          * de mais de um objeto deste fragmento em

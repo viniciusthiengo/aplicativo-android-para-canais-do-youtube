@@ -22,7 +22,7 @@ import thiengo.com.br.canalvinciusthiengo.R
  * @property cover identificador único do ícone
  * vetorial do curso.
  * @constructor cria um objeto completo do tipo
- * Course.
+ * [Course].
  */
 class Course(
     val title: String,

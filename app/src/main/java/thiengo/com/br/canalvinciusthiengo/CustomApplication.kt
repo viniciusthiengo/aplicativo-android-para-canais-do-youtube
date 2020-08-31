@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit
  *      ...>
  *
  * @constructor cria um objeto completo do tipo
- * CustomApplication.
+ * [CustomApplication].
  */
 class CustomApplication: Application() {
 
@@ -53,7 +53,7 @@ class CustomApplication: Application() {
         /*
          * Configuração de WorkManager que
          * garante que mesmo com uma
-         * "re-invocação" de enfileramento de
+         * "re-invocação" de enfileiramento de
          * "work" não haverá work repetido em
          * lista de execução do WorkManager.
          * */
@@ -75,7 +75,7 @@ class CustomApplication: Application() {
      * Com a configuração a seguir é preciso
      * que também tenha definido no aplicativo
      * um serviço do tipo
-     * NotificationExtenderService para que as
+     * [NotificationExtenderService] para que as
      * notificações push sejam interceptadas
      * e trabalhadas de maneira personalizada.
      */
@@ -86,5 +86,3 @@ class CustomApplication: Application() {
             .init()
     }
 }
-
-

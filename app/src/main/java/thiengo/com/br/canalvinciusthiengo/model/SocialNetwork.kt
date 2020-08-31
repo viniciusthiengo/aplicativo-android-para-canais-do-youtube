@@ -15,14 +15,14 @@ import android.net.Uri
  * ...) vinculada ao canal.
  * @property accountName nome da conta na rede
  * vinculada ao canal.
- * @property appUri Intent URI da conta na rede
+ * @property appUri [Intent] URI da conta na rede
  * vinculada ao canal.
  * @property webUri URL da conta na rede vinculada
  * ao canal.
  * @property logo ícone do aplicativo da rede
  * vinculada ao canal.
  * @constructor cria um objeto completo do tipo
- * SocialNetwork.
+ * [SocialNetwork].
  */
 class SocialNetwork(
     val network: String,

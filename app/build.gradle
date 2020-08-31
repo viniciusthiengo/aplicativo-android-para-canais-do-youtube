@@ -54,7 +54,6 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    implementation 'androidx.core:core-ktx:1.3.1'
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
     /**
@@ -88,11 +87,12 @@ dependencies {
      * Para uso da WorkManager API. API responsável por
      * trabalhos em background quando o app não está em uso.
      * */
-    implementation "androidx.work:work-runtime-ktx:2.4.0"
+    implementation 'androidx.work:work-runtime-ktx:2.4.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
 
     /*
      * Para uso da OneSignal API. API redundante de
-     * notificações no projeto.
+     * dado de novo vídeo YouTube em projeto.
      * */
     implementation 'com.onesignal:OneSignal:[3.15.1, 3.99.99]'
     implementation 'com.google.firebase:firebase-messaging:20.2.4'

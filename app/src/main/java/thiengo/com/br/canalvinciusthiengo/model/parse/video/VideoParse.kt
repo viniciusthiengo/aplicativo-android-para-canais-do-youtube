@@ -22,7 +22,7 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.video
  * @property items lista que contém somente o
  * último vídeo liberado no canal.
  * @constructor cria um objeto completo do tipo
- * VideoParse.
+ * [VideoParse].
  */
 data class VideoParse(
     private val items: List<ItemParse> ){
@@ -30,11 +30,11 @@ data class VideoParse(
     /**
      * @property id contém o identificador único do
      * vídeo. O método get() foi sobrescrito pois é
-     * possível, mesmo que pouco provável, que items
+     * possível, mesmo que pouco provável, que [items]
      * seja null ou esteja vazio e assim não haja
      * dados de último vídeo. Porém devido ao
      * algoritmo definido em get() nunca é retornado
-     * null para a propriedade id de VideoParse.
+     * null para a propriedade [id] de [VideoParse].
      * @return o identificador único do vídeo.
      */
     val id: String
@@ -50,11 +50,11 @@ data class VideoParse(
     /**
      * @property title contém o título do vídeo. O
      * método get() foi sobrescrito pois é possível
-     * que items seja null ou esteja vazio e assim
+     * que [items] seja null ou esteja vazio e assim
      * não haja dados de último vídeo. Porém devido
      * ao algoritmo definido em get() nunca é
-     * retornado null para a propriedade title de
-     * VideoParse.
+     * retornado null para a propriedade [title] de
+     * [VideoParse].
      * @return o título do vídeo.
      */
     val title: String
@@ -70,11 +70,11 @@ data class VideoParse(
     /**
      * @property description contém a descrição do
      * vídeo. O método get() foi sobrescrito pois
-     * é possível que items seja null ou esteja
+     * é possível que [items] seja null ou esteja
      * vazio e assim não haja dados de último
      * vídeo. Porém devido ao algoritmo definido
      * em get() nunca é retornado null para a
-     * propriedade description de VideoParse.
+     * propriedade [description] de [VideoParse].
      * @return a descrição do vídeo.
      */
     val description: String
@@ -90,11 +90,11 @@ data class VideoParse(
     /**
      * @property thumbUrl contém a URL da thumb do
      * vídeo. O método get() foi sobrescrito pois
-     * é possível que items seja null ou esteja
+     * é possível que [items] seja null ou esteja
      * vazio e assim não haja dados de último
      * vídeo. Porém devido ao algoritmo definido
      * em get() nunca é retornado null para a
-     * propriedade thumbUrl de VideoParse.
+     * propriedade [thumbUrl] de [VideoParse].
      * @return a URl da thumb de alta resolução
      * do vídeo.
      */
@@ -108,3 +108,11 @@ data class VideoParse(
             }
         }
 }
+
+
+
+
+
+
+
+

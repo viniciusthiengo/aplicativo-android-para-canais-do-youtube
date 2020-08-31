@@ -10,7 +10,7 @@ import thiengo.com.br.canalvinciusthiengo.model.ListItem
 /**
  * Classe adaptadora de itens com lógica comum a
  * todos os fragmentos do app que têm como parte
- * do conteúdo o framework de lista RecyclerView.
+ * do conteúdo o framework de lista [RecyclerView].
  *
  * Define qual ViewHolder, qual lista de dados e
  * qual layout será utilizado no framework de
@@ -18,12 +18,12 @@ import thiengo.com.br.canalvinciusthiengo.model.ListItem
  *
  * @property context contexto do aplicativo.
  * @property items itens de lista do tipo (que
- * implementem de) ListItem.
+ * implementem de) [ListItem].
  * @property callExternalAppCallback contém o
  * algoritmo de execução quando um item é
  * acionado pelo usuário.
  * @constructor cria um objeto completo do tipo
- * ListItemAdapter.
+ * [ListItemAdapter].
  */
 class ListItemAdapter(
         val context: Context,

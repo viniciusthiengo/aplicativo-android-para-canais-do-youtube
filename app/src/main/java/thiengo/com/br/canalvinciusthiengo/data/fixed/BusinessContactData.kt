@@ -27,7 +27,7 @@ abstract class BusinessContactData {
          * canal.
          *
          * @return lista não mutável de objetos
-         * BusinessContact.
+         * [BusinessContact].
          */
         fun getBusinessContacts()
             = listOf(
@@ -48,28 +48,7 @@ abstract class BusinessContactData {
                     contact = "Vinícius Thiengo - Blog",
                     webUri = "http://m.me/thiengoCalopsita",
                     logo = R.drawable.ic_facebook_messenger_color
-                )/*,
-                BusinessContact(
-                    place = "WhatsApp",
-                    contact = "+55 (27) 9-9999-9999",
-                    webUri = "",
-                    appUri = "",
-                    logo = R.drawable.ic_whatsapp_color
-                ),
-                BusinessContact(
-                    place = "Telegram",
-                    contact = "+55 (27) 9-9999-9999",
-                    webUri = "",
-                    appUri = "",
-                    logo = R.drawable.ic_telegram_color
-                ),
-                BusinessContact(
-                    place = "Facebook Messeger",
-                    contact = "Vinícius Thiengo",
-                    webUri = "",
-                    appUri = "",
-                    logo = R.drawable.ic_facebook_messeger_color
-                )*/
+                )
             )
     }
 }

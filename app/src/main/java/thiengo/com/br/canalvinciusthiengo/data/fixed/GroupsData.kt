@@ -27,7 +27,7 @@ abstract class GroupsData {
          * canal.
          *
          * @return lista não mutável de objetos
-         * Group.
+         * [Group].
          */
         fun getGroups()
             = listOf(

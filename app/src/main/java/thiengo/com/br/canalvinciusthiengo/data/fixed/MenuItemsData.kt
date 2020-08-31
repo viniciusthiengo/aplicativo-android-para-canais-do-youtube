@@ -28,7 +28,7 @@ class MenuItemsData {
          * do app.
          *
          * @return lista não mutável de objetos
-         * MenuItem.
+         * [MenuItem].
          */
         fun getItems( res: Resources )
             = listOf(

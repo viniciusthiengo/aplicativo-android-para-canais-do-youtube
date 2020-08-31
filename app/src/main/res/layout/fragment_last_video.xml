@@ -64,7 +64,7 @@
                             android:contentDescription="@string/last_video_play_content_desc"
                             android:scaleType="fitCenter"
                             android:src="@drawable/ic_play_button"
-                            android:tint="@color/colorVideoPlayerIcon" />
+                            app:tint="@color/colorVideoPlayerIcon" />
 
                         <ImageView
                             android:id="@+id/iv_volume"

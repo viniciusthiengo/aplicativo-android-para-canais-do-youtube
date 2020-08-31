@@ -25,19 +25,19 @@ interface YouTubeService {
      * @param maxResults número máximo de videos.
      * @param order dado de ordenação dos resultados.
      * @return todos os dados da resposta do servidor
-     * remoto - em objeto Call<VideoParse>.
+     * remoto - em objeto Call<[VideoParse]>.
      */
     @GET( value = YouTubeConfig.ApiV3.VIDEO_PATH )
     fun lastVideo(
-        @Query("key")
+        @Query( value = "key" )
         key: String = YouTubeConfig.Key.GOOGLE_DEV,
-        @Query("channelId")
+        @Query( value = "channelId" )
         channelId: String = YouTubeConfig.Channel.CHANNEL_ID,
-        @Query("part")
+        @Query( value = "part" )
         part: String = YouTubeConfig.ApiV3.PART_PARAM,
-        @Query("maxResults")
+        @Query( value = "maxResults" )
         maxResults: String = YouTubeConfig.ApiV3.MAX_RESULTS_VIDEO_PARAM,
-        @Query("order")
+        @Query( value = "order" )
         order: String = YouTubeConfig.ApiV3.ORDER_PARAM
     ): Call<VideoParse>
 
@@ -52,19 +52,19 @@ interface YouTubeService {
      * @param maxResults número máximo de PlayLists.
      * @param order dado de ordenação dos resultados.
      * @return todos os dados da resposta do servidor
-     * remoto - em objeto Call<PlayListsParse>.
+     * remoto - em objeto Call<[PlayListsParse]>.
      */
     @GET( value = YouTubeConfig.ApiV3.PLAYLISTS_PATH )
     fun playLists(
-        @Query("key")
+        @Query( value = "key" )
         key: String = YouTubeConfig.Key.GOOGLE_DEV,
-        @Query("channelId")
+        @Query( value = "channelId" )
         channelId: String = YouTubeConfig.Channel.CHANNEL_ID,
-        @Query("part")
+        @Query( value = "part" )
         part: String = YouTubeConfig.ApiV3.PART_PARAM,
-        @Query("maxResults")
+        @Query( value = "maxResults" )
         maxResults: String = YouTubeConfig.ApiV3.MAX_RESULTS_PLAYLISTS_PARAM,
-        @Query("order")
+        @Query( value = "order" )
         order: String = YouTubeConfig.ApiV3.ORDER_PARAM
     ): Call<PlayListsParse>
 }

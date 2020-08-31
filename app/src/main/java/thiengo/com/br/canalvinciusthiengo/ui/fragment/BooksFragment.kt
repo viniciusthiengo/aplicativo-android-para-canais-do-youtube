@@ -11,14 +11,14 @@ import thiengo.com.br.canalvinciusthiengo.ui.adapter.ListItemAdapter
  * indicados pelo canal YouTube do app.
  *
  * @constructor cria um objeto completo do tipo
- * BooksFragment.
+ * [BooksFragment].
  */
 class BooksFragment : FrameworkListFragment() {
 
     companion object {
         /**
          * Constante com o identificador único do
-         * fragmento BooksFragment para que
+         * fragmento [BooksFragment] para que
          * ele seja encontrado na pilha de fragmentos
          * e assim não seja necessária a construção
          * de mais de um objeto deste fragmento em

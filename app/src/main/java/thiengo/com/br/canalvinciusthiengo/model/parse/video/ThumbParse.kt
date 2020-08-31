@@ -8,8 +8,8 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.video
  * O objetivo desta classe (objetos desta classe)
  * é ser parte do parse do JSON (via Gson API)
  * que é retornado pelo servidor do YouTube com
- * os dados de PlayLists do canal vinculado ao
- * app.
+ * os dados de último vídeo liberado do canal
+ * vinculado ao app.
  *
  * Apesar de outros dados de thumb estarem
  * disponíveis no JSON, o que importa para o
@@ -22,6 +22,6 @@ package thiengo.com.br.canalvinciusthiengo.model.parse.video
  *
  * @property url URL da thumb do vídeo.
  * @constructor cria um objeto completo do tipo
- * ThumbParse.
+ * [ThumbParse].
  */
 class ThumbParse( val url: String )

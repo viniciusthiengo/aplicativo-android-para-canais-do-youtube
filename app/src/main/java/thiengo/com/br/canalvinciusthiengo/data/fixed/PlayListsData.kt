@@ -23,7 +23,7 @@ class PlayListsData {
          * vinculadas ao canal.
          *
          * @return lista mutável de objetos
-         * PlayList.
+         * [PlayList].
          */
         fun getInitialPlayLists()
              //= mutableListOf<PlayList>()

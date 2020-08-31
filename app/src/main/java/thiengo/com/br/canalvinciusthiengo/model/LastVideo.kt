@@ -34,7 +34,7 @@ import thiengo.com.br.canalvinciusthiengo.config.YouTubeConfig
  * @property title título do vídeo.
  * @property description descrição do vídeo.
  * @constructor cria um objeto completo do tipo
- * LastVideo.
+ * [LastVideo].
  */
 @Entity
 data class LastVideo(
@@ -82,7 +82,7 @@ data class LastVideo(
 
     /**
      * Retorna a Web URL do vídeo. URL que deve
-     * ser acionada junto a um objeto Intent em
+     * ser acionada junto a um objeto [Intent] em
      * uma invocação à startActivity().
      *
      * Assim o vídeo será aberto dentro do
@@ -101,10 +101,10 @@ data class LastVideo(
 
     /**
      * Todos os códigos a partir deste ponto são
-     * referentes ao Parcelable que é aplicado ao
-     * objeto do tipo LastVideo para que ele
+     * referentes ao [Parcelable] que é aplicado ao
+     * objeto do tipo [LastVideo] para que ele
      * possa ser transportado dentro de objetos
-     * Intent de maneira eficiente.
+     * [Intent] de maneira eficiente.
      */
     constructor( source: Parcel ) : this (
         source.readString()!!,

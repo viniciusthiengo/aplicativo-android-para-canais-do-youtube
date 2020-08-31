@@ -29,7 +29,7 @@ import java.net.URI
  *  </service>
  *
  * @constructor cria um objeto completo do tipo
- * CustomNotificationExtenderService.
+ * [CustomNotificationExtenderService].
  */
 class CustomNotificationExtenderService: NotificationExtenderService() {
 
@@ -62,7 +62,7 @@ class CustomNotificationExtenderService: NotificationExtenderService() {
      * os dados JSON recebidos de notificação OneSignal.
      *
      * @param json dados JSON obtidos de notificação.
-     * @return objeto LastVideo completo.
+     * @return objeto [LastVideo] completo.
      */
     private fun getLastVideoFromJson(
         json: JSONObject? ) : LastVideo? {

@@ -10,7 +10,7 @@ import thiengo.com.br.canalvinciusthiengo.model.ListItem
 /**
  * Classe responsável por aplicar o padrão
  * ViewHolder nas listas de itens dos fragmentos
- * que contêm o framework RecyclerView.
+ * que contêm o framework [RecyclerView].
  *
  * @property adapter adaptador de itens de lista.
  * @property callExternalAppCallback contém o
@@ -18,21 +18,21 @@ import thiengo.com.br.canalvinciusthiengo.model.ListItem
  * acionado pelo usuário.
  * @property itemView layout de item.
  * @constructor cria um objeto completo do tipo
- * ListItemViewHolder.
+ * [ListItemViewHolder].
  */
 class ListItemViewHolder(
-        val adapter: ListItemAdapter,
-        val callExternalAppCallback: (ListItem)->Unit,
+        private val adapter: ListItemAdapter,
+        private val callExternalAppCallback: (ListItem)->Unit,
         itemView: View
     ) : RecyclerView.ViewHolder( itemView ), View.OnClickListener {
 
     /**
      * Propriedades de layout, UI.
      */
-    var ivIcon: ImageView
-    var tvMainText: TextView
-    var tvFirstAuxText: TextView
-    var tvSecondAuxText: TextView
+    private var ivIcon: ImageView
+    private var tvMainText: TextView
+    private var tvFirstAuxText: TextView
+    private var tvSecondAuxText: TextView
 
     /**
      * Bloco de inicialização da UI do layout

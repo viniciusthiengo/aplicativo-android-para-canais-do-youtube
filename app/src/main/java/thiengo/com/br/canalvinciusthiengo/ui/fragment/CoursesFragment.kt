@@ -37,7 +37,7 @@ class CoursesFragment : FrameworkListFragment() {
         )
 
         val adapter = ListItemAdapter(
-            context = activity!!,
+            context = requireContext(),
             items = CoursesData.getCourses(),
             callExternalAppCallback = {
                 item -> callExternalApp(
@@ -45,7 +45,7 @@ class CoursesFragment : FrameworkListFragment() {
                     appUri = item.getAppUri(),
                     failMessage = String.format(
                         getString( R.string.course_toast_alert ),
-                        (item as Course).title
+                        if (item is Course) (item as? Course)?.title else ""
                     )
                 )
             }

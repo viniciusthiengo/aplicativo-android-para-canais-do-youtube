@@ -32,8 +32,7 @@ class Book(
     override fun getFirstAuxText()
         = categories.joinToString(", ")
 
-    override fun getWebUri()
-        = Uri.parse( webPage )
+    override fun getWebUri(): Uri = Uri.parse( webPage )
 
     override fun getIcon()
         = cover

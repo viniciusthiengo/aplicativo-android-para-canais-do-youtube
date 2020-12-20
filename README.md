@@ -58,7 +58,7 @@ A seguir a lista dos artigos que devem ser seguidos, passo a passo, caso você q
    - [Configurando o WorkManager Para Requisições em Background - Parte 12](https://www.thiengo.com.br/configurando-o-workmanager-para-requisicoes-em-background-youtuber-android-app-parte-12);
    - [Testes e Resultados no Projeto Finalizado - Parte 13](https://www.thiengo.com.br/testes-e-resultados-no-projeto-finalizado-youtuber-android-app-parte-13);
    - [Nós Temos Um Framework Em Mãos - Parte 14](https://www.thiengo.com.br/nos-temos-um-framework-em-maos-youtuber-android-app-parte-14);
-   - Parte 15 **[FINAL]**... *em edição 📑🖋*.
+   - [Como e Onde Monetizar o Aplicativo Framework - Parte 15](https://www.thiengo.com.br/como-e-onde-monetizar-o-aplicativo-framework-youtuber-android-app-parte-15).
 
 ### Já tenho um cliente. E agora?
 

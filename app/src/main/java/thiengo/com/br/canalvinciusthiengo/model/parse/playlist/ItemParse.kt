@@ -42,11 +42,6 @@ class ItemParse(
      */
     val title: String
         get() : String {
-            return if( snippet != null ){
-                snippet.title
-            }
-            else{
-                ""
-            }
+            return snippet?.title ?: ""
         }
 }
